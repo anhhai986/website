@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="keywords" content="Sitecake, cms, flatfile cms, HTML, drag and drop cms, simple cms, open source, free" />
+    <title>Simple CMS For Simple Websites</title>
+    <meta name="description" content="Sitecake is drag and drop CMS for static HTML or simple PHP website. No database needed." />
+    <meta name="city" content="New York" />
+    <meta name="country" content="US" />
+    <meta name="allow-search" content="yes" />
+    <meta name="robots" content="all, index, follow" />
+    <meta name="copyright" content="Sitecake" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-basic.css">
+    <!-- Font's -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/fonts.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-touch-icon-60x60.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon-76x76.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon-120x120.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png?v=yy0966qJGm">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png?v=yy0966qJGm" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-194x194.png?v=yy0966qJGm" sizes="194x194">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png?v=yy0966qJGm" sizes="96x96">
+    <link rel="icon" type="image/png" href="/img/favicon/android-chrome-192x192.png?v=yy0966qJGm" sizes="192x192">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png?v=yy0966qJGm" sizes="16x16">
+    <link rel="manifest" href="/img/favicon/manifest.json?v=yy0966qJGm">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico?v=yy0966qJGm">
+    <meta name="msapplication-TileColor" content="#61cae9">
+    <meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png?v=yy0966qJGm">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml?v=yy0966qJGm">
+    <meta name="theme-color" content="#61cae9">
+
+    <script type="text/javascript">
+        (function (e, t) {
+            function r(e, t) {
+                e[t] = function () {
+                    e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
+                };
+            }
+            var n = "JacoRecorder";
+            (function (e, t, i, s) {
+                if (!i.__VERSION) {
+                    e[n] = i;
+                    var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
+                    for (var u = 0; u < o.length; u++) r(i, o[u]);
+                    i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
+                    var a = t.createElement("script");
+                    a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
+                    var f = t.getElementsByTagName("head")[0];
+                    f.appendChild(a);
+                }
+            })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
+        }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
+    </script>
+
+
+
+</head>
+
+
+<body>
+    <!-- Start Header -->
+    <header>
+        <!-- Start Header Nav -->
+        <nav>
+            <ul>
+                <li><a href="templates.html" title="Sitecake templates">Templates</a></li>
+                <li><a href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Go to Github wiki">Docs</a></li>
+                <li><a href="http://forum.sitecake.com" title="Sitecake community" target="_blank">Forum</a></li>
+                <li><a class="download" href="download.html" title="Download Sitecake">Download</a></li>
+            </ul>
+        </nav>
+        <!-- / Header Nav -->
+        <!-- Start Header Logo -->
+        <a class="header-logo" href="http://sitecake.com">
+            <img src="img/logo.png" alt="Sitecake logo" title="Hi from Sitecake!" />
+        </a>
+        <!-- / Header Logo -->
+    </header>
+    <!-- / Header -->
+    <!-- Start Intro -->
+    <section class="intro">
+        <div class="container">
+            <h1>Simple CMS For Your HTML Website</h1>
+            <h2 class="hero">Bootstrap Themes, Foundation Templates, HTML5 Boilerplate, all supported!</h2>
+            <ul>
+                <li>
+                    <a href="https://youtu.be/MomffHIOa7A" class="watch-video" target="_blank">
+                        <p>Watch
+                            <br>
+                            <span>Video</span></p>
+                        <span class="arrow"></span>
+                    </a>
+
+                </li>
+                <li>
+                    <!-- Start Try Demo -->
+                    <a class="try-demo" href="http://sitecake.com/demo" title="See Sitecake in action">
+                        <p>Try
+                            <br> Demo
+                        </p>
+                        <span class="arrow"></span>
+                    </a>
+                    <!-- / Watch Try Demo -->
+                </li>
+                <li>
+                    <!-- Start Download -->
+                    <a class="download" href="download.html" title="Go ahead, try it!">
+                        <p>DOWN
+                            <br>
+                            <span>LOAD</span></p>
+                        <span class="arrow"></span>
+                    </a>
+                    <!-- / Watch Download -->
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- / Intro -->
+    <!-- Start Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Start Features Box -->
+                            <div class="features-box">
+                                <img src="img/ico-draganddrop.png" alt="features-icon01" />
+                                <h3>Drag &amp; drop everything</h3>
+                                <p>Drag &amp; drop items from your desktop, other browser window, YouTube, Google maps, Twitter, ... It will work. </p>
+                            </div>
+                            <!-- / Features Box -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Start Features Box -->
+                            <div class="features-box pull-right">
+                                <img src="img/ico-html.png" alt="features-icon02" />
+                                <h3>Works with plain HTML </h3>
+                                <p>Sitecake reads, modifies and saves changes in regular HTML files. No PHP or template language knowledge required.</p>
+                            </div>
+                            <!-- / Features Box -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Start Features Box -->
+                            <div class="features-box">
+                                <img src="img/ico-nodatabase.png" alt="features-icon01" />
+                                <h3>No database needed</h3>
+                                <p>All changes are saved directly in HTML page, all images in file system. Once you finish editing you still have a static website. </p>
+                            </div>
+                            <!-- / Features Box -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Start Features Box -->
+                            <div class="features-box pull-right">
+                                <img src="img/ico-opensource.png" alt="features-icon01" />
+                                <h3>Opensource</h3>
+                                <p>We would love people to use, improve, build upon, expand and earn with Sitecake. Fork and have some fun, <a href="https://github.com/sitecake/sitecake">it’s on Github.</a></p>
+                            </div>
+                            <!-- / Features Box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / Features -->
+    <!-- Start How To Install -->
+    <section class="how-to-install">
+        <div class="container">
+            <h2>How To Install</h2>
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <code class="how-to-install-box">&lt;div <span class="html-blue">class="sc-content"</span>&gt;<br>
+                                &lt;h1&gt;Fine looking heading&lt;/h1&gt;<br>
+                                &lt;img src=”feature.jpg"&gt;<br>
+                                &lt;p&gt;Some text&lt;/p&gt;<br>
+                                &lt;/div&gt;<br>
+                            </code>
+
+                    <p>First, add <strong><i>sc-content</i></strong> class to divs you want editable</p>
+                </div>
+                <div class="col-sm-4">
+                    <code class="how-to-install-box">
+                            /css<br>
+                            /images<br>
+                            /js<br>
+                            <span class="html-blue">/sitecake</span><br>
+                            index.html<br>
+                            <span class="html-blue">sitecake.php</span>
+                        </code>
+                    <p>Second, upload Sitecake to the same folder as your website</p>
+                </div>
+                <div class="col-sm-4 browser">
+                    <div class="how-to-install-box"></div>
+                    <p>Third, point browser to <strong><i>http://domain.com/sitecake.php</i></strong> and login with <strong><i>‘admin’</i></strong> pass to start editing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / How To Install -->
+
+    <!-- Start Showcase -->
+    <section class="showcase clearfix">
+        <div class="container">
+            <h2>Featured Websites</h2>
+            <p>Sitecake runs websites for non-profits, college projects, art portfolios, restaurants, bed and breakfast, lawyer offices, medical clinics, even multi billion dollar investment funds. See some of them...</p>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-4">
+                        <a href="http://www.atelier-galerie-pierre-moune.fr/" target="_blank">
+                            <img src="img/showcase-01.jpg" alt="Sitecake run website" />
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a href="http://morstonbarn.com/index.php" target="_blank">
+                            <img src="img/showcase-02.jpg" alt="Sitecake run website" />
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a href="http://www.jakobgasteiger.com/" target="_blank">
+                            <img src="img/showcase-03.jpg" alt="Sitecake run website" />
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a href="http://www.jewelzmusic.de/" target="_blank">
+                            <img src="img/showcase-04.jpg" alt="Sitecake run website" />
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a href="http://www.girardin-santenay.com/index.html" target="_blank">
+                            <img src="img/showcase-05.jpg" alt="Sitecake run website" />
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a href="http://vani-et-loic.com/" target="_blank">
+                            <img src="img/showcase-06.jpg" alt="Sitecake run website" />
+                        </a>
+                    </li>
+                </ul>
+                <p>
+                    <a href="featured.html">Here are some more ...</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- / Showcase -->
+
+
+    <!-- Start Featured -->
+    <section class="featured">
+        <div class="container">
+
+            <p>Sitecake pitched, won and been featured with</p>
+            <img src="img/logo-product-hunt.png" alt="Sitecake was featured on producthunt.com" title="Featured" />
+            <img src="img/logo-seedcamp.png" alt="Sitecake was shortlisted with Seedcamp" title="Pitched" />
+            <img src="img/logo-lisbon-challenge.png" alt="Sitecake took part in 3 month accelerator program Lisbon Challenge" title="Accelerated" />
+            <img src="img/logo-how-to-web.png" alt="Sitecake won HowToWeb startup pitch in Belgrade" title="Pitched and won" />
+            <img src="img/logo-the-next-web.png" alt="Sitecake was featured on thenextweb.com" title="Featured" />
+
+        </div>
+    </section>
+    <!-- / Featured -->
+
+
+    <!-- Start Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Help &amp; Support</dt>
+                        <dd>
+                            <a href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Sitecake documentation">Documentation</a>
+                        </dd>
+                        <dd>
+                            <a href="http://support.sitecake.com">Send a ticket</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>News &amp; Info</dt>
+                        <dd>
+                            <a href="https://twitter.com/sitecake">Twitter</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Resources</dt>
+                        <dd>
+                            <a href="featured.html" title="Featured websites">Featured websites</a>
+                        </dd>
+                        <dd>
+                            <a href="hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
+                        </dd>
+                    </dl>
+
+                </div>
+                <div class="col-xs-3">
+                    <dt>Follow us</dt>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://twitter.com/sitecake">
+                                <img src="img/footer-social-twitter.png" alt="footer-social-twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sitecake" title="Sitecake repo">
+                                <img src="img/footer-social-github.png" alt="footer-social-github" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@font-face {
+    font-family: BelloPro;
+	src:url(../font/BelloPro.otf);
+}
+@font-face {
+	font-family:Bello-SmCp;
+	src:url(../font/Bello-SmCp.ttf);
+}
+
+#wrap {
+	width:550px;
+	margin:auto;
+}
+
+.error {
+	text-align:center;
+	margin:70px auto 80px auto;
+}
+
+.caps {
+	font-family:Bello-SmCp;
+	font-size:78px;
+	color:#9fdff0;
+	text-align:center;
+	margin:auto;
+	margin:0 0 50px 0;
+}
+
+.textbox {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 16px;
+	color:#222;
+	margin:30px 0;
+	text-align:center;
+	
+}
+
+a, a:visited {
+	font-family: 'Droid Sans', sans-serif;
+	font-size:16px;
+	color:#3b9ec4;
+	text-decoration:none;
+}
+
+a:hover, a:active {
+	font-family: 'Droid Sans', sans-serif;
+	font-size:16px;
+	color:#3b9ec4;
+	text-decoration:underline;
+}
+
+#nav {
+	 margin: 0 23px;
+     text-align: center;
+	
+}
+
+ul, li {
+	display:inline;
+	list-style:none;
+	padding:0;
+	
+}
+
+ul li a {
+	font-family: 'Droid Sans', sans-serif;
+	padding:3px 8px;
+	font-size:15px;
+	color:#3b9ec4;
+	font-weight:bold;
+	text-decoration:none;
+
+}
+
+ul li a:hover, ul li a:active {
+	font-family: 'Droid Sans', sans-serif;
+	padding:3px 8px;
+	font-size:15px;
+	color:#fff;
+	font-weight:bold;
+	text-decoration:none;
+	background-color:#3b9ec4;
+	border-radius:10px;
+	
+}
