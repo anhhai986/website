@@ -51,19 +51,21 @@
     <link rel="stylesheet" href="../css/highlight-pack/default.css">
     <script src="../js/highlight.pack.js"></script>
     <script>
-       $(document).ready(function() {
-           $('p.code').each(function(i, block) {
-               hljs.highlightBlock(block);
-           });
-       });
-        
-        hljs.configure({useBR: true});
-        
-        $('p.code').each(function(i, block) {
+        $(document).ready(function () {
+            $('p.code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+
+        hljs.configure({
+            useBR: true
+        });
+
+        $('p.code').each(function (i, block) {
             hljs.highlightBlock(block);
         });
     </script>
-   
+
     <!-- Facebook Pixel Code -->
     <script>
         ! function (f, b, e, v, n, t, s) {
@@ -252,7 +254,7 @@
                 <ul class="list-unstyled">
                     <li>Developer's Guide:</li>
                     <li><a href="install.html">Getting started</a></li>
-                    <li><a href="docs-basics.html">Sitecake Basics</a></li>
+                    <li><a href="https://github.com/sitecake/sitecake/wiki/Getting-Started">Sitecake Basics</a></li>
                     <li><a class="active" href="docs-templates.html">Sitecake Templates</a></li>
                     <li><a href="docs-user-styles.html">User styles</a></li>
                     <li><a href="how-to-upgrade-sitecake.html">Upgrade to a new version</a></li>
