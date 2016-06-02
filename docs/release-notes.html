@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="Sitecake, documentation" />
+    <meta name="keywords" content="Sitecake, release notes" />
     <title>Sitecake Documentation</title>
     <meta name="description" content="" />
     <meta name="city" content="New York" />
@@ -19,10 +19,10 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
@@ -47,6 +47,23 @@
     <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png?v=yy0966qJGm">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml?v=yy0966qJGm">
     <meta name="theme-color" content="#61cae9">
+
+    <!-- Code Highlight -->
+    <link rel="stylesheet" href="css/highlight-pack/foundation.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            hljs.configure({
+                useBR: true
+            });
+
+            $('p.code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -75,7 +92,7 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
 
-
+    <!-- Jaco Screen Recording -->
     <script type="text/javascript">
         (function (e, t) {
             function r(e, t) {
@@ -102,18 +119,17 @@
 </head>
 
 
-<body class="documentation">
+<body>
 
     <div class="container">
 
         <nav>
-            <!-- Header Nav -->
             <ul class="nav">
                 <li class="pull-xs-none pull-sm-left">
-                    <a class="navbar-brand" href="../index.html"><img src="../img/sitecake-logo-small.png" alt="Sitecake logo" title="Sitecake homepage" /></a>
+                    <a class="navbar-brand" href="index.html"><img src="img/sitecake-logo-small.png" alt="Sitecake logo" title="Sitecake homepage" /></a>
                 </li>
                 <li class="pull-xs-right pull-sm-right">
-                    <a class="nav-link download" href="../download.html" title="Download Sitecake">Download</a>
+                    <a class="nav-link download" href="download.html" title="Download Sitecake">Download</a>
                 </li>
 
                 <li class="pull-xs-right pull-sm-right">
@@ -122,82 +138,112 @@
 
 
                 <li class="pull-xs-right pull-sm-right">
-                    <a class="nav-link" href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Go to Github wiki">Docs</a>
+                    <a class="nav-link" href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="SiteCake Documentation">Docs</a>
                 </li>
 
                 <li class="pull-xs-right pull-sm-right">
-                    <a class="nav-link" href="../templates.html" title="Sitecake templates">Templates</a>
+                    <a class="nav-link" href="showcase.html" title="Sitecake run websites">Showcase</a>
                 </li>
+
             </ul>
         </nav>
 
 
 
         <!-- DOCUMENTATION CONTENT -->
+        <div class="row  documentation">
 
-        <div class="row">
-            <div class="col-xs-12 col-md-9 offset-md-3 sc-content">
-                <h1>Using URL Rewrite</h1>
-                
+            <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
+                <h1>Release Notes </h1>
             </div>
-            <div class="col-xs-12 col-md-9 push-md-3 sc-content">
-                <p>
-                <br>
-                <br>
-                Installing SiteCake using this approach is based on the usage of the URL rewrite mechanism of the web server and does not requires any changes to the page templates. However it requires setting a set of rewrite rules in order to get the wanted behaviour. 
-                </p>
-                
-                <p>The url rewrite engine is used in a such a way that every HTTP page request 
-                    (e.g. http://example.com/contact.html) is redirected to the SiteCake entry script (sitecake_entry.php) with the original URI (in this example ‘/contact.html’) passed as the url GET parameter (sitecake_entry.php?url=/contact.html’).</p>
-                    <p>SiteCake engine uses the url GET paramter’s value as a relative path (from the site’s document root) to locate and load the respective page template.</p>
-                    <p>The following is an example of the url rewrite configuration (e.g. in .htaccess for Apache).</p>
-                    <p class="code">
-                        # switch on the URL rewrite engine<br>
-                        RewriteEngine on<br><br>
+            <div class="col-xs-12 col-md-9 col-md-push-3">
+                <div class="sc-content">
+                    <h2> 2.3.1 Release Notes</h2>
+                    <h3>New Features</h3>
+                    <ul>
+                        <li>
+                            PHP sites supported - except for HTML files/pages, PHP pages can also be edited by Sitecake (certain restrictions applied).
+                        </li>
+                        <li>
+                            Subdirectories support - Sitecake can edit pages located in subdirectories as well.
+                        </li>
+                        <li>
+                            Explicitly control what pages are under Sitecake control
+                        </li>
+                        <li>
+                            Automatic refresh of draft content upon manual template changes - when page files are manually changed, draft files (in sitecake-temp) are automatically updated.
+                        </li>
+                        <li>
+                            New server side (PHP) session handlers supported (memcache, memcached and redis)
+                        </li>
+                        <li>
+                            Logging server-side (PHP) errors into log file
+                        </li>
+                    </ul>
+                    <h2>Improvements</h2>
+                    <ul>
+                        <li>
+                            Configurable entry point URL (sitecake.php)
+                        </li>
+                        <li>
+                            HTML code within content containers beautified
+                        </li>
+                        <li>
+                            Support for multi-class user styles
+                        </li>
+                        <li>
+                            Support for user styles in named content containers
+                        </li>
+                        <li>
+                            Prevent caching of the editor configuration file
+                        </li>
+                        <li>
+                            Server side logging and error handling improved
+                        </li>
+                    </ul>
+                    <h2>Bug Fixes</h2>
+                    <ul>
+                        <li>
+                            Fixed: CSS rules with pseudo selectors treated as user styles
+                        </li>
+                        <li>
+                            Fixed: problem with logging out from non-index pages
+                        </li>
+                        <li>Fixed: raw html content item cannot be clicked/selected after initial edit</li>
+                    </ul>
 
-                        # set the correct rewrite base<br>
-                        RewriteBase /<br><br>
 
-                        # redirect every request that targets an HTML page (a request ending with '.html' or '.htm')<br>
-                        # to sitecake_entry.php, providing the original URI as the 'url' parameter value (e.g. url=/about.html)<br>
-                        # avoiding HTML files from the '/sitecake' folder<br>
-                        RewriteCond %{REQUEST_URI} ^.*\.html?$<br>
-                        RewriteCond %{REQUEST_URI} !^/sitecake/.*$<br>
-                        RewriteRule ^(.*)$ sitecake/server/sitecake_entry.php?url=$1 [QSA,L]<br><br>
 
-                        # this rewrite rule handles an empty URI (e.g. http://example.com/)<br>
-                        # a case when the index page has to be referenced<br>
-                        RewriteCond %{REQUEST_URI} ^/?$<br>
-                        RewriteRule ^(.*)$ sitecake/server/sitecake_entry.php?url=index.html [QSA,L]
-                    </p>
-                
-                
-                
+
+
+
+
+                </div>
+
+
+
+
 
             </div>
-            <div class="sidebar col-xs-12 col-md-3 pull-md-9 m-t-3 sc-content-sidebar">
+
+
+            <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 m-t-3 sc-content-sidebar">
+
+                <h4>Misc</h4>
                 <ul class="list-unstyled">
-                    <li>Developer's Guide:</li>
-                    <li><a href="install.html">Getting started</a></li>
-                    <li><a href="docs-basics.html">Sitecake Basics</a></li>
-                    <li><a href="docs-templates.html">Sitecake Templates</a></li>
-                    <li><a href="docs-user-styles.html">User styles</a></li>
-                    <li><a href="how-to-upgrade-sitecake.html">Upgrade to a new version</a></li>
-                    <li><a href="repeating-regions.html">Creating repeating regions</a></li>
-                    <li><a href="how-to-use-slideshows.html">Adding a slideshow</a></li>
-                    <li><a href="include-javascript-with-sitecake-template.html">Using Javascript in templates</a></li>
-                    <li><a href="using-php-in-templates.html">Using PHP in templates</a></li>
-                    <li><a class="active" href="using-url-rewrite.html">Using URL rewrite</a></li>
-                    <li><a href="toolbar-module-configuration.html">Toolbar module configuration</a></li>
-                    <li><a href="how-to-change-sitecake-ui-language.html">Changing Sitecake UI language</a></li>
+                    <li><a href="release-notes.html">Release Notes</a></li>
                 </ul>
             </div>
+
 
 
         </div>
 
 
+
         <!-- //DOCUMENTATION CONTENT -->
+
+
 
 
     </div>
@@ -212,10 +258,7 @@
                     <dl>
                         <dt>Help &amp; Support</dt>
                         <dd>
-                            <a href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Sitecake v2 docs">Sitecake v2 docs</a>
-                        </dd>
-                        <dd>
-                            <a href="install.html" title="Sitecake v1 docs">Sitecake v1 docs</a>
+                            <a href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Sitecake documentation">Documentation</a>
                         </dd>
                         <dd>
                             <a href="http://support.sitecake.com">Send a ticket</a>
@@ -234,10 +277,10 @@
                     <dl>
                         <dt>Resources</dt>
                         <dd>
-                            <a href="../featured.html" title="Featured websites">Featured websites</a>
+                            <a href="featured.html" title="Featured websites">Featured websites</a>
                         </dd>
                         <dd>
-                            <a href="../hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
+                            <a href="hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
                     </dl>
 
@@ -247,12 +290,12 @@
                     <ul class="footer-social">
                         <li>
                             <a href="https://twitter.com/sitecake">
-                                <img src="../img/footer-social-twitter.png" alt="footer-social-twitter" />
+                                <img src="/img/footer-social-twitter.png" alt="footer-social-twitter" />
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/sitecake" title="Sitecake repo">
-                                <img src="../img/footer-social-github.png" alt="footer-social-github" />
+                                <img src="/img/footer-social-github.png" alt="footer-social-github" />
                             </a>
                         </li>
                     </ul>
@@ -261,6 +304,7 @@
         </div>
     </footer>
     <!--Footer-->
+
 
     <!-- Google Code for Remarketing Tag -->
     <script type="text/javascript">
@@ -278,7 +322,7 @@
         </div>
     </noscript>
 
-
+    <script id="dsq-count-scr" src="//sitecake.disqus.com/count.js" async></script>
 
 </body>
 
