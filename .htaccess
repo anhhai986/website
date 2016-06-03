@@ -15,7 +15,7 @@ Redirect 301 /using-url-rewrite.php /docs/using-url-rewrite.php
 Redirect 301 /using-php-in-templates.php /docs/using-php-in-templates.php
 Redirect 301 /toolbar-module-configuration.php /docs/toolbar-module-configuration.php
 Redirect 301 /repeating-regions.php /docs/repeating-regions.php
-Redirect 301 /install.html https://github.com/sitecake/sitecake/wiki/Getting-Started
+Redirect 301 /install.html http://sitecake.com/docs/install.html
 Redirect 301 /include-javascript-with-sitecake-template.php /docs/include-javascript-with-sitecake-template.php
 Redirect 301 /how-to-use-slideshows.php /docs/how-to-use-slideshows.php
 Redirect 301 /how-to-upgrade-sitecake.php /docs/how-to-upgrade-sitecake.php

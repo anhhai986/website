@@ -439,7 +439,8 @@ nav ul li a.download:active {
     font-weight: 500;
 }
 
-.features .features-box p a {
+.features .features-box p a,
+.intro a {
     color: #00aeef;
 }
 

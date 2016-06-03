@@ -986,13 +986,18 @@ section.templates-wrapper {
     line-height: 1.3rem;
 }
 
-.documentation p,
-.documentation ul {
-    margin-bottom: 2rem;
+.documentation-content p {
     color: #333;
+    margin-bottom: 1rem;
 }
 
-.documentation ul.summary {
+.documentation-content ul {
+    color: #333;
+    margin-top: 1rem;
+    margin-top: 1rem;
+}
+
+.documentation-content ul.summary {
     background-color: #fff;
     border: #63c3e2 solid 2px;
     padding-top: 1rem;
@@ -1013,7 +1018,8 @@ section.templates-wrapper {
     line-height: 1.3rem;
 }
 
-p em {
+p em,
+ul em {
     font-family: monospace, monospace;
     font-size: 90%;
     background-color: #f7f7f9;
@@ -1030,4 +1036,8 @@ p.code {
     background-color: #f7f7f9;
     border-radius: .25rem;
     color: #5a5959;
+}
+
+.documentation-content {
+    margin-bottom: 4rem;
 }

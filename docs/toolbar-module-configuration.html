@@ -122,7 +122,7 @@
 
 
                 <li class="pull-xs-right pull-sm-right">
-                    <a class="nav-link" href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Go to Github wiki">Docs</a>
+                    <a class="nav-link" href="http://sitecake.com/docs/install.html" title="Sitecake documentation">Docs</a>
                 </li>
 
                 <li class="pull-xs-right pull-sm-right">
@@ -222,7 +222,7 @@
                     <dl>
                         <dt>Help &amp; Support</dt>
                         <dd>
-                            <a href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Sitecake v2 docs">Sitecake v2 docs</a>
+                            <a href="http://sitecake.com/docs/install.html" title="Sitecake v2 docs">Sitecake v2 docs</a>
                         </dd>
                         <dd>
                             <a href="install.html" title="Sitecake v1 docs">Sitecake v1 docs</a>

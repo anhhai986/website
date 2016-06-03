@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, list of websites, run by Sitecake, featured websites" />
-    <title>Sitecake Hosting</title>
-    <meta name="description" content="A list of hosts that we tested and can recommend" />
+    <title>Sitecake templates</title>
+    <meta name="description" content="Basic website templates, free for download, adapted for Sitecake." />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -46,6 +46,9 @@
     <meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png?v=yy0966qJGm">
     <meta name="msapplication-config" content="/img/favicon/browserconfig.xml?v=yy0966qJGm">
     <meta name="theme-color" content="#61cae9">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -98,9 +101,8 @@
 </head>
 
 
-<body class="hosting">
-    <!-- Start Header -->
-    <div class="container">
+<body style="background-color: #E9E9E9;">
+    <div class="container templates">
 
         <nav>
             <ul class="nav">
@@ -110,58 +112,126 @@
                 <li class="pull-xs-right pull-sm-right">
                     <a class="nav-link download" href="download.html" title="Download Sitecake">Download</a>
                 </li>
+
                 <li class="pull-xs-right pull-sm-right">
                     <a class="nav-link" href="http://forum.sitecake.com" title="Sitecake community" target="_blank">Forum</a>
                 </li>
 
 
                 <li class="pull-xs-right pull-sm-right">
-                    <a class="nav-link" href="http://sitecake.com/docs/install.html" title="Sitecake documentation">Docs</a>
+                    <a class="nav-link" href="http://sitecake.com/docs/install.html" title="SiteCake Documentation">Docs</a>
                 </li>
 
                 <li class="pull-xs-right pull-sm-right">
                     <a class="nav-link" href="showcase.html" title="Sitecake run websites">Showcase</a>
                 </li>
-
             </ul>
         </nav>
 
-        <div class="row header">
+        <div class="row couple">
             <div class="col-xs-12">
-                <h1>Sitecake Recommended Hosting</h1>
-                <p>Sitecake has really minimal server requirement, just PHP 5.4+. But, still it might happen that there are issues with a certain hosting setup. We can not test every hosting on a planet, but we can create a list of hostings that we tested and that work perfectly with Sitecake. </p>
+                <h1>Sitecake Templates</h1>
+                <p>We started adding Sitecake templates. Free templates come with no support, payed with support. Submit free templates for everybody or start selling with Sitecake.
+                    <br>
+                    <br>
+                    <a href="mailto:office@sitecake.com">Submit Template</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div role="main">
+
+        <div class="tiles-wrap animated" id="grid">
+            <!-- These are our grid blocks -->
+            <div class="block">
+                <a target="_blank" class="template-preview" href="https://app.simplegoods.co/i/KOZMWZBW">
+                    <img src="/img/templates/grayscale-start-bootstrap-sitecake-template-preview.jpg" alt="Grayscale template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="https://app.simplegoods.co/i/KOZMWZBW">Grayscale <span class="template-price">$35</span></a>
+
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="http://startbootstrap.com/">
+                    <img src="img/templates/logo-start-bootstrap.png" alt="Logo - Start Bootstrap">Start Bootstrap</a>
+
+            </div>
+            <div class="block">
+                <a target="_blank" class="template-preview" href="https://app.simplegoods.co/i/MDKKZENE">
+                    <img src="/img/templates/agency-start-bootstrap-sitecake-template-preview.jpg" alt="Agency template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="https://app.simplegoods.co/i/MDKKZENE">Agency <span class="template-price-free">Free</span></a>
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="http://startbootstrap.com/">
+                    <img src="img/templates/logo-start-bootstrap.png" alt="Logo - Start Bootstrap">Start Bootstrap</a>
+            </div>
+            <div class="block">
+                <a target="_blank" class="template-preview" href="https://app.simplegoods.co/i/PPGOFAKI">
+                    <img src="/img/templates/creative-start-bootstrap-sitecake-template-preview.jpg" alt="Creative template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="https://app.simplegoods.co/i/PPGOFAKI">Creative <span class="template-price-free">Free</span></a>
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="http://startbootstrap.com/">
+                    <img src="img/templates/logo-start-bootstrap.png" alt="Logo - Start Bootstrap">Start Bootstrap</a>
+
+            </div>
+            <div class="block">
+                <a target="_blank" class="template-preview" href="https://app.simplegoods.co/i/GJAFKCDV">
+                    <img src="/img/templates/freelancer-start-bootstrap-sitecake-template-preview.jpg" alt="Frelancer template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="https://app.simplegoods.co/i/GJAFKCDV">Freelancer <span class="template-price-free">Free</span></a>
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="http://startbootstrap.com/">
+                    <img src="img/templates/logo-start-bootstrap.png" alt="Logo - Start Bootstrap">Start Bootstrap</a>
+
+            </div>
+            <div class="block">
+                <a target="_blank" class="template-preview" href="#">
+                    <img src="/img/templates/mountain-sitecake-template-preview.jpg" alt="Mountain King template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="#">Mountain King <span class="template-price">$40</span></a>
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="http://www.themeinthebox.com/">
+                    <img src="img/templates/logo-theme-in-the-box.jpg" alt="Logo - Theme In The Box">Theme In The Box</a>
+
+            </div>
+            <div class="block">
+                <a target="_blank" class="template-preview" href="#">
+                    <img src="/img/templates/cutestrap-sitecake-template-preview.jpg" alt="Cutestrap template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="#">Cutestrap <span class="template-price-free">Free</span></a>
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="https://www.cutestrap.com/">
+                    <img src="img/templates/logo-cutestrap.png" alt="Logo - Tyler Childs">Tyler Childs</a>
+
+            </div>
+            <div class="block">
+                <a target="_blank" class="template-preview" href="#">
+                    <img src="/img/templates/bootestrap-basic-sitecake-template-preview.jpg" alt="Bootstrap Basic template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="#">Bootstrap Basic <span class="template-price-free">Free</span></a>
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="#">
+                    <img src="img/templates/logo-twitter-bootstrap.png" alt="Logo Twitter Bootstrap">Twitter Bootstrap</a>
+
+            </div>
+            <div class="block">
+                <a target="_blank" class="template-preview" href="#">
+                    <img src="/img/templates/landing-page-sitecake-template-preview.jpg" alt="Landing Page template preview">
+                </a>
+                <a target="_blank" class="template-name clearfix" href="#">Landing Page <span class="template-price-free">Free</span></a>
+                <p class="template-description">Description</p>
+                <a target="_blank" class="template-author" href="#">
+                    <img src="" alt="">Author?</a>
             </div>
 
         </div>
-        <hr />
 
-        <div class="row">
-            <div class="col-md-9 col-xs-12 ">
-                <br>
-                <h4><a href="http://fastcomet.com">FastComet: SSD Cloud Hosting with Cloudflare &amp; 24/7 Premium Support</a></h4>
-                <p>FastComet offers high performance cloud hosting with SSD-only servers, CloudFlare CDN &amp; 24/7/365 dedicated support. Free domain &amp; UNIQUE caching for brutal website speed. Daily Backups, Monitoring and amazing Control Panel.</p>
-            </div>
-            <div class="col-md-3 col-xs-12">
-                <a href="http://fastcomet.com"><img src="img/fastcomet.jpg" class="pull-md-right" /></a>
-            </div>
-        </div>
-        <hr />
-        <div class="row">
-            <div class="col-md-9 col-xs-12">
-                <br>
-                <h4><a href="http://peopleshost.com">PeoplesHost</a></h4>
-                <p>PeoplesHost is a website hosting provider for individuals and small businesses. Register a FREE domain name with any plan. Get your website online today!</p>
-            </div>
-            <div class="col-md-3 col-xs-12">
-                <a href="http://peopleshost.com"><img src="img/peopleshost.png" class="pull-md-right" /></a>
-            </div>
-        </div>
-        <hr />
 
 
     </div>
-    <!--container-->
 
+
+    <!--container-->
 
     <!-- Start Footer -->
     <footer class="footer">
@@ -218,6 +288,7 @@
     </footer>
     <!--Footer-->
 
+
     <!-- Google Code for Remarketing Tag -->
     <script type="text/javascript">
         /* <![CDATA[ */
@@ -235,7 +306,18 @@
     </noscript>
 
 
+    <!-- Include the plug-in -->
+    <script src="/js/wookmark.js"></script>
 
+    <!-- Once the page is loaded, initalize the plug-in. -->
+    <script type="text/javascript">
+        window.onload = function () {
+            var wookmark1 = new Wookmark('#grid', {
+                offset: 20,
+                itemWidth: 237
+            });
+        };
+    </script>
 </body>
 
 </html>

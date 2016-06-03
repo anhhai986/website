@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation</title>
+    <title>Getting started with Sitecake</title>
     <meta name="description" content="" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
@@ -19,10 +19,10 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/docs.css" type="text/css">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
@@ -47,6 +47,23 @@
     <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png?v=yy0966qJGm">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml?v=yy0966qJGm">
     <meta name="theme-color" content="#61cae9">
+
+    <!-- Code Highlight -->
+    <link rel="stylesheet" href="css/highlight-pack/foundation.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            hljs.configure({
+                useBR: true
+            });
+
+            $('p.code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -73,30 +90,9 @@
         fbq('track', "PageView");
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
-
-    <link rel="stylesheet" href="/css/highlight-pack/default.css">
-    <script src="../js/highlight.pack.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('pre code').each(function (i, block) {
-                hljs.highlightBlock(block);
-            });
-        });
-    </script>
-    <script>
-        hljs.configure({
-            useBR: true
-        });
-        $('p.code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });
-    </script>
-
-
-
     <!-- End Facebook Pixel Code -->
 
-
+    <!-- Jaco Screen Recording -->
     <script type="text/javascript">
         (function (e, t) {
             function r(e, t) {
@@ -143,7 +139,7 @@
 
 
                 <li class="pull-xs-right pull-sm-right">
-                    <a class="nav-link" href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Go to Github wiki">Docs</a>
+                    <a class="nav-link" href="http://sitecake.com/docs/install.html" title="Sitecake documentation">Docs</a>
                 </li>
 
                 <li class="pull-xs-right pull-sm-right">
@@ -155,87 +151,71 @@
 
 
         <!-- DOCUMENTATION CONTENT -->
+        <div class="row documentation">
 
-        <div class="row  documentation">
-            <div class="col-xs-12 col-md-9 offset-md-3 sc-content">
-                <h1>Sitecake Basics</h1>
+            <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
+                <h1>Getting Started</h1>
             </div>
-            <div class="col-xs-12 col-md-9 push-md-3">
-                <div class="sc-content">
 
-                    <ul class="summary">
-                        <li><a target="_blank" href="http://github.com/sitecake/sitecake-editor">Sitecake Editor</a>, that manages your page in the browser</li>
-                        <li><a target="_blank" href="https://github.com/sitecake/sitecake">Sitecake</a>, a CMS that runs on the server side and that saves content, manages files, etc.</li>
-                    </ul>
-                    <p>Sitecake is a CMS for small business and personal web sites, landing pages, profile pages and for web sites that have few, simply organised pages.</p>
-                    <p>Sitecake consists of two parts:</p>
-                    <p>Sitecake is implemented in PHP (it requires PHP 5.4+) using libraries <a target="_blank" href="http://silex.sensiolabs.org/">Silex</a>, <a target="_blank" href="http://code.google.com/p/phpquery/">phpQuery</a>, <a target="_blank" href="http://wideimage.sourceforge.net/">WideImage</a>, <a target="_blank" href="http://www.phpconcept.net/pclzip/">PclZip</a>, <a target="_blank" href="https://github.com/thephpleague/flysystem">FlySystem</a> and <a target="_blank" href="http://github.com/sebastianbergmann/phpunit">PHPUnit</a>.</p>
-                    <p>It is developed as a flat file CMS, meaning no database is required for its functioning. This approach simplifies the CMS setup and maintenance but, still, provides a performant solution considering its target application. Thanks to the relatively moderate requirements, it is expected to work on most web hosting environments.</p>
-                    <p>Sitecke does not use any specific template language/script for website page templates. It uses plain HTML markup for that purpose. More details about templates could be found <a target="_blank" href="https://github.com/sitecake/sitecake/wiki/Sitecake-Templates">here</a>.</p>
-                    <p>Sitecake could be seen as a 'static' HTML site editor. It enables users to edit the content of HTML files directly on the web server, using a WYSIWYG, all drag&amp;drop editor (rather than a text editor). The CMS is developed in a way that allows users to remove the CMS completely (simply by deleting a folder), to restore/install it at any time (by uploading a folder) or to manually edit HTML pages while the CMS is in place. The web site edited by Sitecake could be moved from one web hosting to another, either with or without the CMS installed.</p>
+            <div class="col-xs-12 col-md-9 col-md-push-3">
+                <div class="sc-content documentation-content">
 
-                    <h2>Installation</h2>
-                    <p>Sitecake CMS is distributed as a single zip archive - <em>sitecake-&lt;version&gt;.zip.</em> When extracted, it looks like this: </p>
 
-                    <p class="code">sitecake/ sitecake.php
-                    </p>
 
-                    <p>The <em>sitecake</em> folder contains all the CMS code and configurations and <em>sitecake.php</em> is used as the entry point to CMS.
-                        <br>
-                        <br> The content of the archive should be uploaded to the website root folder. For a simple website (or Sitecake template), the website root folder might look like this:</p>
-                    <p class="code">
-                        &lt;website root&gt;/
-                        <br> ├── css/
-                        <br> ├── img/
-                        <br> ├── js/
-                        <br> ├── sitecake/
-                        <br> ├── index.html
-                        <br> ├── about.html
-                        <br> ├── contact.html
-                        <br> └── sitecake.php</p>
-
-                    <h2>Configuration</h2>
-                    <p>All configuration options are located under the <em>sitecake</em> folder.</p>
-
-                    <p class="code">
-                        &lt;sitecake&gt;/
-                        <br> ├── &lt;version&gt;/
-                        <br> │ ├── client/
-                        <br> │ └── server/
-                        <br> │ ├── ...
-                        <br> │ └── config.php
-                        <br> ├── credentials.php.default
-                        <br> ├── credentials.php
-                        <br> └── editor.cfg</p>
-
-                    <p>There are three configuration files:</p>
+                    <h2>Requirements</h2>
+                    <p>Sitecake is php CMS. Also it's a flat file CMS so you do not need a database. All you need is:</p>
 
                     <ul>
-                        <li><em>sitecake/credentials.php</em> - contains the CMS admin password.</li>
-                        <li><em>sitecake/editor.cfg</em> - the Sitecake Editor configuration options.</li>
-                        <li><em>sitecake/&lt;version&gt;/server/config.php</em> - the CMS configuration options.</li>
+                        <li>webserver (Apache, NGNIX or IIS)</li>
+                        <li>PHP 5.4+</li>
                     </ul>
 
-                    <h2>Admin password</h2>
-                    <p>The <em>credentials.php</em> file contains only the CMS admin password. The password is kept on the server only as a SHA1 hash. This is how it looks like:</p>
+                    <h2>Step 1: Adapt your website for Sitecake </h2>
 
-                    <p class="code">&lt;?php $credentials = "d033e22ae348aeb5660fc2140aec35850c4da997"; ?&gt;</p>
+                    <p>Add <em>sc-content</em> class to divs you want editable.</p>
 
-                    <p>The password is usually changed using the <em>change password</em> dialog in the Sitecake Editor (the login dialog).</p>
-                    <p>A new password could be set manually by editing the <em>credentials.php</em> file. The SHA1 hash (characters between double quotes) should be replaced by a new SHA1 hash value. A new hash could be obtained, for example, using any online SHA1 encoder tool (e.g. <a target="_blank" href="http://www.sha1-online.com/">SHA1 Online</a>).</p>
-                    <p>The admin password could be reset by replacing <em>credentials.php</em> with <em>credentials.php.default.</em></p>
+                    <p class="code">
+                        &lt;div <span class="html-blue">class="sc-content"</span>&gt;
+                        <br> &nbsp;&nbsp;&lt;h1&gt;Fine looking heading&lt;/h1&gt;
+                        <br> &nbsp;&nbsp;&lt;img src=”feature.jpg"&gt;
+                        <br> &nbsp;&nbsp;&lt;p&gt;Some text&lt;/p&gt;
+                        <br> &lt;/div&gt;
+                        <br>
 
-                    <h2>Sitecake Editor configuration</h2>
-                    <p>The <em>editor.cfg</em> file contains configuration options for the Sitecake Editor. More about possible configurations could be found <a target="_blank" href="https://github.com/sitecake/sitecake-editor/wiki/Editor-configuration-file">here</a>.</p>
+                    </p>
 
-                    <h2>CMS configuration</h2>
-                    <p>The <em>config.php</em> file contains Sitecake CMS configuration options.</p>
+                    <p>Do not nest <em>sc-content</em> divs. It's not supported. </p>
+                    <p>If you want same content repeated on several pages, for sidebars, footers or anything else, just name sc-content class with specific name: <em>sc-content-footer</em>.</p>
+
+                    <h2>Step 2: Upload your website and Sitecake to hosting</h2>
+
+                    <p>Upload your website and Sitecake to the same folder on your hosting. You should have this folder structure:</p>
+
+                    <p class="code nohighlight">
+                        /css
+                        <br> /images
+                        <br> /js
+                        <br>
+                        <span class="html-blue">/sitecake</span>
+                        <br> index.html
+                        <br>
+                        <span class="html-blue">sitecake.php</span>
+
+                    </p>
+
+                    <p>If you still do not have Sitecake, get it from the <a href="../download.html">download page</a>. If you want an easy start, get some of our <a href="../templates.html">free html templates</a> from the templates page</p>
+                    <p>Extract archives with cPanel File Manager or use a script like <a href="https://www.akeebabackup.com/products/akeeba-kickstart.html">Akeeba Kickstart</a></p>
+
+                    <h2>Step 3: Start editing</h2>
+                    <p>Point browser to <em>http://domain.com/sitecake.php</em> and login with <em>admin</em> pass to start editing. That's it! Not very complicated.</p>
+                    <p>If you haven't tried <a href="http://sitecake.com/demo" title="Sitecake editing demo">Sitecake demo</a>, try it now, it should give you some editing feel </p>
+                    <p>If have't seen a 2 minute video in which I show basic editing capabilities, <a href="https://www.youtube.com/watch?v=MomffHIOa7A&feature=youtu.be" title="Sitecake demo video">watch it now</a>.</p>
 
                 </div>
 
 
 
-                <div id="disqus_thread"></div>
+                <div id="disqus_thread" class=""></div>
                 <script>
                     var disqus_config = function () {
                         this.page.url = 'http://sitecake.com/docs/docs-basics.html';
@@ -258,39 +238,28 @@
 
             </div>
 
+            <!--Sidebar-->
+            <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 m-t-3 sc-content-sidebar">
 
-            <div class="sidebar col-xs-12 col-md-3 pull-md-9 m-t-3 sc-content-sidebar">
-                <h4>Website Editing</h4>
-                <ul class="list-unstyled">
-                    <li><a href="install.html">Editing basics</a></li>
-                    <li><a href="install.html">Text editing</a></li>
-                    <li><a class="active" href="docs-basics.html">Working with images</a></li>
-                    <li><a href="docs-templates.html">Working with video</a></li>
-                    <li><a href="docs-user-styles.html">Maps, tweets etc...</a></li>
-                    <li><a href="how-to-upgrade-sitecake.html">Keyboard shortcuts</a></li>
-                    <li><a href="repeating-regions.html">Photoset</a></li>
-                    <li><a href="include-javascript-with-sitecake-template.html">Adding custom code</a></li>
-                    <li><a href="toolbar-module-configuration.html">Uploading files</a></li>
-                    <li><a href="how-to-change-sitecake-ui-language.html">Applying CSS styles</a></li>
-                </ul>
 
                 <h4>Website Integration</h4>
                 <ul class="list-unstyled">
                     <li><a href="install.html">Getting started</a></li>
-                    <li><a class="active" href="docs-basics.html">Sitecake Basics</a></li>
-                    <li><a href="docs-templates.html">Sitecake Templates</a></li>
-                    <li><a href="docs-user-styles.html">User styles</a></li>
-                    <li><a href="how-to-upgrade-sitecake.html">Upgrade to a new version</a></li>
-                    <li><a href="repeating-regions.html">Creating repeating regions</a></li>
-                    <li><a href="include-javascript-with-sitecake-template.html">Using Javascript in templates</a></li>
-                    <li><a href="toolbar-module-configuration.html">Toolbar module configuration</a></li>
-                    <li><a href="how-to-change-sitecake-ui-language.html">Changing Sitecake UI language</a></li>
+                    <!--                    <li><a class="active" href="sitecake-basics.html">Sitecake Basics</a></li>-->
+                    <!--                    <li><a href="docs-templates.html">Sitecake Templates</a></li>-->
+                    <!--                    <li><a href="docs-user-styles.html">User styles</a></li>-->
+                    <!--                    <li><a href="how-to-upgrade-sitecake.html">Upgrade to a new version</a></li>-->
+                    <!--                    <li><a href="repeating-regions.html">Creating repeating regions</a></li>-->
+                    <!--                    <li><a href="include-javascript-with-sitecake-template.html">Using Javascript in templates</a></li>-->
+                    <!--                    <li><a href="toolbar-module-configuration.html">Toolbar module configuration</a></li>-->
+                    <!--                    <li><a href="how-to-change-sitecake-ui-language.html">Changing Sitecake UI language</a></li>-->
                 </ul>
                 <h4>Misc</h4>
                 <ul class="list-unstyled">
-                    <li><a href="install.html">Release Notes</a></li>
+                    <li><a href="release-notes.html">Release Notes</a></li>
                 </ul>
             </div>
+
 
 
         </div>
@@ -314,7 +283,7 @@
                     <dl>
                         <dt>Help &amp; Support</dt>
                         <dd>
-                            <a href="https://github.com/sitecake/sitecake/wiki/Getting-Started" title="Sitecake documentation">Documentation</a>
+                            <a href="http://sitecake.com/docs/install.html" title="Sitecake documentation">Documentation</a>
                         </dd>
                         <dd>
                             <a href="http://support.sitecake.com">Send a ticket</a>
