@@ -181,7 +181,7 @@
                 
 
             </div>
-            <div class="sidebar col-xs-12 col-md-3 pull-md-9 m-t-3 sc-content-sidebar">
+            <div class="sidebar col-xs-12 col-md-3 pull-md-9 sc-content-sidebar">
                 <ul class="list-unstyled">
                     <li>Developer's Guide:</li>
                     <li><a href="install.php">Getting started</a></li>

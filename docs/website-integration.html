@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation</title>
-    <meta name="description" content="" />
+    <title>Website integration with Sitecake</title>
+    <meta name="description" content="Defining editable zones of a HTML page, excluding pages from editing, repeating page elements ..." />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/docs.css" type="text/css">
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
@@ -143,7 +143,7 @@
                 </li>
 
                 <li class="pull-xs-right pull-sm-right">
-                    <a class="nav-link" href="../templates.html" title="Sitecake templates">Templates</a>
+                    <a class="nav-link" href="../websites.html" title="Sitecake websites">websites</a>
                 </li>
             </ul>
         </nav>
@@ -151,20 +151,108 @@
 
 
         <!-- DOCUMENTATION CONTENT -->
-        <div class="row  documentation">
+        <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Sitecake Basics</h1>
+                <h1>Website Integration</h1>
             </div>
 
-
             <div class="col-xs-12 col-md-9 col-md-push-3">
-                <div class="sc-content">
+                <div class="sc-content documentation-content">
+
+
+
+
+                    <h2>Summary</h2>
 
                     <ul class="summary">
-                        <li><a target="_blank" href="http://github.com/sitecake/sitecake-editor">Sitecake Editor</a>, that manages your page in the browser</li>
-                        <li><a target="_blank" href="https://github.com/sitecake/sitecake">Sitecake</a>, a CMS that runs on the server side and that saves content, manages files, etc.</li>
+                        <li>Sitecake can manage both HTML and PHP websites.</li>
+                        <li>Index page have to exist (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>). </li>
+                        <li>To make a page editable add <em>sc-content</em> CSS class to a block level element.</li>
                     </ul>
+
+                    <h2>Website Structure</h2>
+
+                    <p>Once you download and extracted contents of Sitecake arhive it will look like this: </p>
+
+                    <p class="code nohighlight">sitecake/
+                        <br>sitecake.php
+                    </p>
+
+                    <p>The <em>sitecake/</em> folder containes Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Only Sitecake alone is not operational. You need at least one index page, with at least one editable div to start editing. So, the bare minimum is:</p>
+
+                    <p class="code nohighlight">
+                        sitecake/
+                        <br> sitecake.php
+                        <br> <strong>index.html</strong>
+                    </p>
+                    <p><em>index.html</em> file can have only one editable div and you will be able to add content like headings, text, lists, videos and everything else Sitecake supports. Here it is: </p>
+
+                    <p class="code">
+                        &lt;!DOCTYPE html&gt;
+                        <br> &lt;html&gt;
+                        <br> &nbsp;&nbsp;&lt;head&gt;&lt;/head&gt;
+                        <br> &nbsp;&nbsp;&lt;body&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&lt;/body&gt;
+                        <br> &lt;/html&gt;
+                        <br>
+
+                    </p>
+
+                    <p>Now if you login to <em>http://yourdomain.com/sitecake.php</em>, add some content and click publish, your folder on the server will look like this:</p>
+                    <p class="code nohighlight">
+                        <strong>files/</strong>
+                        <br> <strong>images/</strong>
+                        <br> <strong>sitecake-backup/</strong>
+                        <br> <strong>sitecake-temp/</strong>
+                        <br> sitecake/
+                        <br> sitecake.php
+                        <br> index.html
+
+                    </p>
+
+                    <p>What happened is that Sitecake created a few new folders to save the changes made while editing.</p>
+
+                    <ul>
+                        <li><em>files/</em> for saving uploaded files (PDFs for example)</li>
+                        <li><em>images/</em> for saving uploaded images</li>
+                        <li><em>sitecake-backup/</em> after each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes it possible to roll back to any edit in time. Max number of backups is configurabile.</li>
+                        <li><em>sitecake-temp/</em> current editing draft is kept here </li>
+                    </ul>
+
+                    <p>So these are the basics, now let's go further.</p>
+
+
+
+
+
+
+
+
+                    <h2>Page Structure</h2>
+
+                    <p>Sitecake works with regular HTML pages as templates. Editable div tags are assigned by adding CSS class <em>sc-content</em> (Sitecake content)</p>
+
+
+                    <p>A content container is a part of page website that contains user defined content. Basically content containers are editable parts of a page website.</p>
+                    <p>Every container contains an array of content items. A container cannot contain anything else, like layout elements (additional HTML structures or tags for organising the items layout)..</p>
+                    <p>In a website, the existing HTML code within content containers is used as the default (initial) content..</p>
+                    <p>There are two types of content containers:</p>
+
+                    <ul>
+                        <li>anonymous content containers (or just content containers) and</li>
+                        <li>named content containers</li>
+                    </ul>
+
+                    <p><strong>Anonymous</strong> containers are, simply, editable parts of a page website.</p>
+                    <p>In other hand, <strong>named</strong> containers have attached a name and act as content repeaters. If several website pages defined a named container with the same name, Sitecake would copy (synchronised) their content.</p>
+
+                    <h3>Defining Content Containers</h3>
+                    <p>Content containers are defined using a reserved CSS class name <em>sc-content</em> for <em>&lt;div&gt;</em> tags that should contain user-defined content.</p>
+                    <p>For named containers, the CSS class name has to be extended with their names (<em>sc-content-a_name</em>).</p>
+                    <p>Sitecake does not support nested content containers currently.</p>
+                    <p>The following code block is a simple example of a website page that defines a named container (<em>sc-content-footer</em>) and two anonymous containers (marked with <em>sc-content</em>).</p>
 
                     <p class="code">
                         &lt;html&gt;
@@ -185,72 +273,6 @@
                         <br> &nbsp;&nbsp;&lt;/body&gt;
                         <br> &lt;/html&gt;
                     </p>
-
-
-                    <p>Sitecake is a CMS for small business and personal web sites, landing pages, profile pages and for web sites that have few, simply organised pages.</p>
-                    <p>Sitecake consists of two parts:</p>
-                    <p>Sitecake is implemented in PHP (it requires PHP 5.4+) using libraries <a target="_blank" href="http://silex.sensiolabs.org/">Silex</a>, <a target="_blank" href="http://code.google.com/p/phpquery/">phpQuery</a>, <a target="_blank" href="http://wideimage.sourceforge.net/">WideImage</a>, <a target="_blank" href="http://www.phpconcept.net/pclzip/">PclZip</a>, <a target="_blank" href="https://github.com/thephpleague/flysystem">FlySystem</a> and <a target="_blank" href="http://github.com/sebastianbergmann/phpunit">PHPUnit</a>.</p>
-                    <p>It is developed as a flat file CMS, meaning no database is required for its functioning. This approach simplifies the CMS setup and maintenance but, still, provides a performant solution considering its target application. Thanks to the relatively moderate requirements, it is expected to work on most web hosting environments.</p>
-                    <p>Sitecke does not use any specific template language/script for website page templates. It uses plain HTML markup for that purpose. More details about templates could be found <a target="_blank" href="http://sitecake.com/docs/install.html/Sitecake-Templates">here</a>.</p>
-                    <p>Sitecake could be seen as a 'static' HTML site editor. It enables users to edit the content of HTML files directly on the web server, using a WYSIWYG, all drag&amp;drop editor (rather than a text editor). The CMS is developed in a way that allows users to remove the CMS completely (simply by deleting a folder), to restore/install it at any time (by uploading a folder) or to manually edit HTML pages while the CMS is in place. The web site edited by Sitecake could be moved from one web hosting to another, either with or without the CMS installed.</p>
-
-                    <h2>Installation</h2>
-                    <p>Sitecake CMS is distributed as a single zip archive - <em>sitecake-&lt;version&gt;.zip.</em> When extracted, it looks like this: </p>
-
-                    <p class="code nohighlight">sitecake/ sitecake.php
-                    </p>
-
-                    <p>The <em>sitecake</em> folder contains all the CMS code and configurations and <em>sitecake.php</em> is used as the entry point to CMS.
-                        <br>
-                        <br> The content of the archive should be uploaded to the website root folder. For a simple website (or Sitecake template), the website root folder might look like this:</p>
-                    <p class="code nohighlight">
-                        &lt;website root&gt;/
-                        <br> ├── css/
-                        <br> ├── img/
-                        <br> ├── js/
-                        <br> ├── sitecake/
-                        <br> ├── index.html
-                        <br> ├── about.html
-                        <br> ├── contact.html
-                        <br> └── sitecake.php</p>
-
-                    <h2>Configuration</h2>
-                    <p>All configuration options are located under the <em>sitecake</em> folder.</p>
-
-                    <p class="code nohighlight">
-                        &lt;sitecake&gt;/
-                        <br> ├── &lt;version&gt;/
-                        <br> │ ├── client/
-                        <br> │ └── server/
-                        <br> │ ├── ...
-                        <br> │ └── config.php
-                        <br> ├── credentials.php.default
-                        <br> ├── credentials.php
-                        <br> └── editor.cfg</p>
-
-                    <p>There are three configuration files:</p>
-
-                    <ul>
-                        <li><em>sitecake/credentials.php</em> - contains the CMS admin password.</li>
-                        <li><em>sitecake/editor.cfg</em> - the Sitecake Editor configuration options.</li>
-                        <li><em>sitecake/&lt;version&gt;/server/config.php</em> - the CMS configuration options.</li>
-                    </ul>
-
-                    <h2>Admin password</h2>
-                    <p>The <em>credentials.php</em> file contains only the CMS admin password. The password is kept on the server only as a SHA1 hash. This is how it looks like:</p>
-
-                    <p class="code nohighlight">&lt;?php $credentials = "d033e22ae348aeb5660fc2140aec35850c4da997"; ?&gt;</p>
-
-                    <p>The password is usually changed using the <em>change password</em> dialog in the Sitecake Editor (the login dialog).</p>
-                    <p>A new password could be set manually by editing the <em>credentials.php</em> file. The SHA1 hash (characters between double quotes) should be replaced by a new SHA1 hash value. A new hash could be obtained, for example, using any online SHA1 encoder tool (e.g. <a target="_blank" href="http://www.sha1-online.com/">SHA1 Online</a>).</p>
-                    <p>The admin password could be reset by replacing <em>credentials.php</em> with <em>credentials.php.default.</em></p>
-
-                    <h2>Sitecake Editor configuration</h2>
-                    <p>The <em>editor.cfg</em> file contains configuration options for the Sitecake Editor. More about possible configurations could be found <a target="_blank" href="https://github.com/sitecake/sitecake-editor/wiki/Editor-configuration-file">here</a>.</p>
-
-                    <h2>CMS configuration</h2>
-                    <p>The <em>config.php</em> file contains Sitecake CMS configuration options.</p>
-
                 </div>
 
 
@@ -279,36 +301,25 @@
             </div>
 
 
+            <!--Sidebar-->
             <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 sc-content-sidebar">
-                <h4>Website Editing</h4>
-                <ul class="list-unstyled">
-                    <li><a href="install.html">Editing basics</a></li>
-                    <li><a href="install.html">Text editing</a></li>
-                    <li><a class="active" href="docs-basics.html">Working with images</a></li>
-                    <li><a href="docs-templates.html">Working with video</a></li>
-                    <li><a href="docs-user-styles.html">Maps, tweets etc...</a></li>
-                    <li><a href="how-to-upgrade-sitecake.html">Keyboard shortcuts</a></li>
-                    <li><a href="repeating-regions.html">Photoset</a></li>
-                    <li><a href="include-javascript-with-sitecake-template.html">Adding custom code</a></li>
-                    <li><a href="toolbar-module-configuration.html">Uploading files</a></li>
-                    <li><a href="how-to-change-sitecake-ui-language.html">Applying CSS styles</a></li>
-                </ul>
+
 
                 <h4>Website Integration</h4>
                 <ul class="list-unstyled">
                     <li><a href="install.html">Getting started</a></li>
-                    <li><a class="active" href="docs-basics.html">Sitecake Basics</a></li>
-                    <li><a href="docs-templates.html">Sitecake Templates</a></li>
-                    <li><a href="docs-user-styles.html">User styles</a></li>
-                    <li><a href="how-to-upgrade-sitecake.html">Upgrade to a new version</a></li>
-                    <li><a href="repeating-regions.html">Creating repeating regions</a></li>
-                    <li><a href="include-javascript-with-sitecake-template.html">Using Javascript in templates</a></li>
-                    <li><a href="toolbar-module-configuration.html">Toolbar module configuration</a></li>
-                    <li><a href="how-to-change-sitecake-ui-language.html">Changing Sitecake UI language</a></li>
+                    <!--                    <li><a href="website-integration.html">Website integration</a></li>-->
+                    <li><a class="active" href="configuration.html">Configuration</a></li>
+                    <li><a href="user-styles.html">User styles</a></li>
+                    <!--                    <li><a href="how-to-upgrade-sitecake.html">Upgrade to a new version</a></li>-->
+                    <!--                    <li><a href="repeating-regions.html">Creating repeating regions</a></li>-->
+                    <!--                    <li><a href="include-javascript-with-sitecake-template.html">Using Javascript in templates</a></li>-->
+                    <!--                    <li><a href="toolbar-module-configuration.html">Toolbar module configuration</a></li>-->
+                    <!--                    <li><a href="how-to-change-sitecake-ui-language.html">Changing Sitecake UI language</a></li>-->
                 </ul>
                 <h4>Misc</h4>
                 <ul class="list-unstyled">
-                    <li><a href="install.html">Release Notes</a></li>
+                    <li><a href="release-notes.html">Release Notes</a></li>
                 </ul>
             </div>
 

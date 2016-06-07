@@ -959,15 +959,20 @@ section.templates-wrapper {
     color: #5a5959;
     font-size: 3rem;
     font-weight: 900;
-    letter-spacing: -0.08rem
+    letter-spacing: -0.08rem;
+    margin-bottom: 3.5rem;
 }
 
 .documentation h2 {
     color: #5a5959;
     font-weight: 900;
-    margin: 3rem 0 1rem 0;
+    margin-bottom: 1rem;
     letter-spacing: -0.03rem;
     font-size: 1.5rem;
+}
+
+.documentation h2:not(:first-child) {
+    margin-top: 3rem;
 }
 
 .documentation h3 {
@@ -994,7 +999,6 @@ section.templates-wrapper {
 .documentation-content ul {
     color: #333;
     margin-top: 1rem;
-    margin-top: 1rem;
 }
 
 .documentation-content ul.summary {
@@ -1003,7 +1007,11 @@ section.templates-wrapper {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 4px;
-    margin-top: 3rem;
+    margin-top: 0rem;
+}
+
+.documentation-content p.code span.newrow {
+    color: #0cb5e6;
 }
 
 .documentation a,
