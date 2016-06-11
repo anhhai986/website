@@ -167,20 +167,20 @@
 
                     <ul class="summary">
                         <li>Sitecake can manage both HTML and PHP websites.</li>
-                        <li>Index page have to exist (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>). </li>
-                        <li>To make a page editable add <em>sc-content</em> CSS class to a wrapper HTML element (eg. <em>div</em>) that holds your content.</li>
+                        <li>You need to have an index page (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>). </li>
+                        <li>To make a section of a page editable add <em>sc-content</em> CSS class to a wrapper HTML element for your content.</li>
                         <li>Nesting of <em>sc-content</em> elements is not supported.</li>
                     </ul>
 
                     <h2>Website Structure</h2>
 
-                    <p>Once you download and extract contents of Sitecake arhive it will look like this: </p>
+                    <p>Once you download and extract contents of Sitecake archive it will look like this: </p>
 
                     <p class="code nohighlight">sitecake/
                         <br>sitecake.php
                     </p>
 
-                    <p>The <em>sitecake/</em> folder containes Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Sitecake alone is not operational. You need at least one index page, with at least one editable <em>div</em> to start editing. So, the bare minimum is:</p>
+                    <p>The <em>sitecake/</em> folder contains Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Sitecake alone is not operational. You need at least one index page, with at least one editable <em>div</em> to start editing. So, the bare minimum is:</p>
 
                     <p class="code nohighlight">
                         sitecake/
@@ -218,7 +218,7 @@
                     <ul>
                         <li><em>files/</em> for saving uploaded files (PDFs for example)</li>
                         <li><em>images/</em> for saving uploaded images</li>
-                        <li><em>sitecake-backup/</em> after each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes it possible to roll back to any edit in time. Max number of backups is configurabile.</li>
+                        <li><em>sitecake-backup/</em> after each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes it possible to roll back to any edit in time. Max number of backups is configurable.</li>
                         <li><em>sitecake-temp/</em> current editing draft is kept here </li>
                     </ul>
 
@@ -230,7 +230,7 @@
 
 
 
-                    <p>Sitecake content <em>sc-content</em> CSS class added to an HTML tag makes that tag a wrapper for editable content. Existing code within Sitecake content wrapper becomes initial content once Sitecake loads. All tags supported by Sitecake are ediable. Other content is only movable, can be drag and dropped around the website, but is not editable.</p>
+                    <p>Sitecake content <em>sc-content</em> CSS class added to an HTML tag makes that tag a wrapper for editable content. Existing code within Sitecake content wrapper becomes initial content once Sitecake loads. All tags supported by Sitecake are editable. Other content is only movable, can be drag and dropped around the website, but is not editable.</p>
                     <p>At the moment Sitecake supports these content types: </p>
 
                     <ul>
@@ -239,7 +239,7 @@
                         <li><em>ul</em> unordered list</li>
                         <li><em>img</em> image</li>
                         <li><em>a</em> links (but only inside <em>p</em>, <em>h1-h6</em> or <em>ul</em>), can be text links, image links or email links </li>
-                        <li><em>sc-photoset</em> Sitecake CSS class assigned to masonary style gallery created by drag and dropping more than one image on the page</li>
+                        <li><em>sc-photoset</em> Sitecake CSS class assigned to masonry style gallery created by drag and dropping more than one image on the page</li>
                         <li><em>sc-map</em> Sitecake CSS class assigned to embedded Google map</li>
                     </ul>
 
@@ -254,7 +254,7 @@
                     </ul>
 
                     <p><strong>Basic containers</strong> are simply editable parts of a web page.</p>
-                    <p><strong>Repeater containers</strong> have a name attached to them and act as content repeaters. If several website pages have same repeater container, after editing one of them, Sitecake will copy edited content on all pages. Typical use for repeaters are sidecolumns and footers</p>
+                    <p><strong>Repeater containers</strong> have a name attached to them and act as content repeaters. If several website pages have same repeater container, after editing one of them, Sitecake will copy edited content on all pages. Typical use for repeaters are side columns and footers</p>
 
                     <p>The following HTML is an example of a website page that with a repeater (<em>sc-content-footer</em>) and two basic containers (marked with <em>sc-content</em>).</p>
 
