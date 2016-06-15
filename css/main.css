@@ -746,7 +746,8 @@ footer .footer-social li a:focus {
 }
 
 .download a,
-.sitecake-support a {
+.sitecake-support a,
+.sitecake-support a:visited {
     background: #30c3a6;
 }
 
@@ -759,7 +760,8 @@ footer .footer-social li a:focus {
 .sitecake-support a:active {
     background: #00a081;
 }
-    .hanger p {
+
+.hanger p {
     font: 400 32px/44px Lato;
     text-align: center;
     margin: 55px 0 75px;
