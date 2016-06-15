@@ -900,6 +900,11 @@ footer .footer-social li a:focus {
     font-style: normal;
 }
 
+.templates .col-sm-6 p {
+    text-align: left;
+    font-size: 16px;
+}
+
 .templates .col-xs-12 img {
     border: 1px solid #eee;
 }
