@@ -154,87 +154,84 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Multiple Language Support</h1>
+                <h1>Using Javascript</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
+
                     <h2>Summary</h2>
-                    <ul>
-                        <li>Detect edit mode with sitecakeGlobals.editMode boolean and turn your script off</li>
+                    <ul class="summary">
+                        <li>In case of clash of custom javascript code with Sitecake editor, detect edit mode with <em>sitecakeGlobals.editMode</em> boolean and turn your script off</li>
                     </ul>
 
                     <h2>Example</h2>
 
-                    <p>It happens that some specific javascript you want to use can make problems in Sitecake editing mode. In that case solution is to exclude that script in edit mode. There is a boolean sitecakeGlobals.editMode that you can use for edit mode detection. </p>
-                    <p>So if you want to turn off some js, put similar script in the header of your page:</p>
+                    <p>It happens that some specific javascript you want to use can clash with Sitecake in edit mode. Solution is to exclude that script in edit mode. There is a boolean <em>sitecakeGlobals.editMode</em> that you can use for edit mode detection. </p>
+                    <p>Put this script in the header of your page:</p>
 
-                    <p class="code">&lt;script type="text/javascript"&gt; $(function() { if (window.sitecakeGlobals &amp;&amp; sitecakeGlobals.editMode !== true ) { $.getScript('js/yourscript.js'); } }); &lt;/script&gt;
+                    <p class="code javascript">&lt;script type="text/javascript"&gt;
+                        <br> &nbsp;&nbsp;$(function() {
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;if (window.sitecakeGlobals &amp;&amp; sitecakeGlobals.editMode !== true ) {
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.getScript('js/yourscript.js');
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br>&nbsp;&nbsp;});
+                        <br> &lt;/script&gt;
                     </p>
-
-
 
                 </div>
 
 
+
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = 'http://sitecake.com/docs/using-javascript.html';
+                        this.page.identifier = '/docs/using-javascript.html';
+                    };
+
+                    (function () {
+                        var d = document,
+                            s = d.createElement('script');
+
+                        s.src = '//sitecake.disqus.com/embed.js';
+
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
             </div>
-       
 
 
+            <!--Sidebar-->
+            <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 sc-content-sidebar">
+                <h4>Website Integration</h4>
+                <ul class="list-unstyled">
+                    <li><a href="install.html">Getting started</a></li>
+                    <li><a href="website-integration.html">Website integration</a></li>
+                    <li><a href="user-styles.html">User styles</a></li>
+                    <li><a href="using-javascript.html">Using Javascript</a></li>
+                    <li><a href="languages.html">Multiple language support</a></li>
+                    <li><a href="configuration.html">Configuration</a></li>
 
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_config = function () {
-                    this.page.url = 'http://sitecake.com/docs/docs-basics.html';
-                    this.page.identifier = '/docs/docs-basics.html';
-                };
-
-                (function () {
-                    var d = document,
-                        s = d.createElement('script');
-
-                    s.src = '//sitecake.disqus.com/embed.js';
-
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
+                </ul>
+                <h4>Misc</h4>
+                <ul class="list-unstyled">
+                    <li><a href="release-notes.html">Release Notes</a></li>
+                </ul>
+            </div>
 
 
         </div>
 
 
-        <!--Sidebar-->
-        <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 sc-content-sidebar">
-            <h4>Website Integration</h4>
-            <ul class="list-unstyled">
-                <li><a href="install.html">Getting started</a></li>
-                <li><a href="website-integration.html">Website integration</a></li>
-                <li><a href="user-styles.html">User styles</a></li>
-                <!--                    <li><a href="how-to-upgrade-sitecake.html">Upgrade to a new version</a></li>-->
-                <li><a href="using-javascript.html">Using Javascript</a></li>
-                <!--                    <li><a href="toolbar-module-configuration.html">Toolbar module configuration</a></li>-->
-                <li><a href="languages.html">Multiple language support</a></li>
-                <li><a href="configuration.html">Configuration</a></li>
 
-            </ul>
-            <h4>Misc</h4>
-            <ul class="list-unstyled">
-                <li><a href="release-notes.html">Release Notes</a></li>
-            </ul>
-        </div>
-
-
-
-
-    </div>
-
-
-
-    <!-- //DOCUMENTATION CONTENT -->
+        <!-- //DOCUMENTATION CONTENT -->
 
 
 
