@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Website integration with Sitecake</title>
-    <meta name="description" content="Defining editable parts of an HTML page, repeaters, excluding pages from editing ..." />
+    <title>Sitecake Docs: Updating to a new version</title>
+    <meta name="description" content="Easy steps for updating Sitecake to the latest version." />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -153,142 +153,39 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Website Integration</h1>
+                <h1>Updating To A New Version</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
 
-
-
                     <h2>Summary</h2>
-
                     <ul class="summary">
-                        <li>Sitecake can manage both HTML and PHP websites.</li>
-                        <li>You need to have an index page (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>). </li>
-                        <li>To make a section of a page editable add <em>sc-content</em> CSS class to a wrapper HTML element for your content.</li>
-                        <li>Nesting of <em>sc-content</em> elements is not supported.</li>
+                        <li>Extract contents of the latest Sitecake distribution </li>
+                        <li>Copy <em>sitecake/2.3.2/</em> folder next to the folder with previous version, for example <em>sitecake/2.3.1/</em></li>
+                        <li>replace old entry point <em>sitecake.php</em> with new one</li>
                     </ul>
+                    <h2>Updating Sitecake</h2>
+                    <p>Each time we release a new version, emails with download link are sent to all users who purchased Sitecake. Simple way to do an update is just to replace <em>sitecake/</em> folder with the new one. This will work, but it will replace all configuration files with default configuration, including resetting your password to 'admin'.</p>
 
-                    <h2>Website Structure</h2>
-
-                    <p>Once you download and extract contents of Sitecake archive it will look like this: </p>
-
-                    <p class="code nohighlight">sitecake/
-                        <br>sitecake.php
-                    </p>
-
-                    <p>The <em>sitecake/</em> folder contains Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Sitecake alone is not operational. You need at least one index page, with at least one editable <em>div</em> to start editing. So, the bare minimum is:</p>
+                    <p>Smarter way to do the update is to upload folder that holds new version next to the folder with old version and keep configuration files intact. You can rename <em>sitecake.php</em> to <em>sitecake-231.php</em> or something similar and place new <em>sitecake.php</em> in the root.</p>
 
                     <p class="code nohighlight">
                         sitecake/
-                        <br> sitecake.php
-                        <br> <strong>index.html</strong>
-                    </p>
-                    <p><em>index.html</em> file can have only one editable <em>div</em> and you will be able to add content Sitecake supports: headings, text, lists, videos ... </p>
+                        <br> ├── 2.3.1/ (old version)
+                        <br> ├── <strong>2.3.2/ (new version)</strong>
+                        <br> ├── credentials.php.default
+                        <br> ├── credentials.php
+                        <br> └── editor.cnf
+                        <br>sitecake231.php (old version)
+                        <br><strong>sitecake.php (new version)</strong></p>
 
-                    <p class="code">
-                        &lt;!DOCTYPE html&gt;
-                        <br> &lt;html&gt;
-                        <br> &nbsp;&nbsp;&lt;head&gt;&lt;/head&gt;
-                        <br> &nbsp;&nbsp;&lt;body&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;&lt;/div&gt;
-                        <br> &nbsp;&nbsp;&lt;/body&gt;
-                        <br> &lt;/html&gt;
-                        <br>
-
-                    </p>
-
-                    <p>Now you can login to <em>http://yourdomain.com/sitecake.php</em>, add some content and click publish. Your website on the server will look like this:</p>
-                    <p class="code nohighlight">
-                        <strong>files/</strong>
-                        <br> <strong>images/</strong>
-                        <br> <strong>sitecake-backup/</strong>
-                        <br> <strong>sitecake-temp/</strong>
-                        <br> sitecake/
-                        <br> sitecake.php
-                        <br> index.html
-
-                    </p>
-
-                    <p>What happened is that Sitecake created new folders to save editing changes.</p>
-
-                    <ul>
-                        <li><em>files/</em> for saving uploaded files (PDFs for example)</li>
-                        <li><em>images/</em> for saving uploaded images</li>
-                        <li><em>sitecake-backup/</em> after each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes it possible to roll back to any edit in time. Max number of backups is configurable.</li>
-                        <li><em>sitecake-temp/</em> current editing draft is kept here </li>
-                    </ul>
-
-                    <p>Now, let's go further on page structure.</p>
+                    <p>Now you can test how the update works. In case you want to roll back, just rename back <em>sitecake231.php</em> to <em>sitecake.php</em>and you are back.</p>
 
 
 
-                    <h2>Page Structure</h2>
-
-
-
-                    <p>Sitecake content <em>sc-content</em> CSS class added to an HTML tag makes that tag a wrapper for editable content. Existing code within Sitecake content wrapper becomes initial content once Sitecake loads. All tags supported by Sitecake are editable. Other content is only movable, can be drag and dropped around the website, but is not editable.</p>
-                    <p>At the moment Sitecake supports these content types: </p>
-
-                    <ul>
-                        <li><em>h1-h6</em> headings</li>
-                        <li><em>p</em> paragraph</li>
-                        <li><em>ul</em> unordered list</li>
-                        <li><em>img</em> image</li>
-                        <li><em>a</em> links (but only inside <em>p</em>, <em>h1-h6</em> or <em>ul</em>), can be text links, image links or email links </li>
-                        <li><em>sc-photoset</em> Sitecake CSS class assigned to masonry style gallery created by drag and dropping more than one image on the page</li>
-                        <li><em>sc-map</em> Sitecake CSS class assigned to embedded Google map</li>
-                    </ul>
-
-                    <p>NOTE: The list of supported content types will be expanded after release of Sitecake v3 which brings support for third party plugins.</p>
-
-
-                    <p>There are two types of <em>sc-content</em> containers:</p>
-
-                    <ul>
-                        <li>Basic container <em>sc-content</em> </li>
-                        <li>Repeater, container used for repeated content <em>sc-content-something</em></li>
-                    </ul>
-
-                    <p><strong>Basic containers</strong> are simply editable parts of a web page.</p>
-                    <p><strong>Repeater containers</strong> have a name attached to them and act as content repeaters. If several website pages have same repeater container, after editing one of them, Sitecake will copy edited content on all pages. Typical use for repeaters are side columns and footers</p>
-
-                    <p>The following HTML is an example of a website page that with a repeater (<em>sc-content-footer</em>) and two basic containers (marked with <em>sc-content</em>).</p>
-
-                    <p class="code">
-                        &lt;html&gt;
-                        <br> &nbsp;&nbsp;&lt;body&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="row"&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col sc-content"&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Left column&lt;/h1&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Left column text&lt;/p&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col sc-content"&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Right column&lt;/h1&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Right column text&lt;/p&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="footer sc-content-footer"&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is the site footer present on all pages&lt;/p&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-                        <br> &nbsp;&nbsp;&lt;/body&gt;
-                        <br> &lt;/html&gt;
-                    </p>
-                    <h2>Nesting Is Not Supported</h2>
-                    <p>Sitecake does not support nested <em>sc-content</em> element inside another <em>sc-content</em> element. Like in the example below:</p>
-
-                    <p class="code">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is proper content.&lt;/p&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is nested content. Do not expect it to work.&lt;/p&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-
-                    </p>
-
+                    <p>We plan to introduce silent update process. This will make your Sitecake update the same way modern browsers do. You don't even notice when it happened.</p>
                 </div>
 
 
@@ -296,8 +193,8 @@
                 <div id="disqus_thread"></div>
                 <script>
                     var disqus_config = function () {
-                        this.page.url = 'http://sitecake.com/docs/website-integration.html';
-                        this.page.identifier = '/docs/website-integration.html';
+                        this.page.url = 'http://sitecake.com/docs/updating-sitecake-to-a-new-version.html';
+                        this.page.identifier = '/docs/updating-sitecake-to-a-new-version.html';
                     };
 
                     (function () {
@@ -337,7 +234,6 @@
                     <li><a href="release-notes.html">Release Notes</a></li>
                 </ul>
             </div>
-
 
 
         </div>
