@@ -165,28 +165,28 @@
                     <h2>Summary</h2>
 
                     <ul class="summary">
-                        <li>Sitecake can manage both HTML and PHP websites.</li>
-                        <li>You need to have an index page (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>). </li>
-                        <li>To make a section of a page editable add <em>sc-content</em> CSS class to a wrapper HTML element for your content.</li>
-                        <li>Nesting of <em>sc-content</em> elements is not supported.</li>
+                        <li>Sitecake can manage both HTML and PHP websites</li>
+                        <li>You must have an index page (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>) </li>
+                        <li>To make a section of a page editable add <em>sc-content</em> CSS class to a wrapper HTML element for your content</li>
+                        <li>Nesting of <em>sc-content</em> elements is not supported</li>
                     </ul>
 
                     <h2>Website Structure</h2>
 
-                    <p>Once you download and extract contents of Sitecake archive it will look like this: </p>
+                    <p>Once you download and extract contents of the Sitecake archive it will look like this:</p>
 
                     <p class="code nohighlight">sitecake/
                         <br>sitecake.php
                     </p>
 
-                    <p>The <em>sitecake/</em> folder contains Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Sitecake alone is not operational. You need at least one index page, with at least one editable <em>div</em> to start editing. So, the bare minimum is:</p>
+                    <p><em>sitecake/</em> folder contains Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Sitecake alone is not operational. You must have at least an index page, with at least one editable <em>div</em> to start editing. So, the bare minimum is:</p>
 
                     <p class="code nohighlight">
                         sitecake/
                         <br> sitecake.php
                         <br> <strong>index.html</strong>
                     </p>
-                    <p><em>index.html</em> file can have only one editable <em>div</em> and you will be able to add content Sitecake supports: headings, text, lists, videos ... </p>
+                    <p>With index file and one editable <em>div</em> inside you will be able to add new content: headings, text, lists, videos ... </p>
 
                     <p class="code">
                         &lt;!DOCTYPE html&gt;
@@ -200,7 +200,7 @@
 
                     </p>
 
-                    <p>Now you can login to <em>http://yourdomain.com/sitecake.php</em>, add some content and click publish. Your website on the server will look like this:</p>
+                    <p>Try to login to <em>http://yourdomain.com/sitecake.php</em>, add some content and click publish. Your files on the server should look like this:</p>
                     <p class="code nohighlight">
                         <strong>files/</strong>
                         <br> <strong>images/</strong>
@@ -212,14 +212,30 @@
 
                     </p>
 
-                    <p>What happened is that Sitecake created new folders to save editing changes.</p>
+                    <p>What happened is that Sitecake created new folders to save possible content.</p>
 
                     <ul>
-                        <li><em>files/</em> for saving uploaded files (PDFs for example)</li>
+                        <li><em>files/</em> for saving uploaded files (PDFs, for example)</li>
                         <li><em>images/</em> for saving uploaded images</li>
-                        <li><em>sitecake-backup/</em> after each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes it possible to roll back to any edit in time. Max number of backups is configurable.</li>
-                        <li><em>sitecake-temp/</em> current editing draft is kept here </li>
+                        <li><em>sitecake-backup/</em> for creating backups. After each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes possible to roll back to any edit in time. Max number of backups is configurable.</li>
+                        <li><em>sitecake-temp/</em> for draft pages and some other things </li>
                     </ul>
+
+                    <h3>Disallowing Certain Files For Editing</h3>
+
+                    <p>If your website contains directories or files that should not be managed by Sitecake create <em>.scignore</em> file inside your site root and list all files and directories inside. Each one in a new line.</p>
+                    <p>Keep in mind that by default Sitecake is checking only for <em>html</em>, <em>htm</em>, <em>php</em> and <em>php5</em> files (this could be set differently through <a href="configuration.html">configuration</a>) so there is no need to list files that don't have one of these extensions (e.g. .htaccess file)</p>
+
+                    <p><em>.scignore</em> file example :</p>
+
+                    <p class="code nohighlight">framework-dir/
+                        <br>wordpress/
+                        <br>some-file-not-managed-by-sitecake.php
+                        <br>some-file-not-managed-by-sitecake.html
+                        <br>subfolder/some-file-not-managed-by-sitecake.html
+                    </p>
+
+
 
                     <p>Now, let's go further on page structure.</p>
 
@@ -276,10 +292,10 @@
                         <br> &nbsp;&nbsp;&lt;/body&gt;
                         <br> &lt;/html&gt;
                     </p>
-                    <h2>Nesting Is Not Supported</h2>
+                    <h2>Don't Nest sc-content Elements</h2>
                     <p>Sitecake does not support nested <em>sc-content</em> element inside another <em>sc-content</em> element. Like in the example below:</p>
 
-                    <p class="code">
+                    <p class="code html">
                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is proper content.&lt;/p&gt;
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;
@@ -325,10 +341,10 @@
                     <li><a href="website-integration.html">Website integration</a></li>
                     <li><a href="user-styles.html">User styles</a></li>
                     <li><a href="using-javascript.html">Using Javascript</a></li>
+                    <li><a href="working-with-php.html">Working with PHP</a></li>
                     <li><a href="languages.html">Multiple language support</a></li>
                     <li><a href="updating-sitecake-to-a-new-version.html">Updating to a new version</a></li>
                     <li><a href="password-forgotten.html">Reset password</a></li>
-
                     <li><a href="configuration.html">Configuration</a></li>
 
                 </ul>
@@ -337,7 +353,6 @@
                     <li><a href="release-notes.html">Release Notes</a></li>
                 </ul>
             </div>
-
 
 
         </div>
@@ -353,66 +368,66 @@
     <!--container-->
 
 
-<!-- Start Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-3">
-                <dl>
-                    <dt>Help &amp; Support</dt>
-                    <dd>
-                        <a href="http://sitecake.com/docs/install.html" title="Sitecake documentation">Documentation</a>
-                    </dd>
-                    <dd>
-                        <a href="http://support.sitecake.com/hc/en-us/requests/new">Send a ticket</a>
-                    </dd>
-                </dl>
-            </div>
+    <!-- Start Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Help &amp; Support</dt>
+                        <dd>
+                            <a href="http://sitecake.com/docs/install.html" title="Sitecake documentation">Documentation</a>
+                        </dd>
+                        <dd>
+                            <a href="http://support.sitecake.com/hc/en-us/requests/new">Send a ticket</a>
+                        </dd>
+                    </dl>
+                </div>
 
-            <div class="col-xs-3">
-                <dl>
-                    <dt>Resources</dt>
-                    <dd>
-                        <a href="http://sitecake.com/templates.html" title="SiteCake Templates">Templates</a>
-                    </dd>
-                    <dd>
-                        <a href="http://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
-                    </dd>
-                </dl>
-            </div>
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Resources</dt>
+                        <dd>
+                            <a href="http://sitecake.com/templates.html" title="SiteCake Templates">Templates</a>
+                        </dd>
+                        <dd>
+                            <a href="http://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
+                        </dd>
+                    </dl>
+                </div>
 
-            <div class="col-xs-3">
-                <dl>
-                    <dt>Learn More</dt>
-                    <dd>
-                        <a href="http://sitecake.com/docs/install.html">How to install Sitecake</a>
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Learn More</dt>
+                        <dd>
+                            <a href="http://sitecake.com/docs/install.html">How to install Sitecake</a>
 
 
-                    </dd>
-                    <dd><a href="http://sitecake.com/docs/website-integration.html">Website integration</a></dd>
-                    <dd><a href="http://sitecake.com/docs/configuration.html">Configuring Sitecake</a></dd>
-                </dl>
-            </div>
+                        </dd>
+                        <dd><a href="http://sitecake.com/docs/website-integration.html">Website integration</a></dd>
+                        <dd><a href="http://sitecake.com/docs/configuration.html">Configuring Sitecake</a></dd>
+                    </dl>
+                </div>
 
-            <div class="col-xs-3">
-                <dt>Follow us</dt>
-                <ul class="footer-social">
-                    <li>
-                        <a href="https://twitter.com/sitecake">
-                            <img src="img/footer-social-twitter.png" alt="footer-social-twitter" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/sitecake" title="Sitecake on Github">
-                            <img src="img/footer-social-github.png" alt="footer-social-github" />
-                        </a>
-                    </li>
-                </ul>
+                <div class="col-xs-3">
+                    <dt>Follow us</dt>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://twitter.com/sitecake">
+                                <img src="img/footer-social-twitter.png" alt="footer-social-twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sitecake" title="Sitecake on Github">
+                                <img src="img/footer-social-github.png" alt="footer-social-github" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<!--Footer-->
+    </footer>
+    <!--Footer-->
 
 
     <!-- Google Code for Remarketing Tag -->

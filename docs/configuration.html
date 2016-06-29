@@ -192,7 +192,7 @@
                     <p>In case you forgot the password, reset it to default by replacing <em>credentials.php</em> with <em>credentials.php.default.</em></p>
 
                     <h2>Editor configuration</h2>
-                    <p><em>editor.cnf</em> file is Sitecake editor/ toolbar configuration. It looks like this: </p>
+                    <p><em>editor.cnf</em> file is Sitecake editor and toolbar configuration. It looks like this: </p>
                     <p class="code nohighlight">
                         # Toolbar configuration
                         <br> # Toolbar.components - the list of content type available on the toolbar
@@ -227,19 +227,44 @@
 
                     <p><em>FileUploaderItem.uploadSizeLimit</em> sets maximum image / file size for upload. Sometimes, default of 8192 KB can be a problem for your large images. Feel free to change it.</p>
 
-                    <p><em>Locale.code</em> sets UI language. Default is autodetection based on IP address of the editor. Sitecake UI is translated to 12 languages. Look here for <a href="languages.html">more details on localization</a>.</p>
+                    <p><em>Locale.code</em> sets UI language. Default is auto detection based on IP address of the editor. Sitecake UI is translated to 12 languages. Look here for <a href="languages.html">more details on localization</a>.</p>
 
 
-                    <h2>CMS configuration</h2>
+                    <h2>General configuration</h2>
                     <p><em>config.php</em> file sets general CMS configuration options like: </p>
-                    <ul>
-                        <li>entry point file name (yes, sitecake.php can be changed to something.php)</li>
-                        <li>FTP credentials (for hostings where PHP process has insufficient permissions to write website files) </li>
-                        <li>error reporting and logging options</li>
-                        <li>website backup options</li>
-                        <li>...</li>
-                    </ul>
-                    <p>Please open <em>config.php</em> to see all options.</p>
+
+
+
+                    <p><em>debug = false</em> - Indicates wheather Sitecake is in debug mode. This has impact on error displaying and logging.</p>
+
+                    <p><em>entry_point_file_name = sitecake.php</em> - Entry point file can be renamed to improve security. Once renamed set this configuration value to the new file name.</p>
+
+
+                    <p><em>session.save_handler = files</em> - Session handler used on server. Can be set to 'files', 'memcache', 'memcached' and 'redis'.</p>
+
+
+                    <p><em>session.options</em> - Options for session storage. Possible options are commented inside config file. ini_set function have to be enabled on server to be able to use these options with native session handler.</p>
+
+
+                    <p><em>log.size = 2MB</em> - Maximum log size before file is being archived and new log file is created.</p>
+
+
+                    <p><em>log.archive_size = 5</em> - Number of archived log files kept on server </p>
+
+                    <p><em>error.level'] = E_ALL &amp; ~E_DEPRECATED &amp; ~E_STRICT;</em> - PHP error level.</p>
+
+
+
+                    <p><em>site.default_pages = 'index.html','index.htm','index.php','index.php5'</em> - Array of default index pages. Sitecake will use extensions found here when searching for editable website files.</p>
+
+
+                    <p><em>pages.prioritize_manual_changes = true</em> - Each time Sitecake opens a page for editing it can start from two different sources: draft editing from the last session or original HTML page from the server. By default this option is set to true, which means that if there are manual changes to HTML it will discard draft and start anew from updated HTML.</p>
+
+                    <p><em>pages.use_document_relative_paths = true</em> - Indicates whether generated pages should be linked relatively to the document root or the site root. If this option is set to true, document relative paths will be used for navigation links href value. Otherwise, site relative paths will be used.</p>
+
+                    <p><em>filesystem.adapter = local</em> - If the PHP process on the server doesn't have permission to write to the website root files then use the 'ftp' adapter and provide necessary FTP access properties. FTP protocol will be used to manage the website root files.</p>
+
+                    <p>Please open <em>config.php</em> to see additional options.</p>
                 </div>
 
 
@@ -276,10 +301,10 @@
                     <li><a href="website-integration.html">Website integration</a></li>
                     <li><a href="user-styles.html">User styles</a></li>
                     <li><a href="using-javascript.html">Using Javascript</a></li>
+                    <li><a href="working-with-php.html">Working with PHP</a></li>
                     <li><a href="languages.html">Multiple language support</a></li>
                     <li><a href="updating-sitecake-to-a-new-version.html">Updating to a new version</a></li>
                     <li><a href="password-forgotten.html">Reset password</a></li>
-
                     <li><a href="configuration.html">Configuration</a></li>
 
                 </ul>

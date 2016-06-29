@@ -996,6 +996,11 @@ section.templates-wrapper {
     margin-bottom: 1rem;
 }
 
+.documentation-content p.date {
+    margin: -0.8rem 0 0 0;
+    padding: 0;
+}
+
 .documentation-content ul {
     color: #333;
     margin-top: 1rem;
