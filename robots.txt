@@ -6,8 +6,6 @@ Disallow: /sitecake-content/
 Disallow: /services/
 Disallow: /temp/
 Disallow: /cdn-cgi/
-Disallow: /dl/
-Disallow: /Library/
 Disallow: /demo/
 
 
