@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Docs: Using PHP</title>
-    <meta name="description" content="Learn how you can manage PHP websites with Sitecake" />
+    <title>Sitecake Documentation: Adding Tweets</title>
+    <meta name="description" content="Learn how to drag and drop embed tweets in your website." />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -152,98 +152,29 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Working With PHP</h1>
+                <h1>Embedding Tweets</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
 
-                    <p>From the version 2.3 Sitecake started working with PHP files. If you are using Sitecake with a PHP website, there are several things to know:</p>
 
+
+
+                    <p>Embedded tweets are good for testimonials, for example.</p>
+
+                    <p>There are two ways to add a tweet :</p>
                     <ul>
-                        <li>
-                            <p>Complete <em>sc-content</em> element should be contained inside a single file. Opening <em>sc-content</em> element in one file and closing it in another would not work.</p>
+                        <li> on a Twitter website select a tweet from a feed, click to open a single tweet, drag and drop tweet URL from the address bar of your browser tab onto the page
                         </li>
-                        <li>
-                            <p>PHP code inside <em>sc-content</em> element will be overwritten with rendered HTML after first save/publish</p>
-                        </li>
-                        <li>
-                            <p>Paths used in php include and require methods should be relative because Sitecake creates copies of your website files and works with copies. If used paths are full paths, Sitecake will always include original files. If you make changes to <em>sc-content</em> element that is located inside an included file, page refresh would not be enough to see the changes, you should have to publish the page to be able to see the changes.</p>
+                        <li> select a tweet from a feed, drag and drop time of a tweet onto the page (yes, time on tweet is a link to that single tweet)
                         </li>
                     </ul>
 
-
-
-
-                    <!--
-                    <h2>Multilevel folder support</h2>
-
-                    <p>Sitecake supports multi level folder structure. By default, all <em>php</em>, <em>php5</em>, <em>htm</em> and <em>html</em> files in the website root are editable with Sitecake. In case you want to make other files editable you should list them in <em>.scpages</em> file located in the site root. </p>
-
-                    <p class="code nohighlight">
-                        sitecake/
-                        <br> sitecake.php
-                        <br> .scpages
+                    <p>
+                        Read next: <a href="applying-predefined-css-styles.html">Applying predefined CSS styles </a>
                     </p>
-
-                    <p>Here is an example of a <em>.scpages</em> file</p>
-
-                    <p class="code nohighlight">
-                        humans.txt
-                        <br>content/whitepaper.php
-                        <br>content/research.php
-                        <br>team/
-                        <br>!about-us.php
-                        <br>!contact.html
-                    </p>
-
-                    <ul>
-                        <li>any file listed will be editable with Sitecake</li>
-                        <li>complete folders can be included for editing, just add folder path followed by a slash</li>
-                        <li>putting ! in front of page name will exclude a page from editing</li>
-                        <li>all paths listed in <em>.scpages</em> should be relative to site root</li>
-                    </ul>
--->
-
-
-                    <h2>Sitecake files and folders</h2>
-
-                    <p>Here is the short description of things found in sitecake/ folder. </p>
-
-                    <p class="code nohighlight">
-                        sitecake/
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;2.3.1/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version folder
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration files
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bootstrap.php&nbsp;&nbsp;&nbsp;&nbsp;application bootstrap
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;environment check
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake configuration
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locale/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;translation .yml files
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server source files
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake classes
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;services entry point
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vendor/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;third party libraries
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credentials.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;credentials file
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credential.php.default&nbsp;&nbsp;&nbsp;reset credentials file
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;editor.cnf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor configuration
-                        <br>sitecake.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;application entry point
-                        <br>
-
-
-                    </p>
-
-
-
-
-
-
-
-
-
-
-                    <h2>Misc</h2>
-                    <p>Sitecake suports memcache, memcached and redis session handling.</p>
 
                 </div>
 
@@ -285,14 +216,9 @@
             </div>
 
 
+
+
         </div>
-
-
-
-        <!-- //DOCUMENTATION CONTENT -->
-
-
-
 
     </div>
     <!--container-->

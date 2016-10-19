@@ -1030,6 +1030,9 @@ section.templates-wrapper {
     font-size: 0.9rem;
     line-height: 1.3rem;
 }
+    .documentation .sidebar ul {
+    margin-bottom: 1.2rem;
+}
 
 p em,
 ul em {
