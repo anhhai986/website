@@ -171,7 +171,7 @@
 
                     <p class="code javascript">&lt;script type="text/javascript"&gt;
                         <br> &nbsp;&nbsp;$(function() {
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;if (window.sitecakeGlobals &amp;&amp; sitecakeGlobals.editMode !== true ) {
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;if ( !window.sitecakeGlobals || sitecakeGlobals.editMode !== true ) {
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.getScript('js/yourscript.js');
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;}
                         <br>&nbsp;&nbsp;});
