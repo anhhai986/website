@@ -588,10 +588,12 @@ section.featured {
 *************************************/
 
 footer {
-    float: left;
     width: 100%;
     padding: 40px 0;
+    position: absolute;
+    bottom: 0;
     background: #333333;
+    clear: both;
 }
 
 footer dt,
@@ -638,14 +640,6 @@ footer .footer-social li {
 footer .footer-social li a:hover,
 footer .footer-social li a:focus {
     opacity: 0.8;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 230px;
 }
 
 
