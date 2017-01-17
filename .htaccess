@@ -1,21 +1,21 @@
 RewriteEngine on
 
 RewriteCond %{HTTP_HOST} ^www.sitecake.com
-RewriteRule (.*) http://sitecake.com/$1 [R=301,L]
+RewriteRule (.*) https://sitecake.com/$1 [R=301,L]
 
-#Redirect 301 /index.html http://sitecake.com/
+#Redirect 301 /index.html https://sitecake.com/
 RewriteCond %{REQUEST_URI} ^/index.html$
 RewriteRule (.*) / [R=301,L]           
 
 # shortcuts
-Redirect 301 /latest http://sitecake.com/dl/sitecake-2.2.6.zip
+Redirect 301 /latest https://sitecake.com/dl/sitecake-2.2.6.zip
 
 #dokumentacija iz roota -> docs 
 Redirect 301 /using-url-rewrite.php /docs/using-url-rewrite.php
 Redirect 301 /using-php-in-templates.php /docs/using-php-in-templates.php
 Redirect 301 /toolbar-module-configuration.php /docs/toolbar-module-configuration.php
 Redirect 301 /repeating-regions.php /docs/repeating-regions.php
-Redirect 301 /install.html http://sitecake.com/docs/install.html
+Redirect 301 /install.html https://sitecake.com/docs/install.html
 Redirect 301 /include-javascript-with-sitecake-template.php /docs/include-javascript-with-sitecake-template.php
 Redirect 301 /how-to-use-slideshows.php /docs/how-to-use-slideshows.php
 Redirect 301 /how-to-upgrade-sitecake.php /docs/how-to-upgrade-sitecake.php
@@ -36,7 +36,7 @@ Redirect 302 /portfolio-template.html /templates/portfolio.html
 Redirect 302 /change-log.php /download/change-log.php
 
 #redirect nepostojecih strana
-Redirect 301 /features.html http://sitecake.com
+Redirect 301 /features.html https://sitecake.com
 
 ErrorDocument 404 /404.html
 
