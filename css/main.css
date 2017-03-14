@@ -1247,3 +1247,37 @@ p.code {
     width: 100%;
     height: 100%;
 }
+
+
+/* Download Affiliate Box */
+
+.affiliate {
+    padding-top: 120px;
+    height: 414px;
+}
+
+.shared {
+    padding-top: 60px;
+    height: 414px;
+    border-color: #37c4e3;
+}
+
+.affiliate img {
+    padding-bottom: 20px;
+}
+
+.affiliate p {
+    font-size: 20px;
+    padding-bottom: 10px;
+    line-height: 30px;
+}
+
+a.btn-facebook,
+a.btn-facebook:hover {
+    background: #5576ba url('../img/ico-facebook.png') no-repeat 21px 12px;
+    padding-left: 20px;
+}
+
+a.btn-facebook:hover {
+    background: #4669ac url('../img/ico-facebook.png') no-repeat 21px 12px;
+}
