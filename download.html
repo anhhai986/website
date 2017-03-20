@@ -193,25 +193,24 @@
 -->
 
             
-            <div class="col-sm-4 clearfix">
+            <div class="col-sm-4 clearfix" id="facebook-share" style="display: block;">
                 <div class="price-box affiliate">
                     <p>Tell your friends about Sitecake and get $10 off regular version!</p>
 
-                    <a class="btn btn-block btn-facebook" href="" target="_blank" onclick="javascript: _gaq.push(['_trackPageview', '/share-facebook'])">Share on Facebook</a>
+                    <a class="btn btn-block btn-facebook" href="" onclick="javascript: _gaq.push(['_trackPageview', '/share-facebook'])">Share on Facebook</a>
                 </div>
             </div>
 
 
-<!--
-<div class="col-sm-4 clearfix">
-    <div class="price-box affiliate shared">
-        <p>Thank you for sharing a word about Sitecake!</p>
-        <img src="img/shake-hands.gif" />
-        <p>Use <em class="promocode">SC575AV6</em> promo code when downloading Sitecake.</p>
 
-    </div>
-</div>
--->
+            <div class="col-sm-4 clearfix" id="promo-code" style="display: none">
+                <div class="price-box affiliate shared">
+                    <p>Thank you for sharing a word about Sitecake!</p>
+                    <img src="img/shake-hands.gif" />
+                    <p>Use <em class="promocode"></em> promo code when downloading Sitecake.</p>
+                </div>
+            </div>
+
 
 
         </div>
@@ -441,6 +440,63 @@
         </div>
     </noscript> -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({ cache: true });
+            $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+                FB.init({
+                    appId      : '1856698691280103',
+                    xfbml      : true,
+                    version    : 'v2.8'
+                });
+            });
+
+            var clickId;
+
+            $('#facebook-share a.btn-facebook').on('click', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://sitecake.com/services/share-clicks/click',
+                    data: {
+                        'type': '1'//facebook
+                    },
+                    success: function(response, textStatus, request) {
+                        if(response.status == 'success'){
+                            clickId = response.id;
+                        }
+
+                    },
+                });
+                FB.ui({
+                        display: 'popup',
+                        method:  'share',
+                        title: 'Simple CMS for static HTML/PHP websites',
+                        description: 'If you find WordPress too complex, you should try Sitecake. It\'s really basic, drag and drop CMS for static websites. ',
+                        href:    "https://sitecake.com",
+                    },
+                    function(response){
+                        if (response && !response.error_message && clickId!=undefined) {
+                            $.ajax({
+                                type: 'POST',
+                                url: 'http://localhost/sitecake/sitecake-admin/sitecake-admin/share-clicks/confirm',
+                                data: {
+                                    'confirm': '1',
+                                    id: clickId
+                                },
+                                success: function(response, textStatus, request) {
+                                    $('#facebook-share').hide();
+                                    $('#promo-code').show();
+                                    $('#promo-code').find('em.promocode').html(response.coupon);
+                                },
+                            });
+                        }
+                    });
+            });
+        });
+    </script>
 
 </body>
 
