@@ -447,7 +447,7 @@
             $.ajaxSetup({ cache: true });
             $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
                 FB.init({
-                    appId      : '1856698691280103',
+                    appId      : '1257697680988644',
                     xfbml      : true,
                     version    : 'v2.8'
                 });
@@ -481,7 +481,7 @@
                         if (response && !response.error_message && clickId!=undefined) {
                             $.ajax({
                                 type: 'POST',
-                                url: 'http://localhost/sitecake/sitecake-admin/sitecake-admin/share-clicks/confirm',
+                                url: 'https://sitecake.com/services/share-clicks/confirm',
                                 data: {
                                     'confirm': '1',
                                     id: clickId
