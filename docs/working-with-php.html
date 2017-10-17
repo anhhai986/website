@@ -169,7 +169,8 @@
                             <p>PHP code inside <em>sc-content</em> element will be overwritten with rendered HTML after first save/publish</p>
                         </li>
                         <li>
-                            <p>Paths used in php include and require methods should be relative because Sitecake creates copies of your website files and works with copies. If used paths are full paths, Sitecake will always include original files. If you make changes to <em>sc-content</em> element that is located inside an included file, page refresh would not be enough to see the changes, you should have to publish the page to be able to see the changes.</p>
+                            <p>Paths used in php include and require methods that contains editable content should be relative because Sitecake creates copies of your website files and works with copies. If used paths are full paths, Sitecake will always include original files. If you make changes to <em>sc-content</em> element that is located inside an included file, page refresh would not be enough to see the changes, you should have to publish the page to be able to see the changes.<br>
+							On the other hand, if you want to include configuration file, or file where you defined functions you use on your pages, you should use full path for inclusio. So, for example, if you want to include config file that is outside of your site root, you could use <em>include_once($_SERVER['DOCUMENT_ROOT'] . '/../config.php);</em></p>
                         </li>
                     </ul>
 
