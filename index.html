@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="keywords" content="Sitecake, cms, flatfile cms, HTML, drag and drop cms, simple cms, open source, free" />
-    <title>Simple CMS for static HTML/PHP websites</title>
+    <title>Simple CMS for HTML/PHP static websites</title>
     <meta name="description" content="If you find WordPress too complex, you should try Sitecake. It's really basic, drag and drop CMS for static websites." />
     <!--    <meta name="description" content="If you are looking for WordPress alternative, try Sitecake. It's really basic, drag and drop CMS for static websites." />-->
     <meta name="city" content="New York" />
@@ -58,28 +58,32 @@
     <meta name="msapplication-config" content="/img/favicon/browserconfig.xml?v=yy0966qJGm">
     <meta name="theme-color" content="#61cae9">
 
-    <script type="text/javascript">
-        (function (e, t) {
-            function r(e, t) {
-                e[t] = function () {
-                    e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
-                };
-            }
-            var n = "JacoRecorder";
-            (function (e, t, i, s) {
-                if (!i.__VERSION) {
-                    e[n] = i;
-                    var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
-                    for (var u = 0; u < o.length; u++) r(i, o[u]);
-                    i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-                    var a = t.createElement("script");
-                    a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-                    var f = t.getElementsByTagName("head")[0];
-                    f.appendChild(a);
-                }
-            })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-        }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '224938111181968');
+        fbq('track', "PageView");
     </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
 
 
 
@@ -190,7 +194,7 @@
                             <div class="features-box pull-right">
                                 <img src="img/ico-fast.png" alt="features-icon01" />
                                 <h3>Much faster than a WordPress website</h3>
-                                <p>Sitecake manages static websites. Static websites cached with CDN services load lightning fast. For mobile users faster is better. For Google ranking too!</p>
+                                <p>Sitecake manages static websites. Static sites cached with CDN services load lightning fast. For mobile users faster is better. For Google ranking too!</p>
                             </div>
                             <!-- / Features Box -->
                         </div>

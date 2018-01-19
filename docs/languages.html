@@ -92,29 +92,7 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
 
-    <!-- Jaco Screen Recording -->
-    <script type="text/javascript">
-        (function (e, t) {
-            function r(e, t) {
-                e[t] = function () {
-                    e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
-                };
-            }
-            var n = "JacoRecorder";
-            (function (e, t, i, s) {
-                if (!i.__VERSION) {
-                    e[n] = i;
-                    var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
-                    for (var u = 0; u < o.length; u++) r(i, o[u]);
-                    i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-                    var a = t.createElement("script");
-                    a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-                    var f = t.getElementsByTagName("head")[0];
-                    f.appendChild(a);
-                }
-            })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-        }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
-    </script>
+
 
 </head>
 
@@ -166,28 +144,29 @@
                     <p>At the moment the following languages are supported:</p>
 
                     <ul>
-                        <li>English (en)</li>
-                        <li>Spanish (es)</li>
-                        <li>Russian (ru)</li>
-                        <li>German (de)</li>
-                        <li>French (fr)</li>
-                        <li>Italian (it)</li>
-                        <li>Danish (dk)</li>
+                        <li>Croatian (hr)</li>
                         <li>Czech (cs)</li>
-                        <li>Slovenian (sl)</li>
-                        <li>Serbian (sr)</li>
-                        <li>Slovak (sk)</li>
+                        <li>Danish (dk)</li>
+                        <li>Dutch (nl)</li>
+                        <li>English (en)</li>
+                        <li>French (fr)</li>
+                        <li>German (de)</li>
+                        <li>Italian (it)</li>
+                        <li>Norwegian (nn)</li>
                         <li>Portuguese (pt)</li>
                         <li>Portuguese Brazil (pt-br)</li>
+                        <li>Russian (ru)</li>
+                        <li>Serbian (sr)</li>
+                        <li>Slovak (sk)</li>
+                        <li>Slovenian (sl)</li>
+                        <li>Spanish (es)</li>
                         <li>Turkish (tr)</li>
-                        <li>Norwegian (nn)</li>
-                        <li>Dutch (nl)</li>
                     </ul>
 
                     <p>The interface language is specified by setting the <strong>LocaleProxyImpl.interfaceLocale</strong> configuration paramter (in the <em>editor.cnf</em> file).</p>
 
                     <p class="code nohighlight">
-                        # interface language (en, sl, sr, es, de, fr, dk, it, ru, cs, sk, pt, pt-br, nl, tr, nn, auto)
+                        # interface language (hr, cs, dk, nl, en, fr, de, it, nn, pt, pt-br, ru, sk, sl, es, tr, auto)
                         <br> LocaleProxyImpl.interfaceLocale = en</p>
 
                     <p>It can be set to either the 2-letter language code (ISO 639-2 Language Codes) of a supported language or to the ‘auto’ option.</p>

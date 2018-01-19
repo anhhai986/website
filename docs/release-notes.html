@@ -53,23 +53,24 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function (i, block) {
+            $('p.code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
         });
+
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function (f, b, e, v, n, t, s) {
+        ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function () {
+            n = f.fbq = function() {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -88,33 +89,12 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
+
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
 
-    <!-- Jaco Screen Recording -->
-    <script type="text/javascript">
-        (function (e, t) {
-            function r(e, t) {
-                e[t] = function () {
-                    e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
-                };
-            }
-            var n = "JacoRecorder";
-            (function (e, t, i, s) {
-                if (!i.__VERSION) {
-                    e[n] = i;
-                    var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
-                    for (var u = 0; u < o.length; u++) r(i, o[u]);
-                    i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-                    var a = t.createElement("script");
-                    a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-                    var f = t.getElementsByTagName("head")[0];
-                    f.appendChild(a);
-                }
-            })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-        }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
-    </script>
+
 
 </head>
 
@@ -149,7 +129,7 @@
 
 
         <!-- DOCUMENTATION CONTENT -->
-        <div class="row  documentation">
+        <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
                 <h1>Release Notes </h1>
@@ -158,6 +138,87 @@
                 <div class="sc-content documentation-content">
 
 
+                    <h2> 2.4.7 Release Notes</h2>
+                    <p class="date">11/12/2017</p>
+
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Pages with a lot of <em>sc-content</em> sections are further optimized for better performance</li>
+                    </ul>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Page urls conversion to editable urls in edit mode</li>
+                        <li>URLs of uploaded files are now correctly set</li>
+                        <li><em>sc-content</em> class set to header element caused issues</li>
+                        <li>Menu update issue after publish</li>
+
+                    </ul>
+
+                    <h2> 2.4.6 Release Notes</h2>
+                    <p class="date">10/30/2017</p>
+
+
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Background content saves and page publish optimized.</li>
+                        <li>Publish time is drastically shortened.</li>
+                        <li>Page processing is done on a single page load. Earlier all pages were prepared on login.</li>
+                        <li>Dependency libraries that were slowing content processing are removed or rewritten.</li>
+                        <li>Internal PHP website warnings are still logged, but not displayed any more.</li>
+                    </ul>
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Chrome browser edit mode scrolling issue has been fixed.</li>
+
+                    </ul>
+
+                    <h2> 2.4.5 Release Notes</h2>
+                    <p class="date">6/15/2017</p>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Support for Croatian language &#40;hr&#41; added</li>
+                        <li>Page manager: newly created page stays selected after publish </li>
+                        <li>Page manager: page order kept after adding or deleting a page</li>
+                    </ul>
+                    <h3>Bug Fixes</h3>
+                    <ul>
+
+                        <li>Fixed: processing menus for pages excluded within <em>.scpages</em></li>
+                        <li>Fixed: cache inconsistency for <em>.scpages</em> listed files</li>
+                        <li>Fixed: user was not able to navigate website through page links in edit mode</li>
+                        <li>Fixed: Sitecake not handling menus in included files listed in <em>
+                            .scpages</em></li>
+                        <li>Fixed: converting urls with query string</li>
+                        <li>Fixed: h4 and h6 toolbar buttons are reversed</li>
+                        <li>Fixed: menu with zero pages could not be saved</li>
+                    </ul>
+
+
+                    <h2> 2.4.4 Release Notes</h2>
+                    <p class="date">4/27/2017</p>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+
+                        <li>Cache inconsistency caused Sitecake to delete pages excluded through .scpages file</li>
+                    </ul>
+
+
+                    <h2> 2.4.3 Release Notes</h2>
+                    <p class="date">4/25/2017</p>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Menu items with UTF-8 encoding are supported</li>
+                        <li>Files and folders specified in <em>.scpages</em>, can be declared with asterisk</li>
+                    </ul>
+                    <h3>Bug Fixes</h3>
+                    <ul>
+
+                        <li>Fixed: Sitecake removed classes on content items without defined user styles</li>
+                        <li>Fixed: Incorrect page URLs were displayed in page details modal
+                        </li>
+                    </ul>
 
                     <h2> 2.4.2 Release Notes</h2>
                     <p class="date">4/21/2017</p>
@@ -188,6 +249,9 @@
                         <li>Problem with HTML loading with native PHP DOM fixed (warnings suppressed)</li>
 
                     </ul>
+
+
+
                     <h2> 2.3.6 Release Notes</h2>
                     <p class="date">10/15/2016</p>
                     <h3>Improvements</h3>
@@ -429,8 +493,11 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
+
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+
     </script>
     <noscript>
         <div style="display:inline;">

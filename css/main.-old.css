@@ -1094,7 +1094,40 @@ footer .footer-social li a:focus {
 }
 
 
+/********************************/
 
+
+/* Templates page */
+
+
+/********************************/
+
+.templates {
+    margin-bottom: 30px;
+}
+
+.templates h1 {
+    color: #5a5959;
+    font-size: 52px;
+    font-weight: 800;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.templates p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 3px;
+    font-style: normal;
+}
+
+.templates .col-xs-12 img {
+    border: 1px solid #eee;
+}
+
+.templates .col-xs-12 a.free-template:hover img {
+    border: 1px solid #ccc;
+}
 
 
 /* Hosting page */
