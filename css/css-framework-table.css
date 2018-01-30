@@ -35,12 +35,14 @@
 #css_framework_table td,
 #css_framework_table th {
     padding: .28em .68em;
-    vertical-align: top;
+    vertical-align: center;
     font-size: 16px;
     border: 1px solid #f2f2f2;
     border-top: 0;
     border-left: 0;
     border-right: 0;
+    
+    
 }
 
 #css_framework_table td:first-child,
@@ -79,10 +81,9 @@
 
 #css_framework_table td a {
     color: #0cb5e6;
-    
+
 }
 
 #css_framework_table td a:hover {
     color: #51bcda;
 }
-
