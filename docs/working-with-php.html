@@ -53,23 +53,24 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function (i, block) {
+            $('p.code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
         });
+
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function (f, b, e, v, n, t, s) {
+        ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function () {
+            n = f.fbq = function() {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -88,20 +89,21 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
+
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
 
     <!-- Jaco Screen Recording -->
     <script type="text/javascript">
-        (function (e, t) {
+        (function(e, t) {
             function r(e, t) {
-                e[t] = function () {
+                e[t] = function() {
                     e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
                 };
             }
             var n = "JacoRecorder";
-            (function (e, t, i, s) {
+            (function(e, t, i, s) {
                 if (!i.__VERSION) {
                     e[n] = i;
                     var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
@@ -114,6 +116,7 @@
                 }
             })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
         }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
+
     </script>
 
 </head>
@@ -169,8 +172,7 @@
                             <p>PHP code inside <em>sc-content</em> element will be overwritten with rendered HTML after first save/publish</p>
                         </li>
                         <li>
-                            <p>Paths used in php <em>include</em> and <em>require</em> methods that contain editable content should be relative because Sitecake creates copies of your website files and works with copies. If used paths are full paths, Sitecake will always include original files. If you make changes to <em>sc-content</em> element that is located inside an included file, page refresh would not be enough to see the changes, you should have to publish the page to be able to see the changes.<br>
-							On the other hand, if you want to include configuration file or file where you defined functions you use in your pages, you should use full path for inclusion. So, for example, if you want to include config file that is outside of your site root, you could use <em>include_once($_SERVER['DOCUMENT_ROOT'] . '/../config.php);</em></p>
+                            <p>Paths used in php <em>include</em> and <em>require</em> methods that contain editable content should be relative because Sitecake creates copies of your website files and works with copies. If used paths are full paths, Sitecake will always include original files. If you make changes to <em>sc-content</em> element that is located inside an included file, page refresh would not be enough to see the changes, you should have to publish the page to be able to see the changes.<br> On the other hand, if you want to include configuration file or file where you defined functions you use in your pages, you should use full path for inclusion. So, for example, if you want to include config file that is outside of your site root, you could use <em>include_once($_SERVER['DOCUMENT_ROOT'] . '/../config.php);</em></p>
                         </li>
                     </ul>
 
@@ -324,6 +326,10 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
+                        <dd>
+                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
+                        </dd>
+
                     </dl>
                 </div>
 
@@ -368,8 +374,11 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
+
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+
     </script>
     <noscript>
         <div style="display:inline;">
