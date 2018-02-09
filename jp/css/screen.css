@@ -1,0 +1,283 @@
+/*  design and CSS: Nikola Mircic                                                     */
+
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+body {
+    background: #9fdff0 url(../images/bgr-noise.gif) repeat left top;
+}
+
+#header {
+    width: 940px;
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+a#logo {
+    width: 339px;
+    height: 85px;
+    display: block;
+    margin-top: 27px;
+    text-indent: -9999px;
+    line-height: 1px;
+    overflow: hidden;
+    background: url(../images/logo.gif) no-repeat left top;
+    float: left;
+}
+
+
+/* Utilities menu */
+
+ul.utilities {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+ul.utilities li {
+    display: inline;
+}
+
+ul.utilities li a {
+    float: left;
+    font: 13px 'Droid Sans', Arial, Helvetica, sans-serif;
+    color: #222222;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 3px 8px;
+}
+
+ul.utilities li a:hover {
+    background-color: #fffcaa;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+}
+
+ul.utilities li a:active {
+    color: #000;
+    positon: relative;
+    top: 1px;
+    border-radius: 98px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+}
+
+
+/* Navigation menu */
+
+ul.navigation {
+    position: absolute;
+    right: 0;
+    top: 80px;
+}
+
+ul.navigation li {
+    display: inline;
+}
+
+ul.navigation li.inactive {
+    font: 17px 'Droid Sans', Arial, Helvetica, sans-serif;
+    color: #fff;
+    margin: 0 5px;
+    padding: 3px 10px;
+}
+
+ul.navigation li span {
+    float: left;
+    font: 17px 'Droid Sans', Arial, Helvetica, sans-serif;
+    color: #fff;
+    margin: 0 5px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+ul.navigation li a {
+    float: left;
+    font: 17px 'Droid Sans', Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 3px 10px;
+}
+
+ul.navigation li a:hover {
+    background-color: #fff;
+    color: #63c3e2;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+}
+
+.stroke {
+    background: url(../images/stroke.png) no-repeat left top;
+    width: 89px;
+    height: 13px;
+    position: absolute;
+    top: 89px;
+    display: block;
+}
+
+.handwritten {
+    color: #3b9ec4;
+    font: 24px 'Reenie Beanie', arial, serif;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+}
+
+.note1 {
+    position: absolute;
+    top: 100px;
+    right: 217px;
+}
+
+
+/* Content */
+
+#content {
+    width: 940px;
+    margin: 0 auto;
+    padding: 53px 0;
+    position: relative;
+    text-align: center;
+}
+
+h1 {
+    font: normal 35px/36px 'Droid Serif', Times, serif;
+    color: #222222;
+    letter-spacing: -0.03em;
+    padding-bottom: 5px;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.column {
+    margin: 50px 10%;
+}
+
+.column:hover a {
+    color: white;
+}
+
+.screencast {
+    float: left;
+    width: 416px;
+    margin-left: 87px;
+    margin-top: 50px;
+}
+
+.screencast .slide:hover {
+    /*	position:relative;
+	top:-1px;
+*/
+}
+
+.links {
+    float: left;
+    width: 365px;
+    margin-left: 54px;
+    margin-top: 50px;
+    text-align: left;
+    position: relative;
+}
+
+.links a.special {
+    font: 27px 'Droid Serif', Times, serif;
+    color: #222222;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    padding-left: 47px;
+    display: block;
+    margin: 23px 0 31px;
+}
+
+p.special {
+    font: 16px 'Droid Serif', Times, serif;
+    color: #222222;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    padding-left: 0px;
+    display: block;
+    margin: 23px 0 10px;
+    background: none;
+    line-height: auto;
+    position: inherit;
+    top: 0;
+    left: 0;
+}
+
+.links a.special:hover {
+    color: #3799be;
+}
+
+.links a.special span,
+.links p {
+    font: 15px 'Droid Serif', Times, serif;
+    color: #222222;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    letter-spacing: -0.00em;
+}
+
+.links p {
+    padding-left: 47px;
+    line-height: 21px;
+    background: url(../images/cake.gif) no-repeat 42px 5px;
+    position: absolute;
+    top: 223px;
+}
+
+.links a.video {
+    background: url(../images/icon-video.gif) no-repeat left top;
+}
+
+.links a.demo {
+    background: url(../images/icon-demo.gif) no-repeat left top;
+}
+
+.links a.twitter {
+    background: url(../images/icon-twitter.gif) no-repeat left top;
+}
+
+.screencast .thumb {
+    -moz-box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.screencast:hover .thumb {
+    -moz-box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.twitter-share-button {
+    position: relative;
+    top: 5px;
+}
+
+
+/* Tour */
+
+
+/* Video-item */
+
+.video-item {
+    width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    background: url(../images/shadow.gif) no-repeat center bottom;
+    padding-bottom: 70px;
+}
+
+.blue {
+    color: #56a7e6;
+    padding: 0 5px;
+}

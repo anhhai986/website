@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Sitecake, documentation" />
+    <title>Sitecake Documentation: Sitecake Website Integration</title>
+    <meta name="description" content="Defining editable parts of an HTML page, repeaters, excluding pages from editing ..." />
+    <meta name="city" content="New York" />
+    <meta name="country" content="US" />
+    <meta name="allow-search" content="yes" />
+    <meta name="robots" content="all, index, follow" />
+    <meta name="copyright" content="Sitecake" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--Lato font from Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/docs.css" type="text/css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-touch-icon-57x57.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-touch-icon-60x60.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-touch-icon-72x72.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-touch-icon-76x76.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-touch-icon-120x120.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-touch-icon-144x144.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon-152x152.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon-180x180.png?v=yy0966qJGm">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-32x32.png?v=yy0966qJGm" sizes="32x32">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-194x194.png?v=yy0966qJGm" sizes="194x194">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-96x96.png?v=yy0966qJGm" sizes="96x96">
+    <link rel="icon" type="image/png" href="../img/favicon/android-chrome-192x192.png?v=yy0966qJGm" sizes="192x192">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-16x16.png?v=yy0966qJGm" sizes="16x16">
+    <link rel="manifest" href="../img/favicon/manifest.json?v=yy0966qJGm">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico?v=yy0966qJGm">
+    <meta name="msapplication-TileColor" content="#61cae9">
+    <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png?v=yy0966qJGm">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml?v=yy0966qJGm">
+    <meta name="theme-color" content="#61cae9">
+
+    <!-- Code Highlight -->
+    <link rel="stylesheet" href="css/highlight-pack/foundation.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            hljs.configure({
+                useBR: true
+            });
+
+            $('p.code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '224938111181968');
+        fbq('track', "PageView");
+
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <nav>
+            <ul class="nav">
+                <li class="pull-xs-none pull-sm-left">
+                    <a class="navbar-brand" href="https://sitecake.com"><img src="img/sitecake-logo-small.png" alt="Sitecake logo" title="Sitecake homepage" /></a>
+                </li>
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link download" href="../download.html" title="Download Sitecake">Download</a>
+                </li>
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="https://forum.sitecake.com" title="Sitecake community">Forum</a>
+                </li>
+
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="getting-started.html" title="Sitecake Documentation">Docs</a>
+                </li>
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="../showcase.html" title="Sitecake run websites">Showcase</a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+        <!-- DOCUMENTATION CONTENT -->
+        <div class="row documentation">
+
+            <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
+                <h1>Website Integration</h1>
+            </div>
+
+            <div class="col-xs-12 col-md-9 col-md-push-3">
+                <div class="sc-content documentation-content">
+
+
+
+
+                    <h2>Summary</h2>
+
+                    <ul class="summary">
+                        <li>Sitecake can manage both HTML and PHP websites</li>
+                        <li>You must have an index page (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>) </li>
+                        <li>To make a section of a page editable add <em>sc-content</em> CSS class to a wrapper HTML element for your content</li>
+                        <li>Nesting of <em>sc-content</em> elements is not supported</li>
+                    </ul>
+
+                    <h2>Website Structure</h2>
+
+                    <p>Once you download and extract contents of the Sitecake archive it will look like this:</p>
+
+                    <p class="code nohighlight">sitecake/
+                        <br>sitecake.php
+                    </p>
+
+                    <p><em>sitecake/</em> folder contains Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Sitecake alone is not operational. You must have at least an index page, with at least one editable <em>div</em> to start editing. So, the bare minimum is:</p>
+
+                    <p class="code nohighlight">
+                        sitecake/
+                        <br> sitecake.php
+                        <br> <strong>index.html</strong>
+                    </p>
+                    <p>With index file and one editable <em>div</em> inside you will be able to add new content: headings, text, lists, videos ... </p>
+
+                    <p class="code">
+                        &lt;!DOCTYPE html&gt;
+                        <br> &lt;html&gt;
+                        <br> &nbsp;&nbsp;&lt;head&gt;&lt;/head&gt;
+                        <br> &nbsp;&nbsp;&lt;body&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&lt;/body&gt;
+                        <br> &lt;/html&gt;
+                        <br>
+
+                    </p>
+
+                    <p>Try to login to <em>http://yourdomain.com/sitecake.php</em>, add some content and click publish. Your files on the server should look like this:</p>
+                    <p class="code nohighlight">
+                        <strong>files/</strong>
+                        <br> <strong>images/</strong>
+                        <br> <strong>sitecake-backup/</strong>
+                        <br> <strong>sitecake-temp/</strong>
+                        <br> sitecake/
+                        <br> sitecake.php
+                        <br> index.html
+
+                    </p>
+
+                    <p>What happened is that Sitecake created new folders to save possible content.</p>
+
+                    <ul>
+                        <li><em>files/</em> for saving uploaded files (PDFs, for example)</li>
+                        <li><em>images/</em> for saving uploaded images</li>
+                        <li><em>sitecake-backup/</em> for creating backups. After each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes possible to roll back to any edit in time. Max number of backups is configurable.</li>
+                        <li><em>sitecake-temp/</em> for draft pages and some other things </li>
+                    </ul>
+
+                    <h3>Disallowing Certain Files For Editing</h3>
+
+                    <p>If your website contains directories or files that should not be managed by Sitecake create <em>.scignore</em> file inside your site root and list all files and directories inside. Each one in a new line.</p>
+                    <p>Keep in mind that by default Sitecake is checking only for <em>html</em>, <em>htm</em>, <em>php</em> and <em>php5</em> files (this could be set differently through <a href="configuration.html">configuration</a>) so there is no need to list files that don't have one of these extensions (e.g. .htaccess file)</p>
+
+                    <p><em>.scignore</em> file example :</p>
+
+                    <p class="code nohighlight">framework-dir/
+                        <br>wordpress/
+                        <br>some-file-not-managed-by-sitecake.php
+                        <br>some-file-not-managed-by-sitecake.html
+                        <br>subfolder/some-file-not-managed-by-sitecake.html
+                    </p>
+
+
+
+                    <p>Now, let's go further on page structure.</p>
+
+
+
+                    <h2>Page Structure</h2>
+
+
+
+                    <p>Sitecake content <em>sc-content</em> CSS class added to an HTML tag makes that tag a wrapper for editable content. Existing code within Sitecake content wrapper becomes initial content once Sitecake loads. All tags supported by Sitecake are editable. Other content is only movable, can be drag and dropped around the website, but is not editable.</p>
+                    <p>At the moment Sitecake supports these content types: </p>
+
+                    <ul>
+                        <li><em>h1-h6</em> headings</li>
+                        <li><em>p</em> paragraph</li>
+                        <li><em>ul</em> unordered list</li>
+                        <li><em>img</em> image</li>
+                        <li><em>a</em> links (but only inside <em>p</em>, <em>h1-h6</em> or <em>ul</em>), can be text links, image links or email links </li>
+                        <li><em>sc-photoset</em> Sitecake CSS class assigned to masonry style gallery created by drag and dropping more than one image on the page</li>
+                        <li><em>sc-map</em> Sitecake CSS class assigned to embedded Google map</li>
+                    </ul>
+
+                    <p>NOTE: The list of supported content types will be expanded after release of Sitecake v3 which brings support for third party plugins.</p>
+
+
+                    <p>There are two types of <em>sc-content</em> containers:</p>
+
+                    <ul>
+                        <li>Basic container <em>sc-content</em> </li>
+                        <li>Repeater, container used for repeated content <em>sc-content-something</em></li>
+                    </ul>
+
+                    <p><strong>Basic containers</strong> are simply editable parts of a web page.</p>
+                    <p><strong>Repeater containers</strong> have a name attached to them and act as content repeaters. If several website pages have same repeater container, after editing one of them, Sitecake will copy edited content on all pages. Typical use for repeaters are side columns and footers</p>
+
+                    <p>The following HTML is an example of a website page that with a repeater (<em>sc-content-footer</em>) and two basic containers (marked with <em>sc-content</em>).</p>
+
+                    <p class="code">
+                        &lt;html&gt;
+                        <br> &nbsp;&nbsp;&lt;body&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="row"&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col sc-content"&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Left column&lt;/h1&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Left column text&lt;/p&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col sc-content"&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Right column&lt;/h1&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Right column text&lt;/p&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="footer sc-content-footer"&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is the site footer present on all pages&lt;/p&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&lt;/body&gt;
+                        <br> &lt;/html&gt;
+                    </p>
+                    <h2>Don't Nest sc-content Elements</h2>
+                    <p>Sitecake does not support nested <em>sc-content</em> element inside another <em>sc-content</em> element. Like in the example below:</p>
+
+                    <p class="code html">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is proper content.&lt;/p&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is nested content. Do not expect it to work.&lt;/p&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!--Sidebar-->
+            <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 sc-content-sidebar">
+                <h4>Using Sitecake</h4>
+                <ul class="list-unstyled">
+                    <li><a href="getting-started.html">Getting started</a></li>
+                    <li><a href="working-with-text.html">Working with text</a></li>
+                    <li><a href="working-with-images.html">Working with images</a></li>
+                    <li><a href="adding-videos.html">Adding videos</a></li>
+                    <li><a href="adding-google-maps.html">Adding Google Maps</a></li>
+                    <li><a href="adding-tweets.html">Adding Tweets</a></li>
+                    <li><a href="applying-predefined-css-styles.html">Applying predefined CSS styles</a></li>
+                    <li><a href="sitecake-cheatsheat.html">Sitecake cheatsheet</a></li>
+
+                </ul>
+                <h4>Website Integration</h4>
+                <ul class="list-unstyled">
+                    <li><a href="install.html">How to install</a></li>
+                    <li><a href="website-integration.html">Website integration</a></li>
+                    <li><a href="user-styles.html">User styles</a></li>
+                    <li><a href="using-javascript.html">Using Javascript</a></li>
+                    <li><a href="working-with-php.html">Working with PHP</a></li>
+                    <li><a href="languages.html">Multiple language support</a></li>
+                    <li><a href="updating-sitecake-to-a-new-version.html">Updating to a new version</a></li>
+                    <li><a href="password-forgotten.html">Reset password</a></li>
+                    <li><a href="configuration.html">Configuration</a></li>
+
+                </ul>
+                <h4>Misc</h4>
+                <ul class="list-unstyled">
+                    <li><a href="release-notes.html">Release Notes</a></li>
+                </ul>
+            </div>
+
+
+
+        </div>
+
+
+
+        <!-- //DOCUMENTATION CONTENT -->
+
+
+
+
+    </div>
+    <!--container-->
+
+
+    <!-- Start Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Help &amp; Support</dt>
+                        <dd>
+                            <a href="https://sitecake.com/docs/install.html" title="Sitecake documentation">Documentation</a>
+                        </dd>
+                        <dd>
+                            <a href="http://support.sitecake.com/hc/en-us/requests/new">Send a ticket</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Resources</dt>
+                        <dd>
+                            <a href="https://sitecake.com/templates.html" title="Sitecake Templates">Templates</a>
+                        </dd>
+                        <dd>
+                            <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
+                        </dd>
+                        <dd>
+                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
+                        </dd>
+
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Learn More</dt>
+                        <dd>
+                            <a href="https://sitecake.com/docs/install.html">How to install Sitecake</a>
+
+
+                        </dd>
+                        <dd><a href="https://sitecake.com/docs/website-integration.html">Website integration</a></dd>
+                        <dd><a href="https://sitecake.com/docs/configuration.html">Configuring Sitecake</a></dd>
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dt>Follow us</dt>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://twitter.com/sitecake">
+                                <img src="img/footer-social-twitter.png" alt="footer-social-twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sitecake" title="Sitecake on Github">
+                                <img src="img/footer-social-github.png" alt="footer-social-github" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+
+
+    <!-- Google Code for Remarketing Tag -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 948703456;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/948703456/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+
+    <script id="dsq-count-scr" src="//sitecake.disqus.com/count.js" async></script>
+
+</body>
+
+</html>

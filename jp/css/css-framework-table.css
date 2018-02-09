@@ -1,0 +1,89 @@
+/******************************
+
+     CSS-FRAMEWORK-TABLE.CSS
+
+
+******************************/
+
+#css_framework_table {
+    display: inline-block;
+    border-spacing: 0;
+    border-collapse: collapse;
+    overflow-x: auto;
+    max-width: 100%;
+    text-align: left;
+    vertical-align: top;
+    background: linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 0 0, linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 100% 0;
+    background-attachment: scroll, scroll;
+    background-size: 1px 100%, 1px 100%;
+    background-repeat: no-repeat, no-repeat;
+    font-family: Lato;
+    color: #222;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+#css_framework_table caption {
+    font-size: 16px;
+    background: #fff;
+    caption-side: top;
+    text-align: center;
+    color: #222;
+}
+
+#css_framework_table td,
+#css_framework_table th {
+    padding: .28em .68em;
+    vertical-align: center;
+    font-size: 16px;
+    border: 1px solid #f2f2f2;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+
+}
+
+#css_framework_table td:first-child,
+#css_framework_table th:first-child {
+    height: 53px;
+    padding-left: 0;
+    background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-size: 2px 100%;
+    background-repeat: no-repeat;
+    border-left: 0;
+}
+
+#css_framework_table td:last-child,
+#css_framework_table th:last-child {
+    padding-right: 0;
+    border-right: 0;
+    background-image: linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-position: 100% 0;
+    background-size: 2px 100%;
+    background-repeat: no-repeat;
+}
+
+
+#css_framework_table td:only-child,
+#css_framework_table th:only-child {
+    background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-position: 0 0, 100% 0;
+    background-size: 2px 100%, 2px 100%;
+    background-repeat: no-repeat, no-repeat;
+}
+
+#css_framework_table th {
+    line-height: 1.2;
+    text-align: left;
+}
+
+#css_framework_table td a {
+    color: #0cb5e6;
+
+}
+
+#css_framework_table td a:hover {
+    color: #51bcda;
+}

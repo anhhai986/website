@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Sitecake, release notes" />
+    <title>Sitecake Release Notes</title>
+    <meta name="description" content="" />
+    <meta name="city" content="New York" />
+    <meta name="country" content="US" />
+    <meta name="allow-search" content="yes" />
+    <meta name="robots" content="all, index, follow" />
+    <meta name="copyright" content="Sitecake" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--Lato font from Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/docs.css" type="text/css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-touch-icon-57x57.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-touch-icon-60x60.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-touch-icon-72x72.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-touch-icon-76x76.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-touch-icon-120x120.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-touch-icon-144x144.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon-152x152.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon-180x180.png?v=yy0966qJGm">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-32x32.png?v=yy0966qJGm" sizes="32x32">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-194x194.png?v=yy0966qJGm" sizes="194x194">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-96x96.png?v=yy0966qJGm" sizes="96x96">
+    <link rel="icon" type="image/png" href="../img/favicon/android-chrome-192x192.png?v=yy0966qJGm" sizes="192x192">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-16x16.png?v=yy0966qJGm" sizes="16x16">
+    <link rel="manifest" href="../img/favicon/manifest.json?v=yy0966qJGm">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico?v=yy0966qJGm">
+    <meta name="msapplication-TileColor" content="#61cae9">
+    <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png?v=yy0966qJGm">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml?v=yy0966qJGm">
+    <meta name="theme-color" content="#61cae9">
+
+    <!-- Code Highlight -->
+    <link rel="stylesheet" href="css/highlight-pack/foundation.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            hljs.configure({
+                useBR: true
+            });
+
+            $('p.code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '224938111181968');
+        fbq('track', "PageView");
+
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <nav>
+            <ul class="nav">
+                <li class="pull-xs-none pull-sm-left">
+                    <a class="navbar-brand" href="https://sitecake.com"><img src="img/sitecake-logo-small.png" alt="Sitecake logo" title="Sitecake homepage" /></a>
+                </li>
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link download" href="../download.html" title="Download Sitecake">Download</a>
+                </li>
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="https://forum.sitecake.com" title="Sitecake community">Forum</a>
+                </li>
+
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="getting-started.html" title="Sitecake Documentation">Docs</a>
+                </li>
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="../showcase.html" title="Sitecake run websites">Showcase</a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+        <!-- DOCUMENTATION CONTENT -->
+        <div class="row documentation">
+
+            <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
+                <h1>Release Notes </h1>
+            </div>
+            <div class="col-xs-12 col-md-9 col-md-push-3">
+                <div class="sc-content documentation-content">
+
+
+                    <h2> 2.4.7 Release Notes</h2>
+                    <p class="date">11/12/2017</p>
+
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Pages with a lot of <em>sc-content</em> sections are further optimized for better performance</li>
+                    </ul>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Page urls conversion to editable urls in edit mode</li>
+                        <li>URLs of uploaded files are now correctly set</li>
+                        <li><em>sc-content</em> class set to header element caused issues</li>
+                        <li>Menu update issue after publish</li>
+
+                    </ul>
+
+                    <h2> 2.4.6 Release Notes</h2>
+                    <p class="date">10/30/2017</p>
+
+
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Background content saves and page publish optimized.</li>
+                        <li>Publish time is drastically shortened.</li>
+                        <li>Page processing is done on a single page load. Earlier all pages were prepared on login.</li>
+                        <li>Dependency libraries that were slowing content processing are removed or rewritten.</li>
+                        <li>Internal PHP website warnings are still logged, but not displayed any more.</li>
+                    </ul>
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Chrome browser edit mode scrolling issue has been fixed.</li>
+
+                    </ul>
+
+                    <h2> 2.4.5 Release Notes</h2>
+                    <p class="date">6/15/2017</p>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Support for Croatian language &#40;hr&#41; added</li>
+                        <li>Page manager: newly created page stays selected after publish </li>
+                        <li>Page manager: page order kept after adding or deleting a page</li>
+                    </ul>
+                    <h3>Bug Fixes</h3>
+                    <ul>
+
+                        <li>Fixed: processing menus for pages excluded within <em>.scpages</em></li>
+                        <li>Fixed: cache inconsistency for <em>.scpages</em> listed files</li>
+                        <li>Fixed: user was not able to navigate website through page links in edit mode</li>
+                        <li>Fixed: Sitecake not handling menus in included files listed in <em>
+                            .scpages</em></li>
+                        <li>Fixed: converting urls with query string</li>
+                        <li>Fixed: h4 and h6 toolbar buttons are reversed</li>
+                        <li>Fixed: menu with zero pages could not be saved</li>
+                    </ul>
+
+
+                    <h2> 2.4.4 Release Notes</h2>
+                    <p class="date">4/27/2017</p>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+
+                        <li>Cache inconsistency caused Sitecake to delete pages excluded through .scpages file</li>
+                    </ul>
+
+
+                    <h2> 2.4.3 Release Notes</h2>
+                    <p class="date">4/25/2017</p>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Menu items with UTF-8 encoding are supported</li>
+                        <li>Files and folders specified in <em>.scpages</em>, can be declared with asterisk</li>
+                    </ul>
+                    <h3>Bug Fixes</h3>
+                    <ul>
+
+                        <li>Fixed: Sitecake removed classes on content items without defined user styles</li>
+                        <li>Fixed: Incorrect page URLs were displayed in page details modal
+                        </li>
+                    </ul>
+
+                    <h2> 2.4.2 Release Notes</h2>
+                    <p class="date">4/21/2017</p>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Page manager added. Clone existing pages, delete and reorder. Drag and drop manage menu items.</li>
+                        <li>Basic on page SEO available (set page title, description, url, see how it looks in Google snippet)</li>
+
+
+                        <li>Updates for PHP7 support</li>
+                        <li>Default template for menu item changed to render as element
+                        </li>
+                        <li>Improvements in error handling and logging</li>
+                        <li>Default value for '<em>pages.use_document_relative_paths</em>' changed to false</li>
+
+
+                        <li>Page manager keyboard shortcuts (D,H,S,ESC, DEL) added</li>
+                    </ul>
+
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Attributes on paragraphs, headings and image elements are no longer removed by Sitecake</li>
+                        <li>Classes that are not defined as Sitecake user styles are no longer removed by Sitecake</li>
+                        <li>Fixes for backups handling</li>
+                        <li>PHP version check 5.6 instead of 5.5</li>
+                        <li>SEO page details in page manager are now saved correctly</li>
+                        <li>Problem with HTML loading with native PHP DOM fixed (warnings suppressed)</li>
+
+                    </ul>
+
+
+
+                    <h2> 2.3.6 Release Notes</h2>
+                    <p class="date">10/15/2016</p>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Supported for PHP 7 added. New minimal version for running Sitecake is PHP 5.6</li>
+                        <li>Opening link in a new window supported</li>
+                        <li>request parametar name for opening Sitecake on a page changed to "scpage"
+                            <br>(<em>sitecake.php?scpage=contact.html</em>)</li>
+                    </ul>
+
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Fixed: BACKSPACE/DEL deletes content of the bullet list</li>
+                        <li>Fixed: CloudFlare caching issue</li>
+                        <li>Fixed: Bad (404) redirection after logout from asubdirectory</li>
+                        <li>Fixed: Crashing on undo press while editing text element</li>
+                        <li>Fixed: Impossible to press delete (X button) on image placeholder</li>
+                        <li>Fixed: Srcset disappearance</li>
+                        <li>Fixed: Undo caused duplication of <em>br</em> tags</li>
+
+                    </ul>
+
+
+
+                    <h2> 2.3.4 Release Notes</h2>
+                    <p class="date">7/29/2016</p>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>
+                            Improved session handling
+                        </li>
+                    </ul>
+
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>
+                            Fixed: error handler shows full paths inside error message description
+                        </li>
+                        <li> Fixed: Sitecake tried to copy deleted files and displayed missing file error
+                        </li>
+                    </ul>
+
+
+                    <h2> 2.3.2 Release Notes</h2>
+                    <p class="date">7/15/2016</p>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+
+                        <li>
+                            Improved session handling
+                        </li>
+                        <li>
+                            Fixed: In edit mode links to other pages failed to invoke Sitecake toolbar on a newly open page
+                        </li>
+                        <li> Fixed: site root permission check failure, manifesting in HTTP 500 error
+                        </li>
+                    </ul>
+
+
+                    <h2> 2.3.1 Release Notes</h2>
+                    <p class="date">6/30/2016</p>
+
+                    <h3>New Features</h3>
+                    <ul>
+                        <li>
+                            PHP sites supported - except for HTML files/pages, PHP pages can also be edited by Sitecake (certain restrictions applied).
+                        </li>
+                        <li>
+                            Subdirectories support - Sitecake can edit pages located in subdirectories as well.
+                        </li>
+                        <li>
+                            Explicitly control what pages are under Sitecake control
+                        </li>
+                        <li>
+                            Automatic refresh of draft content upon manual template changes - when page files are manually changed, draft files (in sitecake-temp) are automatically updated.
+                        </li>
+                        <li>
+                            New server side (PHP) session handlers supported (memcache, memcached and redis)
+                        </li>
+                        <li>
+                            Logging server-side (PHP) errors into log file
+                        </li>
+                    </ul>
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>
+                            Configurable entry point URL (sitecake.php)
+                        </li>
+                        <li>
+                            HTML code within content containers beautified
+                        </li>
+                        <li>
+                            Support for multi-class user styles
+                        </li>
+                        <li>
+                            Support for user styles in named content containers
+                        </li>
+                        <li>
+                            Prevent caching of the editor configuration file
+                        </li>
+                        <li>
+                            Server side logging and error handling improved
+                        </li>
+                    </ul>
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>
+                            Fixed: CSS rules with pseudo selectors treated as user styles
+                        </li>
+                        <li>
+                            Fixed: problem with logging out from non-index pages
+                        </li>
+                        <li>Fixed: raw html content item cannot be clicked/selected after initial edit</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!--Sidebar-->
+            <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 sc-content-sidebar">
+                <h4>Using Sitecake</h4>
+                <ul class="list-unstyled">
+                    <li><a href="getting-started.html">Getting started</a></li>
+                    <li><a href="working-with-text.html">Working with text</a></li>
+                    <li><a href="working-with-images.html">Working with images</a></li>
+                    <li><a href="adding-videos.html">Adding videos</a></li>
+                    <li><a href="adding-google-maps.html">Adding Google Maps</a></li>
+                    <li><a href="adding-tweets.html">Adding Tweets</a></li>
+                    <li><a href="applying-predefined-css-styles.html">Applying predefined CSS styles</a></li>
+                    <li><a href="sitecake-cheatsheat.html">Sitecake cheatsheet</a></li>
+
+                </ul>
+                <h4>Website Integration</h4>
+                <ul class="list-unstyled">
+                    <li><a href="install.html">How to install</a></li>
+                    <li><a href="website-integration.html">Website integration</a></li>
+                    <li><a href="user-styles.html">User styles</a></li>
+                    <li><a href="using-javascript.html">Using Javascript</a></li>
+                    <li><a href="working-with-php.html">Working with PHP</a></li>
+                    <li><a href="languages.html">Multiple language support</a></li>
+                    <li><a href="updating-sitecake-to-a-new-version.html">Updating to a new version</a></li>
+                    <li><a href="password-forgotten.html">Reset password</a></li>
+                    <li><a href="configuration.html">Configuration</a></li>
+
+                </ul>
+                <h4>Misc</h4>
+                <ul class="list-unstyled">
+                    <li><a href="release-notes.html">Release Notes</a></li>
+                </ul>
+            </div>
+
+
+
+        </div>
+
+
+
+        <!-- //DOCUMENTATION CONTENT -->
+
+
+
+
+    </div>
+    <!--container-->
+
+
+    <!-- Start Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Help &amp; Support</dt>
+                        <dd>
+                            <a href="https://sitecake.com/docs/install.html" title="Sitecake documentation">Documentation</a>
+                        </dd>
+                        <dd>
+                            <a href="http://support.sitecake.com/hc/en-us/requests/new">Send a ticket</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Resources</dt>
+                        <dd>
+                            <a href="https://sitecake.com/templates.html" title="Sitecake Templates">Templates</a>
+                        </dd>
+                        <dd>
+                            <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
+                        </dd>
+                        <dd>
+                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Learn More</dt>
+                        <dd>
+                            <a href="https://sitecake.com/docs/install.html">How to install Sitecake</a>
+
+
+                        </dd>
+                        <dd><a href="https://sitecake.com/docs/website-integration.html">Website integration</a></dd>
+                        <dd><a href="https://sitecake.com/docs/configuration.html">Configuring Sitecake</a></dd>
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dt>Follow us</dt>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://twitter.com/sitecake">
+                                <img src="img/footer-social-twitter.png" alt="footer-social-twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sitecake" title="Sitecake on Github">
+                                <img src="img/footer-social-github.png" alt="footer-social-github" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+
+
+    <!-- Google Code for Remarketing Tag -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 948703456;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/948703456/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+
+    <script id="dsq-count-scr" src="//sitecake.disqus.com/count.js" async></script>
+
+</body>
+
+</html>

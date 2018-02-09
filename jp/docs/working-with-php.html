@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Sitecake, documentation" />
+    <title>Sitecake Docs: Using PHP</title>
+    <meta name="description" content="Learn how you can manage PHP websites with Sitecake" />
+    <meta name="city" content="New York" />
+    <meta name="country" content="US" />
+    <meta name="allow-search" content="yes" />
+    <meta name="robots" content="all, index, follow" />
+    <meta name="copyright" content="Sitecake" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--Lato font from Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/docs.css" type="text/css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-touch-icon-57x57.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-touch-icon-60x60.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-touch-icon-72x72.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-touch-icon-76x76.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-touch-icon-120x120.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-touch-icon-144x144.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon-152x152.png?v=yy0966qJGm">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon-180x180.png?v=yy0966qJGm">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-32x32.png?v=yy0966qJGm" sizes="32x32">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-194x194.png?v=yy0966qJGm" sizes="194x194">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-96x96.png?v=yy0966qJGm" sizes="96x96">
+    <link rel="icon" type="image/png" href="../img/favicon/android-chrome-192x192.png?v=yy0966qJGm" sizes="192x192">
+    <link rel="icon" type="image/png" href="../img/favicon/favicon-16x16.png?v=yy0966qJGm" sizes="16x16">
+    <link rel="manifest" href="../img/favicon/manifest.json?v=yy0966qJGm">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico?v=yy0966qJGm">
+    <meta name="msapplication-TileColor" content="#61cae9">
+    <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png?v=yy0966qJGm">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml?v=yy0966qJGm">
+    <meta name="theme-color" content="#61cae9">
+
+    <!-- Code Highlight -->
+    <link rel="stylesheet" href="css/highlight-pack/foundation.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            hljs.configure({
+                useBR: true
+            });
+
+            $('p.code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '224938111181968');
+        fbq('track', "PageView");
+
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Jaco Screen Recording -->
+    <script type="text/javascript">
+        (function(e, t) {
+            function r(e, t) {
+                e[t] = function() {
+                    e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
+                };
+            }
+            var n = "JacoRecorder";
+            (function(e, t, i, s) {
+                if (!i.__VERSION) {
+                    e[n] = i;
+                    var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
+                    for (var u = 0; u < o.length; u++) r(i, o[u]);
+                    i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
+                    var a = t.createElement("script");
+                    a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
+                    var f = t.getElementsByTagName("head")[0];
+                    f.appendChild(a);
+                }
+            })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
+        }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <nav>
+            <ul class="nav">
+                <li class="pull-xs-none pull-sm-left">
+                    <a class="navbar-brand" href="https://sitecake.com"><img src="img/sitecake-logo-small.png" alt="Sitecake logo" title="Sitecake homepage" /></a>
+                </li>
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link download" href="../download.html" title="Download Sitecake">Download</a>
+                </li>
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="https://forum.sitecake.com" title="Sitecake community">Forum</a>
+                </li>
+
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="getting-started.html" title="Sitecake Documentation">Docs</a>
+                </li>
+
+                <li class="pull-xs-right pull-sm-right">
+                    <a class="nav-link" href="../showcase.html" title="Sitecake run websites">Showcase</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!-- DOCUMENTATION CONTENT -->
+        <div class="row documentation">
+
+            <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
+                <h1>Working With PHP</h1>
+            </div>
+
+            <div class="col-xs-12 col-md-9 col-md-push-3">
+                <div class="sc-content documentation-content">
+
+
+                    <p>From the version 2.3 Sitecake started working with PHP files. If you are using Sitecake with a PHP website, there are several things to know:</p>
+
+                    <ul>
+                        <li>
+                            <p>Complete <em>sc-content</em> element should be contained inside a single file. Opening <em>sc-content</em> element in one file and closing it in another would not work.</p>
+                        </li>
+                        <li>
+                            <p>PHP code inside <em>sc-content</em> element will be overwritten with rendered HTML after first save/publish</p>
+                        </li>
+                        <li>
+                            <p>Paths used in php <em>include</em> and <em>require</em> methods that contain editable content should be relative because Sitecake creates copies of your website files and works with copies. If used paths are full paths, Sitecake will always include original files. If you make changes to <em>sc-content</em> element that is located inside an included file, page refresh would not be enough to see the changes, you should have to publish the page to be able to see the changes.<br> On the other hand, if you want to include configuration file or file where you defined functions you use in your pages, you should use full path for inclusion. So, for example, if you want to include config file that is outside of your site root, you could use <em>include_once($_SERVER['DOCUMENT_ROOT'] . '/../config.php);</em></p>
+                        </li>
+                    </ul>
+
+
+
+
+                    <!--
+                    <h2>Multilevel folder support</h2>
+
+                    <p>Sitecake supports multi level folder structure. By default, all <em>php</em>, <em>php5</em>, <em>htm</em> and <em>html</em> files in the website root are editable with Sitecake. In case you want to make other files editable you should list them in <em>.scpages</em> file located in the site root. </p>
+
+                    <p class="code nohighlight">
+                        sitecake/
+                        <br> sitecake.php
+                        <br> .scpages
+                    </p>
+
+                    <p>Here is an example of a <em>.scpages</em> file</p>
+
+                    <p class="code nohighlight">
+                        humans.txt
+                        <br>content/whitepaper.php
+                        <br>content/research.php
+                        <br>team/
+                        <br>!about-us.php
+                        <br>!contact.html
+                    </p>
+
+                    <ul>
+                        <li>any file listed will be editable with Sitecake</li>
+                        <li>complete folders can be included for editing, just add folder path followed by a slash</li>
+                        <li>putting ! in front of page name will exclude a page from editing</li>
+                        <li>all paths listed in <em>.scpages</em> should be relative to site root</li>
+                    </ul>
+-->
+
+
+                    <h2>Sitecake files and folders</h2>
+
+                    <p>Here is the short description of things found in sitecake/ folder. </p>
+
+                    <p class="code nohighlight">
+                        sitecake/
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;2.3.1/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version folder
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration files
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bootstrap.php&nbsp;&nbsp;&nbsp;&nbsp;application bootstrap
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;environment check
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake configuration
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locale/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;translation .yml files
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server source files
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake classes
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;services entry point
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vendor/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;third party libraries
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credentials.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;credentials file
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credential.php.default&nbsp;&nbsp;&nbsp;reset credentials file
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;editor.cnf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor configuration
+                        <br>sitecake.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;application entry point
+                        <br>
+
+
+                    </p>
+
+
+
+
+
+
+
+
+
+
+                    <h2>Misc</h2>
+                    <p>Sitecake suports memcache, memcached and redis session handling.</p>
+
+                </div>
+
+            </div>
+
+
+
+            <!--Sidebar-->
+            <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 sc-content-sidebar">
+                <h4>Using Sitecake</h4>
+                <ul class="list-unstyled">
+                    <li><a href="getting-started.html">Getting started</a></li>
+                    <li><a href="working-with-text.html">Working with text</a></li>
+                    <li><a href="working-with-images.html">Working with images</a></li>
+                    <li><a href="adding-videos.html">Adding videos</a></li>
+                    <li><a href="adding-google-maps.html">Adding Google Maps</a></li>
+                    <li><a href="adding-tweets.html">Adding Tweets</a></li>
+                    <li><a href="applying-predefined-css-styles.html">Applying predefined CSS styles</a></li>
+                    <li><a href="sitecake-cheatsheat.html">Sitecake cheatsheet</a></li>
+
+                </ul>
+                <h4>Website Integration</h4>
+                <ul class="list-unstyled">
+                    <li><a href="install.html">How to install</a></li>
+                    <li><a href="website-integration.html">Website integration</a></li>
+                    <li><a href="user-styles.html">User styles</a></li>
+                    <li><a href="using-javascript.html">Using Javascript</a></li>
+                    <li><a href="working-with-php.html">Working with PHP</a></li>
+                    <li><a href="languages.html">Multiple language support</a></li>
+                    <li><a href="updating-sitecake-to-a-new-version.html">Updating to a new version</a></li>
+                    <li><a href="password-forgotten.html">Reset password</a></li>
+                    <li><a href="configuration.html">Configuration</a></li>
+
+                </ul>
+                <h4>Misc</h4>
+                <ul class="list-unstyled">
+                    <li><a href="release-notes.html">Release Notes</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+
+        <!-- //DOCUMENTATION CONTENT -->
+
+
+
+
+    </div>
+    <!--container-->
+
+
+    <!-- Start Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Help &amp; Support</dt>
+                        <dd>
+                            <a href="https://sitecake.com/docs/install.html" title="Sitecake documentation">Documentation</a>
+                        </dd>
+                        <dd>
+                            <a href="http://support.sitecake.com/hc/en-us/requests/new">Send a ticket</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Resources</dt>
+                        <dd>
+                            <a href="https://sitecake.com/templates.html" title="Sitecake Templates">Templates</a>
+                        </dd>
+                        <dd>
+                            <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
+                        </dd>
+                        <dd>
+                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
+                        </dd>
+
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dl>
+                        <dt>Learn More</dt>
+                        <dd>
+                            <a href="https://sitecake.com/docs/install.html">How to install Sitecake</a>
+
+
+                        </dd>
+                        <dd><a href="https://sitecake.com/docs/website-integration.html">Website integration</a></dd>
+                        <dd><a href="https://sitecake.com/docs/configuration.html">Configuring Sitecake</a></dd>
+                    </dl>
+                </div>
+
+                <div class="col-xs-3">
+                    <dt>Follow us</dt>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://twitter.com/sitecake">
+                                <img src="img/footer-social-twitter.png" alt="footer-social-twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sitecake" title="Sitecake on Github">
+                                <img src="img/footer-social-github.png" alt="footer-social-github" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+
+
+    <!-- Google Code for Remarketing Tag -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 948703456;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/948703456/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+
+    <script id="dsq-count-scr" src="//sitecake.disqus.com/count.js" async></script>
+
+</body>
+
+</html>

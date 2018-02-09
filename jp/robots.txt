@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+Disallow: /sitecake/
+Disallow: /sitecake-content/
+Disallow: /services/
+Disallow: /temp/
+Disallow: /cdn-cgi/
+Disallow: /demo/
+
+
+
+
+
+
+
+
+
+
+
+
+
