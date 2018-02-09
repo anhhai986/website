@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Cheatsheet</title>
-    <meta name="description" content="Quick reference for editing with Sitecake. Learn Sitecake keyboard shortcuts." />
+    <title>Sitecakeの文書：チートシート</title>
+    <meta name="description" content="Sitecakeでの編集の際に便利な参照シートです。Sitecakeのキーボードショートカットが記載されています。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -130,34 +128,35 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Sitecake Cheatsheet</h1>
+                <h1>Sitecakeチートシート</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
-                    <h2>Text actions and selection</h2>
+                    <h2>テキストのアクションと選択</h2>
                     <hr>
-                    <p><em>Click on text</em> - edit text in-place</p>
-                    <p><em>Click outside text</em> - end text editing</p>
-                    <p><em>Click on a element and drag</em> - drag and drop reorder page elements</p>
-                    <p><em>Click and drag outside of an elements</em> - create lasso selection</p>
-                    <p><em>ENTER</em> - finish editing current paragraph, start another</p>
-                    <p><em>SHIFT+ENTER</em> - add an empty line (<em>br</em>) inside the paragraph </p>
-                    <p><em>CTRL+A</em> - select all elements on the page DEL delete selected elements</p>
-                    <p><em>CTRL+Z</em> - undo previous action</p>
-                    <p><em>CTRL+Y</em> - redo previous action </p>
+                    <p><em>テキストをクリック</em> - テキストを編集</p>
+                    <p><em>テキストの外側をクリック</em> - テキスト編集を終了</p>
+                    <p><em>エレメントをドラッグ</em> - ページエレメントをドラッグ＆ドロップで並び替え</p>
+                    <p><em>エレメントの外側でクリック＆ドラッグ</em> - 投げ縄選択</p>
+                    <p><em>ENTER</em> - 現在の段落の編集を終了して、次を開始</p>
+                    <p><em>SHIFT+ENTER</em> - 段落内に改行 (<em>br</em>) を追加</p>
+                    <p><em>CTRL+A</em> - ページ内の全てのエレメントを選択
+                    <p><em>DEL</em> - 選択したエレメントを削除</p>
+                    <p><em>CTRL+Z</em> - 前のアクションを元に戻す</p>
+                    <p><em>CTRL+Y</em> - 前のアクションをやり直す</p>
 
 
-                    <h2>Image and video actions</h2>
+                    <h2>画像とビデオのアクション</h2>
                     <hr>
 
-                    <p><em>Click on an image / map / video</em> - enter RESIZE mode</p>
-                    <p><em>Clicks two times on an image</em> - enter CROP mode</p>
-                    <p><em>Click three times on an image</em> - enter FRAME mode
+                    <p><em>画像/地図/ビデオをクリック</em> - リサイズモード開始</p>
+                    <p><em>画像を2回クリック</em> - 切り抜きモード開始</p>
+                    <p><em>画像を3回クリック</em> - フレームモード開始
                     </p>
 
-                    <p style="display:none;"><em>P</em> - open page manager (from version 2.4+)</p>
+                    <p style="display:none;"><em>P</em> - ページマネージャーを開く (バージョン2.4以降)</p>
 
                 </div>
 
@@ -232,10 +231,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 
@@ -280,11 +275,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

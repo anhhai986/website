@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Applying Predefined CSS Styles</title>
-    <meta name="description" content="Learn how to use custom styles with Sitecake CMS." />
+    <title>Sitecakeの文書：予め定義したCSSスタイルの適用</title>
+    <meta name="description" content="Sitecake CMSで独自の予め定義したCSSスタイルを適用する方法をご紹介します。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -132,7 +130,7 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Applying Predefined CSS Styles</h1>
+                <h1>予め定義したCSSスタイルの適用</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
@@ -143,11 +141,11 @@
                     <p>
                         <br>
                     </p>
-                    <p>It is possible to assign several visual styles for a certain content type (paragraph, list, image). If this is the case Sitecake will display the list of additional style options in the drop down menu on the toolbar.
+                    <p>特定のコンテンツタイプ（段落、箇条書き、画像）に複数の視覚的スタイルを割り当てることができます。 この場合、Sitecakeツールバーのドロップダウンメニューに追加のスタイルオプションのリストが表示されます。
 
-                        <img src="../img/docs-user-styles.png" alt="Sitecake user styles preview"> Style drop down is visible only when there are additional styles for a certain content type. No styles, no selector.
+                        <img src="../img/docs-user-styles.png" alt="Sitecake user styles preview">スタイルドロップダウンは、特定のコンテンツタイプに追加のスタイルがある場合にのみ表示されます。 スタイルが存在しないと、セレクタは利用できません。
                     </p>
-                    <p>Learn how to <a href="user-styles.html">define user styles</a>.
+                    <p><a href="user-styles.html">ユーザースタイルの定義の方法はこちら</a>。
                     </p>
 
                     <p>
@@ -227,9 +225,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
                     </dl>
                 </div>
 
@@ -274,11 +269,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

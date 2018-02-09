@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Updating to a new version</title>
-    <meta name="description" content="Easy steps for updating Sitecake to the latest version." />
+    <title>Sitecakeの文書：最新版へのアップデート</title>
+    <meta name="description" content="Sitecakeを簡単に最新版へアップデートする方法。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -132,39 +130,39 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Updating To A New Version</h1>
+                <h1>最新版へのアップデート</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
 
-                    <h2>Summary</h2>
+                    <h2>要約</h2>
                     <ul class="summary">
-                        <li>Extract contents of the latest Sitecake distribution </li>
-                        <li>Copy <em>sitecake/2.3.2/</em> folder next to the folder with previous version, for example <em>sitecake/2.3.1/</em></li>
-                        <li>replace old entry point <em>sitecake.php</em> with new one</li>
+                        <li>最新版のSitecakeを展開</li>
+                        <li><em>sitecake/2.3.2/</em>フォルダを以前のバージョンのフォルダの横に配置（例：<em>sitecake/2.3.1/</em>）</li>
+                        <li>以前のエントリポイント<em>sitecake.php</em>を最新版に交換</li>
                     </ul>
-                    <h2>Updating Sitecake</h2>
-                    <p>Each time we release a new version, emails with download link are sent to all users who purchased Sitecake. Simple way to do an update is just to replace <em>sitecake/</em> folder with the new one. This will work, but it will replace all configuration files with default configuration, including resetting your password to 'admin'.</p>
+                    <h2>Sitecakeの更新</h2>
+                    <p>最新版がリリースされるたびに、ダウンロードリンクの付されたメールが、全Sitecake購入者に対して送信されます。一番簡単なアップデートの方法は<em>sitecake/</em>フォルダを最新版に入れ替えることです。ただし、これではデフォルト設定などの全ての設定ファイル（これには、パスワードが'admin'にリセットすることも含まれます）の入れ替えも行なってしまいます。</p>
 
-                    <p>Smarter way to do the update is to upload folder that holds new version next to the folder with old version and keep configuration files intact. You can rename <em>sitecake.php</em> to <em>sitecake-231.php</em> or something similar and place new <em>sitecake.php</em> in the root.</p>
+                    <p>そこで賢い方法をご紹介します。最新版の入ったフォルダを前回のバージョンの入ったフォルダのすぐ横にアップロードして、設定ファイルは触れずにそのままにしてください。<em>sitecake.php</em>を<em>sitecake-231.php</em>などに名称変更して、新しい<em>sitecake.php</em>をルートに設置することができます。</p>
 
                     <p class="code nohighlight">
                         sitecake/
-                        <br> ├── 2.3.1/ (old version)
-                        <br> ├── <strong>2.3.2/ (new version)</strong>
+                        <br> ├── 2.3.1/ (以前のバージョン)
+                        <br> ├── <strong>2.3.2/ (最新版)</strong>
                         <br> ├── credentials.php.default
                         <br> ├── credentials.php
                         <br> └── editor.cnf
-                        <br>sitecake231.php (old version)
-                        <br><strong>sitecake.php (new version)</strong></p>
+                        <br>sitecake231.php (以前のバージョン)
+                        <br><strong>sitecake.php (最新版)</strong></p>
 
-                    <p>Now you can test how the update works. In case you want to roll back, just rename back <em>sitecake231.php</em> to <em>sitecake.php</em>and you are back.</p>
+                    <p>この状態で、更新がうまくいっているかテストを行ってください。元に戻したい場合には、<em>sitecake231.php</em>を<em>sitecake.php</em>に名称変更し直せば、元どおりになります。</p>
 
 
 
-                    <p>We plan to introduce silent update process. This will make your Sitecake update the same way modern browsers do. You don't even notice when it happened.</p>
+                    <p>サイレントアップデートへの移行を計画中です。これが実現した暁には、Sitecakeのアップデートは現代のブラウザと同じ仕組みで実施され、更新がなされたことにも気づかないほどになります。</p>
                 </div>
 
             </div>
@@ -244,10 +242,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 
@@ -292,11 +286,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

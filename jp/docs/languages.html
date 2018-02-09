@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Multiple Language Support</title>
-    <meta name="description" content="Learn how to change language in Sitecake " />
+    <title>Sitecakeの文書：複数言語対応</title>
+    <meta name="description" content="Sitecakeでの言語切り替え方法をご紹介します。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -133,47 +131,46 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Multiple Language Support</h1>
+                <h1>複数言語対応</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
-                    <p>
-                        Sitecake provides a possibility to switch between supported languages used for the interface (icons and button labels, text messages, etc.).
+                    <p>               Sitecakeでは、インターフェースに使用される言語（アイコンとボタンのラベル、テキストメッセージなど）を切り替えることができます。
                     </p>
 
-                    <p>At the moment the following languages are supported:</p>
+                    <p>現在使用できる言語は以下の通りです：</p>
 
                     <ul>
-                        <li>Croatian (hr)</li>
-                        <li>Czech (cs)</li>
-                        <li>Danish (dk)</li>
-                        <li>Dutch (nl)</li>
-                        <li>English (en)</li>
-                        <li>French (fr)</li>
-                        <li>German (de)</li>
-                        <li>Italian (it)</li>
-                        <li>Norwegian (nn)</li>
-                        <li>Portuguese (pt)</li>
-                        <li>Portuguese Brazil (pt-br)</li>
-                        <li>Russian (ru)</li>
-                        <li>Serbian (sr)</li>
-                        <li>Slovak (sk)</li>
-                        <li>Slovenian (sl)</li>
-                        <li>Spanish (es)</li>
-                        <li>Turkish (tr)</li>
+                        <li>クロアチア語 (hr)</li>
+                        <li>チェコ語 (cs)</li>
+                        <li>デンマーク語 (dk)</li>
+                        <li>オランダ語 (nl)</li>
+                        <li>英語 (en)</li>
+                        <li>フランス語 (fr)</li>
+                        <li>ドイツ語 (de)</li>
+                        <li>イタリア語 (it)</li>
+                        <li>ノルウェー語 (nn)</li>
+                        <li>ポルトガル語 (pt)</li>
+                        <li>ブラジルポルトガル語 (pt-br)</li>
+                        <li>ロシア語 (ru)</li>
+                        <li>セルビア語 (sr)</li>
+                        <li>スロバキア語 (sk)</li>
+                        <li>スロベニア語 (sl)</li>
+                        <li>スペイン語 (es)</li>
+                        <li>トルコ語 (tr)</li>
                     </ul>
 
-                    <p>The interface language is specified by setting the <strong>LocaleProxyImpl.interfaceLocale</strong> configuration paramter (in the <em>editor.cnf</em> file).</p>
+                    <p>インタフェース言語については、<em>editor.cnf</em>ファイルの<strong> LocaleProxyImpl.interfaceLocale</strong>設定のパラメータを指定してください。</p>
 
                     <p class="code nohighlight">
                         # interface language (hr, cs, dk, nl, en, fr, de, it, nn, pt, pt-br, ru, sk, sl, es, tr, auto)
                         <br> LocaleProxyImpl.interfaceLocale = en</p>
 
-                    <p>It can be set to either the 2-letter language code (ISO 639-2 Language Codes) of a supported language or to the ‘auto’ option.</p>
-                    <p>In case the auto option is set, the interface language is selected either by the GET parameter scln, if it is presented, or by the browser (or system) language settings.</p>
-                    <p>The following is an example of URL for accessing a Sitecake-enabled page selecting English as the interface language by the scln paramter, where the LocaleProxyImpl.interfaceLocale is set to ‘auto’’:</p>
+                    <p>対応する言語の2文字 (ISO 639-2言語コード)または、‘auto’（自動）オプションに設定することができます。</p>
+                    <p>自動オプションが設定されている場合は、GETパラメータscln（提示されている場合）またはブラウザ（またはシステム）の言語設定のいずれかによってインタフェース言語が選択されます。</p>
+                    <p>以下は、LocaleProxyImpl.interfaceLocaleが'autoに設定されており、sclnパラメータによって英語をインターフェース言語として選択しているSitecakeページのURLです:</p>
                     <p class="code nohighlight">http://example.com/about.html?scln=en</p>
 
                 </div>
@@ -257,9 +254,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
                     </dl>
                 </div>
 
@@ -304,11 +298,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

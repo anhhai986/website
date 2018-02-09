@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Sitecake Website Integration</title>
-    <meta name="description" content="Defining editable parts of an HTML page, repeaters, excluding pages from editing ..." />
+    <title>Sitecakeの文書：Sitecakeウェブサイトの統合</title>
+    <meta name="description" content="編集からページを除外し、HTMLページ、リピーターの編集可能な部分を定義します。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -133,7 +133,7 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Website Integration</h1>
+                <h1>ウェブサイトの統合</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
@@ -142,31 +142,31 @@
 
 
 
-                    <h2>Summary</h2>
+                    <h2>要約</h2>
 
                     <ul class="summary">
-                        <li>Sitecake can manage both HTML and PHP websites</li>
-                        <li>You must have an index page (<em>index.html</em> or <em>index.htm</em> or <em>index.php</em> or <em>index.php5</em>) </li>
-                        <li>To make a section of a page editable add <em>sc-content</em> CSS class to a wrapper HTML element for your content</li>
-                        <li>Nesting of <em>sc-content</em> elements is not supported</li>
+                        <li>SitecakeはHTMLとPHP両方のウェブサイトを管理することができます</li>
+                        <li>インデックスページが必要です（<em>index.html</em>、<em>index.htm</em>、<em>index.php</em> または<em>index.php5</em>) </li>
+                        <li>ページのセクションを編集可能にするには、<em>sc-content</em> CSSクラスをコンテンツのラッパーHTML要素に追加します</li>
+                        <li><em>sc-content</em>要素のネストはサポートされていません</li>
                     </ul>
 
-                    <h2>Website Structure</h2>
+                    <h2>ウェブサイトの構造</h2>
 
-                    <p>Once you download and extract contents of the Sitecake archive it will look like this:</p>
+                    <p>Sitecakeアーカイブのコンテンツをダウンロード、抽出すると、次のようになります。</p>
 
                     <p class="code nohighlight">sitecake/
                         <br>sitecake.php
                     </p>
 
-                    <p><em>sitecake/</em> folder contains Sitecake code and configuration. <em>sitecake.php</em> is used as the entry point for editing. Sitecake alone is not operational. You must have at least an index page, with at least one editable <em>div</em> to start editing. So, the bare minimum is:</p>
+                    <p><em>sitecake/</em>フォルダには、Sitecakeのコードと設定が含まれています。 <em>sitecake.php</em>は編集のエントリポイントとして使用されます。Sitecakeだけでは動作しません。 編集を開始するには、少なくとも1つの編集可能な<em>div</em>を持つインデックスページが必要です。 したがって、最低限のものは次のとおりです。</p>
 
                     <p class="code nohighlight">
                         sitecake/
                         <br> sitecake.php
                         <br> <strong>index.html</strong>
                     </p>
-                    <p>With index file and one editable <em>div</em> inside you will be able to add new content: headings, text, lists, videos ... </p>
+                    <p>インデックスファイルと編集可能な<em>div</em>を使って、見出し、テキスト、リスト、ビデオなど新しいコンテンツを追加することができます。</p>
 
                     <p class="code">
                         &lt;!DOCTYPE html&gt;
@@ -180,7 +180,7 @@
 
                     </p>
 
-                    <p>Try to login to <em>http://yourdomain.com/sitecake.php</em>, add some content and click publish. Your files on the server should look like this:</p>
+                    <p><em>http://yourdomain.com/sitecake.php</em>にログインしコンテンツを追加後、公開をクリックしてみてください。サーバー上のあなたのファイルはこのような形になります。</p>
                     <p class="code nohighlight">
                         <strong>files/</strong>
                         <br> <strong>images/</strong>
@@ -192,21 +192,21 @@
 
                     </p>
 
-                    <p>What happened is that Sitecake created new folders to save possible content.</p>
+                    <p>何が起こったのかと言うと、Sitecakeがコンテンツを保存するために新しいフォルダを作成しました。</p>
 
                     <ul>
-                        <li><em>files/</em> for saving uploaded files (PDFs, for example)</li>
-                        <li><em>images/</em> for saving uploaded images</li>
-                        <li><em>sitecake-backup/</em> for creating backups. After each publish Sitecake makes a snapshot of all files and saves copies under data stamp named folder. This makes possible to roll back to any edit in time. Max number of backups is configurable.</li>
-                        <li><em>sitecake-temp/</em> for draft pages and some other things </li>
+                        <li><em>files/</em>：アップロードしたファイルの保存（例えばPDFなど）</li>
+                        <li><em>images/</em>：アップロードした画像の保存</li>
+                        <li><em>sitecake-backup/</em>：バックアップの作成　＊それぞれが公開されると、Sitecakeはすべてのファイルのスナップショットを作成し、コピーをデータスタンプにより名前の付けられたフォルダに保存します。 これにより、任意の編集時間にロールバックすることが可能になります。 バックアップの最大数は設定可能です。</li>
+                        <li><em>sitecake-temp/</em>：下書きページとその他</li>
                     </ul>
 
-                    <h3>Disallowing Certain Files For Editing</h3>
+                    <h3>特定のファイルの編集を無効にする</h3>
 
-                    <p>If your website contains directories or files that should not be managed by Sitecake create <em>.scignore</em> file inside your site root and list all files and directories inside. Each one in a new line.</p>
-                    <p>Keep in mind that by default Sitecake is checking only for <em>html</em>, <em>htm</em>, <em>php</em> and <em>php5</em> files (this could be set differently through <a href="configuration.html">configuration</a>) so there is no need to list files that don't have one of these extensions (e.g. .htaccess file)</p>
+                    <p> Sitecakeで管理しないディレクトリやファイルがウェブサイトにある場合は、サイトルート内に<em>.scignore</em>ファイルを作成し、その中にすべてのファイルとディレクトリを掲載してください（それぞれ改行）。</p>
+                    <p>デフォルトでSitecakeは<em>html</em>、<em>htm</em>、<em>PHP</em>、<em> PHP5</em>ファイルのみをチェックしています これは<a href="configuration.html">設定</a>から変更可能です）ので、これらの拡張子を持たないファイル（例：.htaccessファイル）を掲載する必要はありません。</p>
 
-                    <p><em>.scignore</em> file example :</p>
+                    <p><em>.scignore</em>ファイルの例：</p>
 
                     <p class="code nohighlight">framework-dir/
                         <br>wordpress/
@@ -217,42 +217,41 @@
 
 
 
-                    <p>Now, let's go further on page structure.</p>
+                    <p>続いては、ページの構造を見てみましょう。</p>
 
 
 
-                    <h2>Page Structure</h2>
+                    <h2>ページの構造</h2>
 
 
 
-                    <p>Sitecake content <em>sc-content</em> CSS class added to an HTML tag makes that tag a wrapper for editable content. Existing code within Sitecake content wrapper becomes initial content once Sitecake loads. All tags supported by Sitecake are editable. Other content is only movable, can be drag and dropped around the website, but is not editable.</p>
-                    <p>At the moment Sitecake supports these content types: </p>
-
-                    <ul>
-                        <li><em>h1-h6</em> headings</li>
-                        <li><em>p</em> paragraph</li>
-                        <li><em>ul</em> unordered list</li>
-                        <li><em>img</em> image</li>
-                        <li><em>a</em> links (but only inside <em>p</em>, <em>h1-h6</em> or <em>ul</em>), can be text links, image links or email links </li>
-                        <li><em>sc-photoset</em> Sitecake CSS class assigned to masonry style gallery created by drag and dropping more than one image on the page</li>
-                        <li><em>sc-map</em> Sitecake CSS class assigned to embedded Google map</li>
-                    </ul>
-
-                    <p>NOTE: The list of supported content types will be expanded after release of Sitecake v3 which brings support for third party plugins.</p>
-
-
-                    <p>There are two types of <em>sc-content</em> containers:</p>
+                    <p>Sitecakeのコンテンツ<em>sc-content</em>HTMLタグにCSSクラスを追加すると、そのタグは編集可能なコンテンツのラッパーになります。Sitecakeコンテンツラッパー内の既存のコードは、Sitecakeが読み込まれると初期のコンテンツになります。Sitecakeが対応するすべてのタグは編集可能です。他のコンテンツは移動可能で、ウェブサイト上でドラッグ＆ドロップすることはできますが、編集はできません。</p>
+                    <p>現在Sitecakeが対応するのは以下のコンテンツタイプです：</p>
 
                     <ul>
-                        <li>Basic container <em>sc-content</em> </li>
-                        <li>Repeater, container used for repeated content <em>sc-content-something</em></li>
+                        <li><em>h1-h6</em>見出し</li>
+                        <li><em>p</em>段落</li>
+                        <li><em>ul</em>数字のない箇条書き</li>
+                        <li><em>img</em>画像</li>
+                        <li><em>a</em>リンク（ただし<em>p</em>, <em>h1-h6</em>または <em>ul</em>内のみ）＊テキストリンク, 画像リンク, メールリンク</li>
+                        <li><em>sc-photoset</em> Sitecake CSSクラス（ページ内に複数の画像を用いて、タイル式スタイルギャラリーに、ドラッグ＆ドロップで適用されたもの）</li>
+                        <li><em>sc-map</em> Sitecake CSSクラス（埋め込んだGoogleマップに適用されたもの）</li>
                     </ul>
 
-                    <p><strong>Basic containers</strong> are simply editable parts of a web page.</p>
-                    <p><strong>Repeater containers</strong> have a name attached to them and act as content repeaters. If several website pages have same repeater container, after editing one of them, Sitecake will copy edited content on all pages. Typical use for repeaters are side columns and footers</p>
+                    <p>補足：サードパーティのプラグインに対応するSitecake v3のリリース後、利用可能なコンテンツタイプは拡張されます。</p>
 
-                    <p>The following HTML is an example of a website page that with a repeater (<em>sc-content-footer</em>) and two basic containers (marked with <em>sc-content</em>).</p>
 
+                    <p><em>sc-content</em>コンテナは2種類あります：</p>
+
+                    <ul>
+                        <li>ベーシックコンテナ<em>sc-content</em> </li>
+                        <li>リピーター（コンテンツの繰り返し<em>sc-content-something</em>に使用）</li>
+                    </ul>
+
+                    <p><strong>ベーシックコンテナ</strong>はウェブページの中でもシンプルに編集可能な領域です。</p>
+                    <p><strong>リピーターコンテナ</strong>には名前が付され、コンテントの繰り返しを行います。いくつものウェブサイトのページに同じリピーターコンテナがある場合、その1つを編集するだけで、Sitecakeは編集されたコンテンツをすべての該当ページにコピーします。 リピーターの典型的な用途は、サイドカラムとフッターです。</p>
+
+                    <p>次のHTMLは、リピーター（<em>sc-content-footer</em>）と2つの基本コンテナ（<em>sc-content</em>）を持つウェブサイトページの例です。</p>
                     <p class="code">
                         &lt;html&gt;
                         <br> &nbsp;&nbsp;&lt;body&gt;
@@ -260,7 +259,7 @@
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col sc-content"&gt;
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Left column&lt;/h1&gt;
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Left column text&lt;/p&gt;
-                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col sc-content"&gt;
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Right column&lt;/h1&gt;
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Right column text&lt;/p&gt;
@@ -272,8 +271,8 @@
                         <br> &nbsp;&nbsp;&lt;/body&gt;
                         <br> &lt;/html&gt;
                     </p>
-                    <h2>Don't Nest sc-content Elements</h2>
-                    <p>Sitecake does not support nested <em>sc-content</em> element inside another <em>sc-content</em> element. Like in the example below:</p>
+                    <h2>sc-content要素をネストに使用しないこと</h2>
+                    <p>Sitecakeは、他の<em>sc-content</em>要素にネストされた<em>sc-content</em>要素には対応していません（以下の例を参照のこと）。</p>
 
                     <p class="code html">
                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="sc-content"&gt;
@@ -364,10 +363,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 

@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: How to Install</title>
-    <meta name="description" content="Three step guide to start managing your website with Sitecake CMS" />
+    <title>Sitecakeの文書：インストール方法</title>
+    <meta name="description" content="Sitecake CMSでウェブサイトを管理するための3ステップガイドです。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -131,7 +129,7 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>How to Install</h1>
+                <h1>インストール方法</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
@@ -139,17 +137,17 @@
 
 
 
-                    <h2>Requirements</h2>
-                    <p>Sitecake is php CMS. Also it's a flat file CMS so you do not need a database. All you need is:</p>
+                    <h2>要件</h2>
+                    <p>SitecakeはPHP CMSです。また、フラットファイルCMSなので、データベースは必要ありません。必要なのは以下の通りです：</p>
 
                     <ul>
-                        <li>web server (Apache or NGINX)</li>
-                        <li>PHP 5.6+</li>
+                        <li>ウェブサーバー (ApacheまたはNGINX)</li>
+                        <li>PHP 5.6以降</li>
                     </ul>
 
-                    <h2>Step 1: Adapt your website for Sitecake </h2>
+                    <h2>ステップ1：ウェブサイトをSitecake向けに調整</h2>
 
-                    <p>Add <em>sc-content</em> class to divs you want editable.</p>
+                    <p><em>sc-content</em>クラスを編集したいdivに追加してください。</p>
 
                     <p class="code">
                         &lt;div <span class="html-blue">class="sc-content"</span>&gt;
@@ -161,12 +159,13 @@
 
                     </p>
 
-                    <p>Do not nest <em>sc-content</em> divs. It's not supported. </p>
-                    <p>If you want same content repeated on several pages, for sidebars, footers or anything else, just name sc-content class with specific name: <em>sc-content-footer</em>.</p>
+                    <p><em>sc-content</em> divをネスト構造にしないでください。そのような構造には対応していません。</p>
+                    <p>サイドバー、フッタ、その他何かのページで同じコンテンツを繰り返したい場合は、sc-contentクラスに特定の名前を付けてください：
+                    <em>sc-content-footer</em></p>
 
-                    <h2>Step 2: Upload your website and Sitecake to hosting</h2>
+                    <h2>ステップ2：ウェブサイトとSitecakeをホスティングにアップロード</h2>
 
-                    <p>Upload your website and Sitecake to the same folder on your hosting. You should have this folder structure:</p>
+                    <p>あなたのウェブサイトとSitecakeをホスティング先の同じフォルダにアップロードしてください。 以下のフォルダ構造を持つ必要があります：</p>
 
                     <p class="code nohighlight">
                         /css
@@ -179,13 +178,13 @@
                         <span class="html-blue">sitecake.php</span>
                     </p>
 
-                    <p>If you still do not have Sitecake, get it from the <a href="../download.html">download page</a>. If you want an easy start, get some of our <a href="../templates.html">free html templates</a> from the templates page</p>
-                    <p>Extract archives with cPanel File Manager or use a script like <a href="https://www.akeebabackup.com/products/akeeba-kickstart.html">Akeeba Kickstart</a></p>
+<p>まだSitecakeをお持ちでない場合は、<a href="../download.html">ダウンロードページ</a>からこれを入手してください。 簡単な使い方をお求めの場合は、<a href="../templates.html">無料のhtmlテンプレート</a>をテンプレートページから入手してください。</p>
+                    <p>cPanel File Managerを使用してアーカイブを抽出するか、<a href="https://www.akeebabackup.com/products/akeeba-kickstart.html">Akeeba Kickstart </a>のようなスクリプトを使用してください。</p>
 
-                    <h2>Step 3: Start editing</h2>
-                    <p>Point browser to <em>http://domain.com/sitecake.php</em> and login with <em>admin</em> pass to start editing. That's it! Not very complicated.</p>
-                    <p>If you haven't tried <a href="https://sitecake.com/demo" title="Sitecake editing demo">Sitecake demo</a>, try it now, it should give you some editing feel </p>
-                    <p>If haven't seen a 2 minute video in which I show basic editing capabilities, <a href="https://www.youtube.com/watch?v=MomffHIOa7A&feature=youtu.be" title="Sitecake demo video">watch it now</a>.</p>
+                    <h2>ステップ3：編集を開始</h2>
+                    <p>ブラウザで<em>http://domain.com/sitecake.php</em>に移動し、パスワードに<em>admin</em>を使用してログインし編集を開始してください。これだけで完了です！</p>
+                    <p><a href="https://sitecake.com/demo" title="Sitecake editing demo">Sitecakeデモ</a>のお試しがまだの場合には、今すぐお使いください。使い心地がよくわかるはずです。</p>
+                    <p>基本的な編集機能を紹介した<a href="https://www.youtube.com/watch?v=MomffHIOa7A&feature=youtu.be" title="Sitecake demo video">2分のビデオ</a>もご覧ください。</p>
 
                 </div>
 
@@ -260,9 +259,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
                     </dl>
                 </div>
 
@@ -307,11 +303,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

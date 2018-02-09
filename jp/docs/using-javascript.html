@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Using Javascript</title>
-    <meta name="description" content="Learn how to avoid Javascript conflicts with Sitecake editor" />
+    <title>Sitecakeの文書：Javascriptの利用</title>
+    <meta name="description" content="JavascriptがSitecakeエディタと干渉しない方法をご紹介します。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -132,22 +130,22 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Using Javascript</h1>
+                <h1>Javascriptの利用</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
 
-                    <h2>Summary</h2>
+                    <h2>要約</h2>
                     <ul class="summary">
-                        <li>In case of clash of custom javascript code with Sitecake editor, detect edit mode with <em>sitecakeGlobals.editMode</em> boolean and turn your script off</li>
+                        <li>Sitecakeエディタと干渉し、javascriptコードがクラッシュしてしまった時には、<em>sitecakeGlobals.editMode</em>ブーリアンで編集モードを検知し、スクリプトをオフにしてください。</li>
                     </ul>
 
-                    <h2>Example</h2>
+                    <h2>例</h2>
 
-                    <p>It happens that some specific javascript you want to use can clash with Sitecake in edit mode. Solution is to exclude that script in edit mode. There is a boolean <em>sitecakeGlobals.editMode</em> that you can use for edit mode detection. </p>
-                    <p>Put this script in the header of your page:</p>
+                    <p>特定のjavascriptが編集モードでSitecakeとクラッシュすることはあり得ます。解決策は、編集モードでそのスクリプトを取り除くことです。<em>sitecakeGlobals.editMode</em>ブーリアンを編集モードの検知に利用することができます。</p>
+                    <p>このスクリプトをページのヘッダーに記述してください。</p>
 
                     <p class="code javascript">&lt;script type="text/javascript"&gt;
                         <br> &nbsp;&nbsp;$(function() {
@@ -237,10 +235,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 
@@ -285,11 +279,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

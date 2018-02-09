@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Working with Text</title>
-    <meta name="description" content="Learn how to manage headings, paragraphs and lists." />
+    <title>Sitecakeの文書：テキストの使用方法</title>
+    <meta name="description" content="見出し、段落、箇条書きの利用方法をご紹介します。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -131,7 +129,7 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Working with Text</h1>
+                <h1>テキストの利用方法</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
@@ -142,40 +140,41 @@
                     <p>
                         <br>
                     </p>
-                    <p>Right now Sitecake can work with three text elements:</p>
+                    <p>現段階でSitecakeは3種類のテキストエレメントに対応しています。</p>
                     <ul>
-                        <li>headings (<em>h1-h6</em>)</li>
-                        <li>paragraphs (<em>p</em>)</li>
-                        <li>bullet lists (<em>ul</em>)</li>
+                        <li>見出し(<em>h1-h6</em>)</li>
+                        <li>段落(<em>p</em>)</li>
+                        <li>箇条書き (<em>ul</em>)</li>
                     </ul>
 
 
 
 
-                    <p>To add a new text element drag and drop toolbar icon (heading, text or bullets) on the page and enter the text.</p>
+                    <p>新しいテキストエレメントを追加するには、ツールバーアイコン（見出し、テキスト、または、箇条書き）をページにドラッグ＆ドロップして、テキストを入力してください。</p>
 
-                    <p>To edit existing text element just click the text and edit in place.</p>
+                    <p>既存のテキストエレメントを編集するには、テキストをクリックして、その場で修正を行ってください。</p>
 
-                    <p>Template designer can define a number of different <a href="user-styles.html">CSS user styles</a> for each text element so users can apply them from a toolbar drop down menu.</p>
+                    <p>テンプレートデザイナーは、ユーザーがツールバードロップダウンメニューから利用できるように、各テキストエレメントに対して複数の<a href="user-styles.html">CSSユーザースタイル</a>を定義することができます。</p>
 
-                    <p>In order to apply inline styles select a couple of words form a sentence. Once selection is made you can:</p>
+                    <p>インラインスタイルを適用するには、テキスト内の文字を選択してください。選択後には、複数の操作を行うことができます。</p>
                     <ul>
-                        <li> assign text as bold (<em>strong</em>) </li>
-                        <li>assign text as italic (<em>em</em>) </li>
-                        <li>add a web link</li>
-                        <li>add an email link</li>
+                        <li>太字 (<em>strong</em>) </li>
+                        <li>イタリック体 (<em>em</em>) </li>
+                        <li>ウェブリンクを追加</li>
+                        <li>メールリンクを追加</li>
                     </ul>
 
 
 
 
 
-                    <p> Text selection will open address bar in the toolbar where you can paste a web or email address. To create an email link just click gray area to the left of the address bar to toggle between web and email link. Select little square icon on the right of the address to open a link in a new browser window. (<em>target ="_blank"</em>)</p>
+                    <p>テキストの選択後に、ツールバーに、アドレスバーが表示されるので、そこにウェブ/メールリンクを貼り付けてください。メールリンクを作成するには、アドレスバー左にあるグレーのエリアをクリックして、ウェブとメールの切り替えを行なってください。アドレスの右側に表示される小さな四角をクリックすると、そのリンクが新規ウィンドウで表示されます。 (<em>target ="_blank"</em>)</p>
 
-                    <p>To end text editing mode click anywhere outside of the editable area. Use <a href="sitecake-cheatsheat.html">keyboard shortcuts</a> to edit faster.</p>
+                    <p>テキスト編集モードを終了するには、編集可能エリアの外側のどこかをクリックしてください。素早く編集するには
+                、<a href="sitecake-cheatsheat.html">キーボードショートカット</a>が便利です。</p>
 
                     <p>
-                        Read next: <a href="working-with-images.html">Working with images</a>
+                       次へ：<a href="working-with-images.html">画像の使い方</a>
                     </p>
 
                 </div>
@@ -250,10 +249,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 
@@ -298,11 +293,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

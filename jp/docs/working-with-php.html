@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Docs: Using PHP</title>
-    <meta name="description" content="Learn how you can manage PHP websites with Sitecake" />
+    <title>Sitecakeの文書：PHPの利用</title>
+    <meta name="description" content="PHPウェブサイトをSitecakeで管理する方法をご紹介します。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,21 +88,20 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
 
     <!-- Jaco Screen Recording -->
     <script type="text/javascript">
-        (function(e, t) {
+        (function (e, t) {
             function r(e, t) {
-                e[t] = function() {
+                e[t] = function () {
                     e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
                 };
             }
             var n = "JacoRecorder";
-            (function(e, t, i, s) {
+            (function (e, t, i, s) {
                 if (!i.__VERSION) {
                     e[n] = i;
                     var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
@@ -116,7 +114,6 @@
                 }
             })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
         }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
-
     </script>
 
 </head>
@@ -155,24 +152,25 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Working With PHP</h1>
+                <h1>PHPの使い方</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
 
-                    <p>From the version 2.3 Sitecake started working with PHP files. If you are using Sitecake with a PHP website, there are several things to know:</p>
+                    <p>バージョン2.3よりSitecakeはPHPファイルと連動するようになりました。SitecakeをPHPウェブサイト向けに利用する際には、いくつかのポイントをご理解ください。</p>
 
                     <ul>
                         <li>
-                            <p>Complete <em>sc-content</em> element should be contained inside a single file. Opening <em>sc-content</em> element in one file and closing it in another would not work.</p>
+                            <p>完全な<em>sc-content</em>エレメントを1つのファイル内に格納するようにしてください。<em>sc-content</em>エレメントをあるファイルで開き、他のファイルで閉じる行為は機能しません。</p>
                         </li>
                         <li>
-                            <p>PHP code inside <em>sc-content</em> element will be overwritten with rendered HTML after first save/publish</p>
+                            <p><em>sc-content</em>エレメント内のPHPコードは、最初の保存/公開後、レンダリングされたHTMLにより上書きされます。</p>
                         </li>
                         <li>
-                            <p>Paths used in php <em>include</em> and <em>require</em> methods that contain editable content should be relative because Sitecake creates copies of your website files and works with copies. If used paths are full paths, Sitecake will always include original files. If you make changes to <em>sc-content</em> element that is located inside an included file, page refresh would not be enough to see the changes, you should have to publish the page to be able to see the changes.<br> On the other hand, if you want to include configuration file or file where you defined functions you use in your pages, you should use full path for inclusion. So, for example, if you want to include config file that is outside of your site root, you could use <em>include_once($_SERVER['DOCUMENT_ROOT'] . '/../config.php);</em></p>
+                            <p>Sitecakeはウェブサイトのファイルのコピーを作成し、それに基づき動作するので、編集可能なコンテンツを含む、phpの<em>include</em>や<em>require</em>といったメソッドで使用されるパスは相対でなければなりません。絶対パスを利用すると、Sitecakeは常にオリジナルのファイルを含む形となります。そこに含まれるファイル内に位置する<em>sc-content</em>エレメントに変化を加えても、その変化を確認するにはページの再読み込みだけでは不十分で、ページの公開が必要となります。<br>
+							一方で、設定ファイルや、ページで使用する機能を定義したファイルを利用する際には、絶対パスを利用するようにしてください。たとえば、あなたのサイトルート外にある設定ファイルを含むには、<em>include_once($_SERVER['DOCUMENT_ROOT'] . '/../config.php);</em>を利用することができます。</p>
                         </li>
                     </ul>
 
@@ -210,27 +208,27 @@
 -->
 
 
-                    <h2>Sitecake files and folders</h2>
+                    <h2>Sitecakeのファイルとフォルダ</h2>
 
-                    <p>Here is the short description of things found in sitecake/ folder. </p>
+                    <p>sitecake/フォルダ内についての簡単な説明がこちらです。</p>
 
                     <p class="code nohighlight">
                         sitecake/
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;2.3.1/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version folder
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration files
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bootstrap.php&nbsp;&nbsp;&nbsp;&nbsp;application bootstrap
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;environment check
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake configuration
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locale/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;translation .yml files
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server source files
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake classes
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;services entry point
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vendor/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;third party libraries
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credentials.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;credentials file
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credential.php.default&nbsp;&nbsp;&nbsp;reset credentials file
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;editor.cnf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor configuration
-                        <br>sitecake.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;application entry point
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;2.3.1/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;バージョンフォルダ
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;エディタ
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;設定ファイル
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bootstrap.php&nbsp;&nbsp;&nbsp;&nbsp;アプリケーションbootstrap
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;環境チェック
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake設定
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locale/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;翻訳.yml files
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;サーバーソースファイル
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecake/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitecakeクラス
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;サービスエントリポイント
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vendor/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;サードパーティライブラリ
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credentials.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;クレデンシャルファイル
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;credential.php.default&nbsp;&nbsp;&nbsp;リセットクレデンシャルファイル
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;editor.cnf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;エディタ設定
+                        <br>sitecake.php&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;アプリケーションエントリポイント
                         <br>
 
 
@@ -245,8 +243,8 @@
 
 
 
-                    <h2>Misc</h2>
-                    <p>Sitecake suports memcache, memcached and redis session handling.</p>
+                    <h2>その他</h2>
+                    <p>Sitecakeはmemcache、memcached、redisによるセッションハンドリングに対応しています。</p>
 
                 </div>
 
@@ -326,10 +324,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 
@@ -374,11 +368,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

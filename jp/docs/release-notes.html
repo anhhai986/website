@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, release notes" />
-    <title>Sitecake Release Notes</title>
+    <title>Sitecakeリリースノート</title>
     <meta name="description" content="" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
@@ -132,242 +132,238 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Release Notes </h1>
+                <h1>リリースノート</h1>
             </div>
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
 
-                    <h2> 2.4.7 Release Notes</h2>
-                    <p class="date">11/12/2017</p>
+                    <h2> 2.4.7リリースノート</h2>
+                    <p class="date">2017年11月12日</p>
 
-                    <h3>Improvements</h3>
+                    <h3>改善</h3>
                     <ul>
-                        <li>Pages with a lot of <em>sc-content</em> sections are further optimized for better performance</li>
+                        <li><em>sc-content</em>セクションを多く含むページでのパフォーマンス改善のために最適化が施されました</li>
                     </ul>
 
-                    <h3>Bug Fixes</h3>
+                    <h3>バグの修正</h3>
                     <ul>
-                        <li>Page urls conversion to editable urls in edit mode</li>
-                        <li>URLs of uploaded files are now correctly set</li>
-                        <li><em>sc-content</em> class set to header element caused issues</li>
-                        <li>Menu update issue after publish</li>
-
-                    </ul>
-
-                    <h2> 2.4.6 Release Notes</h2>
-                    <p class="date">10/30/2017</p>
-
-
-                    <h3>Improvements</h3>
-                    <ul>
-                        <li>Background content saves and page publish optimized.</li>
-                        <li>Publish time is drastically shortened.</li>
-                        <li>Page processing is done on a single page load. Earlier all pages were prepared on login.</li>
-                        <li>Dependency libraries that were slowing content processing are removed or rewritten.</li>
-                        <li>Internal PHP website warnings are still logged, but not displayed any more.</li>
-                    </ul>
-                    <h3>Bug Fixes</h3>
-                    <ul>
-                        <li>Chrome browser edit mode scrolling issue has been fixed.</li>
+                        <li>編集モードでのページURLの編集可能URLへの変換</li>
+                        <li>ファイルアップロードのURLを正しく設定</li>
+                        <li>ヘッダーエレメント関連の問題対処のために<em>sc-content</em>クラス を設定</li>
+                        <li>公開後のメニュー更新問題への対処</li>
 
                     </ul>
 
-                    <h2> 2.4.5 Release Notes</h2>
-                    <p class="date">6/15/2017</p>
-                    <h3>Improvements</h3>
-                    <ul>
-                        <li>Support for Croatian language &#40;hr&#41; added</li>
-                        <li>Page manager: newly created page stays selected after publish </li>
-                        <li>Page manager: page order kept after adding or deleting a page</li>
-                    </ul>
-                    <h3>Bug Fixes</h3>
-                    <ul>
+                    <h2> 2.4.6リリースノート</h2>
+                    <p class="date">2017年10月30日</p>
 
-                        <li>Fixed: processing menus for pages excluded within <em>.scpages</em></li>
-                        <li>Fixed: cache inconsistency for <em>.scpages</em> listed files</li>
-                        <li>Fixed: user was not able to navigate website through page links in edit mode</li>
-                        <li>Fixed: Sitecake not handling menus in included files listed in <em>
-                            .scpages</em></li>
-                        <li>Fixed: converting urls with query string</li>
-                        <li>Fixed: h4 and h6 toolbar buttons are reversed</li>
-                        <li>Fixed: menu with zero pages could not be saved</li>
+
+                    <h3>改善</h3>
+                    <ul>
+                        <li>バックグラウンドでのコンテンツ保存とページ公開の最適化</li>
+                        <li>公開時間の圧倒的短縮</li>
+                        <li>1回のページ読み込みでページ処理を実行（以前は全てのページはログインで利用可能となっていた）</li>
+                        <li>コンテンツ処理の遅延原因となっていたディペンデンシライブラリの削除または書き換え</li>
+                        <li>内部PHPウェブサイト警告がログに記録されるものの、表示は解消</li>
+                    </ul>
+                    <h3>バグの修正</h3>
+                    <ul>
+                        <li>クロームブラウザの編集モードスクロールの問題を解消</li>
+
                     </ul>
 
-
-                    <h2> 2.4.4 Release Notes</h2>
-                    <p class="date">4/27/2017</p>
-
-                    <h3>Bug Fixes</h3>
+                    <h2> 2.4.5リリースノート</h2>
+                    <p class="date">2017年6月15日</p>
+                    <h3>改善</h3>
+                    <ul>
+                        <li>クロアチア語&#40;hr&#41;への対応を開始</li>
+                        <li>ページマネージャー：新規作成ページは公開後も選択状態に</li>
+                        <li>ページマネージャー：ページの追加または削除後にもページの並びを維持</li>
+                    </ul>
+                    <h3>バグの修正</h3>
                     <ul>
 
-                        <li>Cache inconsistency caused Sitecake to delete pages excluded through .scpages file</li>
+                        <li>修正：<em>.scpages</em>にて除外されたページのメニュー処理</li>
+                        <li>修正：<em>.scpages</em>掲載ファイルのキャッシュの非一貫性</li>
+                        <li>修正：エディットモードでユーザーはページリンクを介してウェブサイトを移動することができなかった</li>
+                        <li>修正：<em>
+                            .scpages</em>掲載のファイルにおけるメニューへのSitecakeの非対応</li>
+                        <li>修正：URLをクエリストリングで変換</li>
+                        <li>修正：h4とh6ツールバーボタンの入れ替え</li>
+                        <li>修正：ページの存在しないメニューの保存不可</li>
                     </ul>
 
 
-                    <h2> 2.4.3 Release Notes</h2>
-                    <p class="date">4/25/2017</p>
-                    <h3>Improvements</h3>
-                    <ul>
-                        <li>Menu items with UTF-8 encoding are supported</li>
-                        <li>Files and folders specified in <em>.scpages</em>, can be declared with asterisk</li>
-                    </ul>
-                    <h3>Bug Fixes</h3>
+                    <h2> 2.4.4リリースノート</h2>
+                    <p class="date">2017年4月27日</p>
+
+                    <h3>バグの修正</h3>
                     <ul>
 
-                        <li>Fixed: Sitecake removed classes on content items without defined user styles</li>
-                        <li>Fixed: Incorrect page URLs were displayed in page details modal
+                        <li>キャッシュの非一貫性によりSitecakeが .scpagesファイルを介して除外されたページを削除</li>
+                    </ul>
+
+
+                    <h2> 2.4.3リリースノート</h2>
+                    <p class="date">2017年4月25日</p>
+                    <h3>改善</h3>
+                    <ul>
+                        <li>UTF-8エンコードのメニューアイテム対応</li>
+                        <li><em>.scpages</em>にて特定したファイルとフォルダをアスタリスクで宣言</li>
+                    </ul>
+                    <h3>バグの修正</h3>
+                    <ul>
+
+                        <li>修正：Sitecakeがユーザースタイルの定義されていないコンテンツのクラスを除去</li>
+                        <li>修正：ページ詳細モーダルでの不正確なページURL表示</li>
+                    </ul>
+
+                    <h2> 2.4.2リリースノート</h2>
+                    <p class="date">2017年4月21日</p>
+                    <h3>改善</h3>
+                    <ul>
+                        <li>ページマネージャー追加。既存ページの複製、削除、並び替え。ドラッグ＆ドロップでメニューアイテムを管理</li>
+                        <li>基本的なサイト上SEO（ページタイトル、説明、URLを設定し、Googleスニペットでの表示を確認）</li>
+
+
+                        <li>PHP7サポートの更新</li>
+                        <li>メニューアイテムのデフォルトテンプレートをエレメントとしてレンダリングするよう変更
                         </li>
-                    </ul>
-
-                    <h2> 2.4.2 Release Notes</h2>
-                    <p class="date">4/21/2017</p>
-                    <h3>Improvements</h3>
-                    <ul>
-                        <li>Page manager added. Clone existing pages, delete and reorder. Drag and drop manage menu items.</li>
-                        <li>Basic on page SEO available (set page title, description, url, see how it looks in Google snippet)</li>
+                        <li>エラーの対処とログの改善</li>
+                        <li>'<em>pages.use_document_relative_paths</em>'のデフォルト値をfalseに変更</li>
 
 
-                        <li>Updates for PHP7 support</li>
-                        <li>Default template for menu item changed to render as element
-                        </li>
-                        <li>Improvements in error handling and logging</li>
-                        <li>Default value for '<em>pages.use_document_relative_paths</em>' changed to false</li>
-
-
-                        <li>Page manager keyboard shortcuts (D,H,S,ESC, DEL) added</li>
+                        <li>ページマネージャーキーボードショートカット（D,H,S,ESC, DEL）追加</li>
                     </ul>
 
 
-                    <h3>Bug Fixes</h3>
+                    <h3>バグの修正</h3>
                     <ul>
-                        <li>Attributes on paragraphs, headings and image elements are no longer removed by Sitecake</li>
-                        <li>Classes that are not defined as Sitecake user styles are no longer removed by Sitecake</li>
-                        <li>Fixes for backups handling</li>
-                        <li>PHP version check 5.6 instead of 5.5</li>
-                        <li>SEO page details in page manager are now saved correctly</li>
-                        <li>Problem with HTML loading with native PHP DOM fixed (warnings suppressed)</li>
+                        <li>段落、見出し、画像エレメントの属性がSitecakeにより除去されないように改善</li>
+                        <li>Sitecakeユーザースタイルとして定義されていないクラスがSitecakeにより除去されないように改善</li>
+                        <li>バックアップハンドリングの修正</li>
+                        <li>5.5からPHPバージョンチェック5.6へ</li>
+                        <li>SEOページ情報（ページマネージャー内）を正常に保存</li>
+                        <li>ネイティブHP DOMを使ったHTML読み込みの修正（警告の抑制）</li>
 
                     </ul>
 
 
 
-                    <h2> 2.3.6 Release Notes</h2>
-                    <p class="date">10/15/2016</p>
-                    <h3>Improvements</h3>
+                    <h2> 2.3.6リリースノート</h2>
+                    <p class="date">2016年10月15日</p>
+                    <h3>改善</h3>
                     <ul>
-                        <li>Supported for PHP 7 added. New minimal version for running Sitecake is PHP 5.6</li>
-                        <li>Opening link in a new window supported</li>
-                        <li>request parametar name for opening Sitecake on a page changed to "scpage"
+                        <li>PHP 7への対応開始。Sitecake実行の最新ミニマルバージョン（PHP 5.6）</li>
+                        <li>リンクを新規ウィンドウで開く機能搭載</li>
+                        <li>ページ上でSitecakeを開くリクエストパラメータ名を"scpage"に変更
                             <br>(<em>sitecake.php?scpage=contact.html</em>)</li>
                     </ul>
 
 
-                    <h3>Bug Fixes</h3>
+                    <h3>バグの修正</h3>
                     <ul>
-                        <li>Fixed: BACKSPACE/DEL deletes content of the bullet list</li>
-                        <li>Fixed: CloudFlare caching issue</li>
-                        <li>Fixed: Bad (404) redirection after logout from asubdirectory</li>
-                        <li>Fixed: Crashing on undo press while editing text element</li>
-                        <li>Fixed: Impossible to press delete (X button) on image placeholder</li>
-                        <li>Fixed: Srcset disappearance</li>
-                        <li>Fixed: Undo caused duplication of <em>br</em> tags</li>
+                        <li>修正：BACKSPACE/DELによる箇条書きのコンテンツ削除</li>
+                        <li>修正：CloudFlareキャッシュの問題</li>
+                        <li>修正：サブディレクトリからのログアウト後のBad (404) リダイレクト</li>
+                        <li>修正：テキストエレメント編集中の[元に戻す]実行時のクラッシュ</li>
+                        <li>修正：画像プレースホルダーの削除[x]ボタンのクリック不可</li>
+                        <li>修正：Srcset消失</li>
+                        <li>修正：[元に戻す]操作による<em>br</em>タグの複製</li>
 
                     </ul>
 
 
 
-                    <h2> 2.3.4 Release Notes</h2>
-                    <p class="date">7/29/2016</p>
-                    <h3>Improvements</h3>
+                    <h2> 2.3.4リリースノート</h2>
+                    <p class="date">2016年7月29日</p>
+                    <h3>改善</h3>
                     <ul>
                         <li>
-                            Improved session handling
+                            セッションのハンドリングを改善
                         </li>
                     </ul>
 
 
-                    <h3>Bug Fixes</h3>
+                    <h3>バグの修正</h3>
                     <ul>
                         <li>
-                            Fixed: error handler shows full paths inside error message description
+                            修正：ハンドラーエラーによるエラーメッセージ内全てのパスの表示
                         </li>
-                        <li> Fixed: Sitecake tried to copy deleted files and displayed missing file error
+                        <li>修正：Sitecakeが削除されたファイルをコピーしようとし、ファイル欠如エラーを表示
                         </li>
                     </ul>
 
 
-                    <h2> 2.3.2 Release Notes</h2>
-                    <p class="date">7/15/2016</p>
+                    <h2> 2.3.2リリースノート</h2>
+                    <p class="date">2016年7月15日</p>
 
-                    <h3>Bug Fixes</h3>
+                    <h3>バグの修正</h3>
                     <ul>
 
                         <li>
-                            Improved session handling
+                            セッションのハンドリング改善
                         </li>
-                        <li>
-                            Fixed: In edit mode links to other pages failed to invoke Sitecake toolbar on a newly open page
-                        </li>
-                        <li> Fixed: site root permission check failure, manifesting in HTTP 500 error
+                        <li>修正：エディットモードから他のページへのリンクについて、新規ページでのツールバー表示の失敗</li>
+                        <li>修正: サイトルート許可チェックの失敗（HTTP 500エラー）
                         </li>
                     </ul>
 
 
-                    <h2> 2.3.1 Release Notes</h2>
-                    <p class="date">6/30/2016</p>
+                    <h2> 2.3.1リリースノート</h2>
+                    <p class="date">2016年6月30日</p>
 
-                    <h3>New Features</h3>
+                    <h3>最新機能</h3>
                     <ul>
-                        <li>
-                            PHP sites supported - except for HTML files/pages, PHP pages can also be edited by Sitecake (certain restrictions applied).
+                        <li>PHPサイト対応 - HTMLファイル/ページを除く（PHPページのSitecakeを利用した編集も可能 *特定の制限はあり）
                         </li>
                         <li>
-                            Subdirectories support - Sitecake can edit pages located in subdirectories as well.
+                            サブディレクトリ対応 - Sitecakeを利用しサブディレクトリ内のページを編集
                         </li>
                         <li>
-                            Explicitly control what pages are under Sitecake control
+                           どのページをSitecake下でコントロールするか厳密に設定
                         </li>
                         <li>
-                            Automatic refresh of draft content upon manual template changes - when page files are manually changed, draft files (in sitecake-temp) are automatically updated.
+                            手動でのテンプレート変更後に自動で下書きコンテンツを再読み込み - ページファイルの手動の変更に合わせて、下書きファイルも (sitecake-temp内)自動で更新
                         </li>
                         <li>
-                            New server side (PHP) session handlers supported (memcache, memcached and redis)
+                           最新サーバーサイド (PHP) セッションハンドラー対応(memcache,memcached,redis)
                         </li>
                         <li>
-                            Logging server-side (PHP) errors into log file
+                            Logging サーバーサイド (PHP) のエラーをログファイルに記録
                         </li>
                     </ul>
-                    <h3>Improvements</h3>
+                    <h3>改善</h3>
                     <ul>
                         <li>
-                            Configurable entry point URL (sitecake.php)
+                            設定可能なエントリポイントURL (sitecake.php)
                         </li>
                         <li>
-                            HTML code within content containers beautified
+                            コンテンツのコンテナ内のHTMLコードの整理
                         </li>
                         <li>
-                            Support for multi-class user styles
+                            マルチクラスユーザースタイルに対応
                         </li>
                         <li>
-                            Support for user styles in named content containers
+                            名称のつけられたコンテンツコンテナ内ユーザースタイルに対応
                         </li>
                         <li>
-                            Prevent caching of the editor configuration file
+                            エディタ設定ファイルのキャッシュを阻止
                         </li>
                         <li>
-                            Server side logging and error handling improved
+                            サーバーサイドのログとエラーハンドリングを改善
                         </li>
                     </ul>
-                    <h3>Bug Fixes</h3>
+                    <h3>バグの修正</h3>
                     <ul>
                         <li>
-                            Fixed: CSS rules with pseudo selectors treated as user styles
+                            修正：擬似クラスのCSSがユーザースタイルとして扱われる
                         </li>
                         <li>
-                            Fixed: problem with logging out from non-index pages
+                            修正：インデックスでないページからのログアウト時の問題
                         </li>
-                        <li>Fixed: raw html content item cannot be clicked/selected after initial edit</li>
+                        <li>修正：htmlコンテントアイテムが最初の編集の後クリック/選択できない</li>
                     </ul>
 
                 </div>
@@ -448,9 +444,6 @@
                         </dd>
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
-                        </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
                         </dd>
                     </dl>
                 </div>

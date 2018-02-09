@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: Working with Images</title>
-    <meta name="description" content="Learn how to add images to your website. From desktop, other website or cloud services." />
+    <title>Sitecakeの文書：画像の利用</title>
+    <meta name="description" content="ウェブサイトへの画像の追加方法を学びましょう。デスクトップ、ウェブサイト、クラウドサーバーなどなどあらゆる場所から追加することができます。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -132,7 +130,7 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>Working with Images</h1>
+                <h1>画像の利用方法</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
@@ -145,37 +143,37 @@
                     </p>
 
 
-                    <p>There are three ways to add images to your page:</p>
+                    <p>ページへの画像追加方法は3種類あります</p>
                     <ul>
-                        <li>drag and drop toolbar image icon on the page, click blue placeholder and upload one or more images</li>
-                        <li>drag and drop one or more images from your desktop</li>
-                        <li>drag and drop an image from the other browser tab (other website)</li>
+                        <li>ツールバーの画像アイコンをドラッグ＆ドロップして、青のプレースホルダーをクリックして、画像をアップロードします</li>
+                        <li>デスクトップから画像をドラッグ＆ドロップします</li>
+                        <li>他のブラウザタブ（他のウェブサイト）から画像をドラッグ＆ドロップします</li>
                     </ul>
 
 
 
 
-                    <p>Images are uploaded in the background so you continue editing during the upload. This useful if you have to upload a lot of large images: upload them all at once and position on the page later.</p>
+                    <p>画像はバックグラウンドでアップロードされるので、その最中でも編集を続行することができます。大容量の画像をたくさんアップロードする必要がある時には特に便利です。全てまとめてアップロードして、後から、ページに配置することができます。</p>
 
-                    <p>Once images are uploaded, you can choose to resize, crop or frame an image.</p>
+                    <p>画像のアップロード完了後に、リサイズ、切り抜き、フレームの選択をすることも可能です。</p>
                     <ul>
-                        <li>one click on the image will enter <strong>resize mode</strong></li>
-                        <li>two clicks to enter <strong>crop mode</strong></li>
-                        <li> three clicks to enter <strong>frame mode</strong></li>
+                        <li>画像を1回クリックすると<strong>リサイズモード</strong>が始まり</li>
+                        <li>2回クリックすると<strong>切り抜きモード</strong>となり</li>
+                        <li>3回クリックすると<strong>フレームモード</strong>が開始されます。</li>
                     </ul>
 
 
 
 
-                    <p>ENTER or double click will exit image editing and save changes.</p>
+                    <p>ENTERキーまたはダブルクリックで、画像の編集が完了し、変更内容が保存されます。</p>
 
-                    <h3>Photoset</h3>
-                    <p>As a bonus, adding multiple images from your desktop will create a simple masonry style photoset. Photosets have <em>.sc-photoset</em> class attached to them so you can use it to apply your own visual style ...</p>
+                    <h3>フォトセット</h3>
+                    <p>さらにボーナスとして、デスクトップから複数の画像を追加すると、シンプルなタイル式のフォトセットが完成します。フォトセットには<em>.sc-photoset</em>のクラスが指定されており、これを編集することでお好みのスタイルが実現します。</p>
 
-                    <p>We plan to add slideshow and gallery content elements in addition to photoset. Right now only hosted slideshows can be added through Sitecake html element from a third party services like <a href="http://flickr.com" target="_blank">Flickr</a> or <a href="http://albumizr.com" target="_blank">Albumizr</a>.</p>
+                    <p>フォトセットに加え、スライドショーとギャラリーのコンテンツエレメント追加も計画中です。現段階では、SitecakeのHTMLエレメントを通して、<a href="http://flickr.com" target="_blank">Flickr</a>や<a href="http://albumizr.com" target="_blank">Albumizr</a>といったサードパーティのホステッドスライドショーのみを追加することが可能です。</p>
 
                     <p>
-                        Read next: <a href="adding-videos.html">Adding videos</a>
+                        次へ：<a href="adding-videos.html">ビデオの追加</a>
                     </p>
 
                 </div>
@@ -186,34 +184,34 @@
 
             <!--Sidebar-->
             <div class="sidebar col-xs-12 col-md-3 col-md-pull-9 sc-content-sidebar">
-                <h4>Using Sitecake</h4>
+                <h4>Sitecakeの利用方法</h4>
                 <ul class="list-unstyled">
-                    <li><a href="getting-started.html">Getting started</a></li>
-                    <li><a href="working-with-text.html">Working with text</a></li>
-                    <li><a href="working-with-images.html">Working with images</a></li>
-                    <li><a href="adding-videos.html">Adding videos</a></li>
-                    <li><a href="adding-google-maps.html">Adding Google Maps</a></li>
-                    <li><a href="adding-tweets.html">Adding Tweets</a></li>
-                    <li><a href="applying-predefined-css-styles.html">Applying predefined CSS styles</a></li>
-                    <li><a href="sitecake-cheatsheat.html">Sitecake cheatsheet</a></li>
+                    <li><a href="getting-started.html">利用開始</a></li>
+                    <li><a href="working-with-text.html">テキストの使い方</a></li>
+                    <li><a href="working-with-images.html">画像の使い方</a></li>
+                    <li><a href="adding-videos.html">ビデオの追加方法</a></li>
+                    <li><a href="adding-google-maps.html">Googleマップの追加方法</a></li>
+                    <li><a href="adding-tweets.html">ツイートの追加方法</a></li>
+                    <li><a href="applying-predefined-css-styles.html">予め定義したCSSスタイルの適用方法</a></li>
+                    <li><a href="sitecake-cheatsheat.html">Sitecakeチートシート</a></li>
 
                 </ul>
-                <h4>Website Integration</h4>
+                <h4>ウェブサイトの統合</h4>
                 <ul class="list-unstyled">
-                    <li><a href="install.html">How to install</a></li>
-                    <li><a href="website-integration.html">Website integration</a></li>
-                    <li><a href="user-styles.html">User styles</a></li>
-                    <li><a href="using-javascript.html">Using Javascript</a></li>
-                    <li><a href="working-with-php.html">Working with PHP</a></li>
-                    <li><a href="languages.html">Multiple language support</a></li>
-                    <li><a href="updating-sitecake-to-a-new-version.html">Updating to a new version</a></li>
-                    <li><a href="password-forgotten.html">Reset password</a></li>
-                    <li><a href="configuration.html">Configuration</a></li>
+                    <li><a href="install.html">インストール方法</a></li>
+                    <li><a href="website-integration.html">ウェブサイトの統合</a></li>
+                    <li><a href="user-styles.html">ユーザースタイル</a></li>
+                    <li><a href="using-javascript.html">Javascriptの利用</a></li>
+                    <li><a href="working-with-php.html">PHPの使い方</a></li>
+                    <li><a href="languages.html">複数言語サポート</a></li>
+                    <li><a href="updating-sitecake-to-a-new-version.html">最新版へのアップデート</a></li>
+                    <li><a href="password-forgotten.html">パスワードのリセット</a></li>
+                    <li><a href="configuration.html">設定</a></li>
 
                 </ul>
-                <h4>Misc</h4>
+                <h4>その他</h4>
                 <ul class="list-unstyled">
-                    <li><a href="release-notes.html">Release Notes</a></li>
+                    <li><a href="release-notes.html">リリースノート</a></li>
                 </ul>
             </div>
 
@@ -251,10 +249,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 
@@ -299,11 +293,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">

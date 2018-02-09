@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Sitecake, documentation" />
-    <title>Sitecake Documentation: User Styles</title>
-    <meta name="description" content="How to define user CSS styles so they can be picked while editing" />
+    <title>Sitecakeの文書：ユーザースタイル</title>
+    <meta name="description" content="編集中に選択されるようにユーザーのCSSスタイルを定義する方法をご紹介します。" />
     <meta name="city" content="New York" />
     <meta name="country" content="US" />
     <meta name="allow-search" content="yes" />
@@ -53,24 +53,23 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             hljs.configure({
                 useBR: true
             });
 
-            $('p.code').each(function(i, block) {
+            $('p.code').each(function (i, block) {
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -89,7 +88,6 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
-
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -132,19 +130,19 @@
         <div class="row documentation">
 
             <div class="col-xs-12 col-md-9 col-md-offset-3 sc-content">
-                <h1>User Styles</h1>
+                <h1>ユーザースタイル</h1>
             </div>
 
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
-                    <p>User styles are regular CSS styles, that are listed in Sitecake toolbar drop down for an editor to pick them and apply.</p>
+                    <p>ユーザースタイルとは、通常のCSSスタイルと同様のもので、Sitecakeのツールバードロップダウンメニューに掲載され、ユーザーはこれを選択して適用することができます。</p>
                     <img src="../img/docs-user-styles.png" alt="Sitecake user styles preview">
-                    <p>When designer designs a website he defines a set of good looking, consistent visual styles for text, images, lists and everything else. Sometimes it's useful to design a set of alternative styles that can be applied by the website editor (client) at the time of need. This kind of styles we call user styles</p>
-                    <p>To create an user style a specific CSS rule has to be defined in an external style sheet. An external style sheet is either an external CSS file referenced using the <em>&lt;link&gt;</em> or an inline style defined using the <em>&lt;style&gt;</em>.</p>
-                    <p>Let's cut the theory and give some examples:</p>
+                    <p>デザイナーがウェブサイトを設計する際には、通常、テキスト、画像、箇条書きなど全てに対して一貫したデザインを定義するものです。時に、複数種類のスタイルを用意しておき、ウェブサイトの所有者（クライアント）が自由に選択できるようにするのが便利な選択肢となります。このような種類のスタイルを、私たちはユーザースタイルと呼んでいます。</p>
+                    <p>ユーザースタイルを作成するには、特定のCSSルールを外部のスタイルシートで定義する必要があります。外部スタイルシートは、 <em>&lt;リンク&gt;</em>を利用し呼び出す外部のCSSファイルか、<em>&lt;スタイル&gt;</em>を使用し定義したインラインスタイルとなります。</p>
+                    <p>理論はこの程度にして例を見てみましょう。</p>
 
-                    <h2>Examples</h2>
-                    <p>If you have the basic structure of HTML page like this:</p>
+                    <h2>例</h2>
+                    <p>もしこのようなHTMLページの構造を使用している場合には…</p>
                     <p class="code">&lt;div class="sc-content sidebar"&gt;
                         <br> ...
                         <br>&lt;/div&gt;
@@ -154,16 +152,16 @@
                         <br>&lt;/div&gt;
                     </p>
 
-                    <p>the following would be valid user styles:</p>
+                    <p>以下が有効なユーザースタイルとなります。</p>
 
-                    <h2>Example 1</h2>
+                    <h2>例1</h2>
 
                     <p class="code">.sidebar p.red { background-color: red; }
                         <br>.sidebar p.blue { background-color: blue; } </p>
 
-                    <p>defines two variants (blue and red) of p tag in sidebar container.</p>
+                    <p>サイドバーのコンテナ内のpの2つの変数（青と赤）を定義しています。</p>
 
-                    <h2>Example 2</h2>
+                    <h2>例2</h2>
 
                     <p class="code">.sidebar ul.red-dot {
                         <br>&nbsp;&nbsp;padding: 5px;
@@ -177,28 +175,28 @@
                         <br>&nbsp;&nbsp;background: url(../images/blue-dot.png);
                         <br>}</p>
 
-                    <p>defines two styles (<em>red-dot</em> and <em>blue-dot</em>) of <em>ul</em> tag in <em>sidebar</em> container.</p>
+                    <p><em>サイドバー</em>コンテナ内の<em>ul</em>タグの2つのスタイル（<em>red-dot</em>と<em>blue-dot</em>）を定義しています。</p>
 
-                    <h2>Example 3</h2>
+                    <h2>例3</h2>
 
                     <p class="code">.sidebar p.red, .main p.red {
                         <br> ...
                         <br>}</p>
 
-                    <p>defines <em>red</em> user style for paragraphs in both <em>sidebar</em> and <em>main</em> containers.</p>
+                    <p><em>サイドバー</em>と<em>メイン</em>のコンテナ内段落の<em>red</em>ユーザースタイルを定義しています。</p>
 
-                    <h2>Example 4</h2>
+                    <h2>例4</h2>
                     <p class="code">#main-column > div.sc-html.outlined {
                         <br> &nbsp;&nbsp;outline: solid 1px red;
                         <br>}</p>
 
-                    <p>defines <em>outlined</em> style variant for the custom HTML items in the <em>main</em> container (selected by its ID).</p>
+                    <p><em>メイン</em>コンテナ内（IDにより選択）カスタムHTMLアイテムの<em>outlined</em>スタイルの変数を定義しています。</p>
 
-                    <h2>What will not work</h2>
-                    <p>Style without the parent in the declaration:</p>
+                    <h2>機能しないパターン</h2>
+                    <p>宣言に親を用いないスタイル：</p>
                     <p class="code">p.red { color:red; }</p>
 
-                    <p>If you don't put the parent, Sitecake does not know for which container to offer this alternative style.</p>
+                    <p>親を利用しないと、Sitecakeはスタイルをどのコンテナに提供すればいいのか理解できません。</p>
 
                 </div>
 
@@ -280,10 +278,6 @@
                         <dd>
                             <a href="https://sitecake.com/hosting.html" title="Recommended hosting for Sitecake">Sitecake hosting</a>
                         </dd>
-                        <dd>
-                            <a href="https://sitecake.com/resources/css-frameworks.html" title="List of CSS frameworks">CSS frameworks</a>
-                        </dd>
-
                     </dl>
                 </div>
 
@@ -328,11 +322,8 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-
-
     </script>
     <noscript>
         <div style="display:inline;">
