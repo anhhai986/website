@@ -1,0 +1,90 @@
+/*------------------------------------------------------------
+ 
+ Start Responsive CSS for Sitecake 2015.
+ 
+*-----------------------------------------------------------*/
+
+@media (max-width: 992px) {
+	header {
+		padding-top: 30px;
+	}
+	header nav {
+		float: left;
+		width: 100%;
+		text-align: center;
+		position: right;
+		right: 0;
+		top: 0;
+		margin-bottom: 30px;
+		position: relative;
+	}
+}
+@media (max-width: 768px) {
+	header {
+		padding-bottom: 30px;
+	}
+	.intro {
+		padding-bottom: 60px;
+	}
+	.intro h1 {
+		font-size: 38px;
+	}
+	.intro ul li:first-child {
+		margin-bottom: 5px;
+	}
+	.intro ul li {
+		width: 85%;
+		margin: 0 0 5px 0; 
+	}
+	.intro ul li a {
+		width: 100%;
+		-webkit-transform: skew(-17deg);
+	     -moz-transform: skew(-17deg);
+	       -o-transform: skew(-17deg);
+	}
+	.features .col-sm-6 {
+		float: left;
+		width: 100%;
+	}
+	.features h3 {
+		margin-bottom: 50px;
+	}
+	.features .features-box {
+		float: left;
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.how-to-install .col-sm-4 {
+		margin-bottom: 15px;
+	}
+	.how-to-install .browser .how-to-install-box {
+	  background: transparent url('../img/browser-responsive.png') top left;
+	}
+}
+@media (max-width: 600px) {
+	body {
+		padding-bottom: 0;
+	}
+	footer {
+		position: relative !important;
+		height: auto !important;
+	}
+	footer .col-xs-3 {
+		width: 100%;
+		text-align: center;
+	}
+	footer ul {
+		margin-bottom: 20px;
+	}
+}
+@media (max-width: 480px) {
+	.intro h1 {
+		font-size: 30px;
+	}
+	.showcase .col-xs-4 {
+		width: 100%;
+		text-align: center;
+	}
+}

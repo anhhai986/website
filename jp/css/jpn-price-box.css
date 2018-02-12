@@ -1,0 +1,15 @@
+/*--------------------------------------------
+
+    CSS for /jpn/download.html price box font
+        with headers and buttons excluded
+
+---------------------------------------------*/
+
+
+.jpn-dwnld p {
+    font-size: 0.92rem;
+}
+
+.jpn-dwnld ul li {
+    font-size: 0.83rem;
+}
