@@ -29,7 +29,12 @@ body {
     font-family: Lato, Helvetica, Arial, sans-serif;
     color: #222;
 }
-
+/************************************
+                ANGULAR
+************************************/
+[ng\:cloak], [ng-cloak], .ng-cloak { 
+    display: none !important; 
+}
 
 /*************************************
           Bootstrap overide
