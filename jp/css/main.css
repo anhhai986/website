@@ -4,7 +4,6 @@
  
 *-----------------------------------------------------------*/
 
-
 /*************************************
               General
 *************************************/
@@ -591,7 +590,6 @@ section.intro {
 }
 */
 
-
 /*************************************
                Footer
 *************************************/
@@ -874,18 +872,13 @@ footer .footer-social li a:focus {
 
 /********************************/
 
-
 /* Templates page */
-
 
 /********************************/
 
-
 /********************************/
 
-
 /* Templates page */
-
 
 /********************************/
 
@@ -1280,4 +1273,24 @@ a.btn-facebook:hover {
 
 a.btn-facebook:hover {
     background: #4669ac url('../img/ico-facebook.png') no-repeat 21px 12px;
+}
+
+
+
+/*--------------------------------------------
+
+Japanese price box font adjustments
+
+---------------------------------------------*/
+
+.jpn-dwnld p {
+    font-size: 0.80rem;
+    font-family: sans-serif;
+}
+
+.jpn-dwnld ul li {
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: sans-serif;
+
 }
