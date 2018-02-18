@@ -241,8 +241,9 @@
                 var month = d.getUTCMonth() + 1;
                 var frameworks = [];
                 $scope.frameworks = frameworks;
-
-
+                
+                
+                // Bootstrap
                 $http.get('/resources/css_github_stars/bootstrap_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.bootstrap_stars = res.data.stargazers_count;
@@ -258,7 +259,8 @@
                         $scope.frameworks.push(bootstrap)
                     })
 
-
+                
+                // Semantic
                 $http.get('/resources/css_github_stars/semantic_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.semantic_stars = res.data.stargazers_count;
@@ -272,7 +274,8 @@
                         }
                         $scope.frameworks.push(semantic)
                     })
-
+                
+                // Ionic
                 $http.get('/resources/css_github_stars/ionic_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.ionic_stars = res.data.stargazers_count;
@@ -286,7 +289,8 @@
                         }
                         $scope.frameworks.push(ionic)
                     })
-
+                
+                // Materialize
                 $http.get('/resources/css_github_stars/materialize_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.materialize_stars = res.data.stargazers_count;
@@ -300,7 +304,8 @@
                         }
                         $scope.frameworks.push(materialize)
                     })
-
+                
+                // Foundation Zurb
                 $http.get('/resources/css_github_stars/foundationzurb_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.foundationzurb_stars = res.data.stargazers_count;
@@ -314,7 +319,8 @@
                         }
                         $scope.frameworks.push(foundationzurb)
                     })
-
+                
+                // Bulma
                 $http.get('/resources/css_github_stars/bulma_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.bulma_stars = res.data.stargazers_count;
@@ -328,7 +334,8 @@
                         }
                         $scope.frameworks.push(bulma)
                     })
-
+                
+                // Pure CSS
                 $http.get('/resources/css_github_stars/purecss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.purecss_stars = res.data.stargazers_count;
@@ -342,7 +349,8 @@
                         }
                         $scope.frameworks.push(purecss)
                     })
-
+                
+                // Skeleton
                 $http.get('/resources/css_github_stars/skeleton_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.skeleton_stars = res.data.stargazers_count;
@@ -356,7 +364,8 @@
                         }
                         $scope.frameworks.push(skeleton)
                     })
-
+                
+                // Uikit
                 $http.get('/resources/css_github_stars/uikit_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.uikit_stars = res.data.stargazers_count;
@@ -370,7 +379,8 @@
                         }
                         $scope.frameworks.push(uikit)
                     })
-
+                
+                // Miligram
                 $http.get('/resources/css_github_stars/milligram_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.milligram_stars = res.data.stargazers_count;
@@ -384,7 +394,8 @@
                         }
                         $scope.frameworks.push(milligram)
                     })
-
+                
+                // Tachyons
                 $http.get('/resources/css_github_stars/tachyons_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.tachyons_stars = res.data.stargazers_count;
@@ -398,7 +409,8 @@
                         }
                         $scope.frameworks.push(tachyons)
                     })
-
+                
+                // Spectre
                 $http.get('/resources/css_github_stars/spectre_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.spectre_stars = res.data.stargazers_count;
@@ -412,7 +424,8 @@
                         }
                         $scope.frameworks.push(spectre)
                     })
-
+                
+                // Bass CSS
                 $http.get('/resources/css_github_stars/basscss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.basscss_stars = res.data.stargazers_count;
@@ -426,7 +439,8 @@
                         }
                         $scope.frameworks.push(basscss)
                     })
-
+                
+                // Topcoat
                 $http.get('/resources/css_github_stars/topcoat_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.topcoat_stars = res.data.stargazers_count;
@@ -440,7 +454,8 @@
                         }
                         $scope.frameworks.push(topcoat)
                     })
-
+                
+                // Susy
                 $http.get('/resources/css_github_stars/susy_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.susy_stars = res.data.stargazers_count;
@@ -454,7 +469,8 @@
                         }
                         $scope.frameworks.push(susy)
                     })
-
+                
+                // Mui CSS
                 $http.get('/resources/css_github_stars/muicss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.muicss_stars = res.data.stargazers_count;
@@ -468,7 +484,8 @@
                         }
                         $scope.frameworks.push(muicss)
                     })
-
+                
+                // Picnic
                 $http.get('/resources/css_github_stars/picnic_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.picnic_stars = res.data.stargazers_count;
@@ -482,7 +499,8 @@
                         }
                         $scope.frameworks.push(picnic)
                     })
-
+                
+                // Mobi CSS
                 $http.get('/resources/css_github_stars/mobicss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.mobicss_stars = res.data.stargazers_count;
@@ -496,7 +514,8 @@
                         }
                         $scope.frameworks.push(mobicss)
                     })
-
+                
+                // Hack
                 $http.get('/resources/css_github_stars/hack_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.hack_stars = res.data.stargazers_count;
@@ -510,7 +529,8 @@
                         }
                         $scope.frameworks.push(hack)
                     })
-
+                
+                // Mini CSS
                 $http.get('/resources/css_github_stars/minicss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.minicss_stars = res.data.stargazers_count;
@@ -524,7 +544,8 @@
                         }
                         $scope.frameworks.push(minicss)
                     })
-
+                
+                // Ink
                 $http.get('/resources/css_github_stars/ink_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.ink_stars = res.data.stargazers_count;
@@ -538,7 +559,8 @@
                         }
                         $scope.frameworks.push(ink)
                     })
-
+                
+                // Alloy UI
                 $http.get('/resources/css_github_stars/alloyui_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.alloyui_stars = res.data.stargazers_count;
@@ -552,7 +574,8 @@
                         }
                         $scope.frameworks.push(alloyui)
                     })
-
+                
+                // Cutestrap
                 $http.get('/resources/css_github_stars/cutestrap_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.cutestrap_stars = res.data.stargazers_count;
@@ -566,7 +589,8 @@
                         }
                         $scope.frameworks.push(cutestrap)
                     })
-
+                
+                // Unsemantic
                 $http.get('/resources/css_github_stars/unsemantic_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.unsemantic_stars = res.data.stargazers_count;
@@ -594,7 +618,8 @@
                         }
                         $scope.frameworks.push(blaze)
                     })
-
+                
+                // Kube
                 $http.get('/resources/css_github_stars/kube_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.kube_stars = res.data.stargazers_count;
@@ -608,7 +633,8 @@
                         }
                         $scope.frameworks.push(kube)
                     })
-
+                
+                // Html KickStart
                 $http.get('/resources/css_github_stars/HTMLKickStart_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.HTMLKickStart_stars = res.data.stargazers_count;
@@ -622,7 +648,8 @@
                         }
                         $scope.frameworks.push(HTMLKickStart)
                     })
-
+                
+                // Inuit CSS
                 $http.get('/resources/css_github_stars/inuitcss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.inuitcss_stars = res.data.stargazers_count;
@@ -650,7 +677,8 @@
                         }
                         $scope.frameworks.push(mincss)
                     })
-
+                
+                // Tacit
                 $http.get('/resources/css_github_stars/tacit_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.tacit_stars = res.data.stargazers_count;
@@ -664,7 +692,8 @@
                         }
                         $scope.frameworks.push(tacit)
                     })
-
+                
+                // Concise CSS
                 $http.get('/resources/css_github_stars/concisecss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.concisecss_stars = res.data.stargazers_count;
@@ -678,7 +707,8 @@
                         }
                         $scope.frameworks.push(concisecss)
                     })
-
+                
+                // Awesome CSS
                 $http.get('/resources/css_github_stars/awsmcss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.awsmcss_stars = res.data.stargazers_count;
@@ -692,7 +722,8 @@
                         }
                         $scope.frameworks.push(awsmcss)
                     })
-
+                
+                // Furatto
                 $http.get('/resources/css_github_stars/furatto_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.furatto_stars = res.data.stargazers_count;
@@ -706,7 +737,8 @@
                         }
                         $scope.frameworks.push(furatto)
                     })
-
+                
+                // Cardinal
                 $http.get('/resources/css_github_stars/cardinalcss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.cardinalcss_stars = res.data.stargazers_count;
@@ -720,7 +752,8 @@
                         }
                         $scope.frameworks.push(cardinalcss)
                     })
-
+                
+                // Responsive
                 $http.get('/resources/css_github_stars/responsive_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.responsive_stars = res.data.stargazers_count;
@@ -734,7 +767,8 @@
                         }
                         $scope.frameworks.push(responsive)
                     })
-
+                
+                // Kraken
                 $http.get('/resources/css_github_stars/kraken_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.kraken_stars = res.data.stargazers_count;
@@ -748,7 +782,8 @@
                         }
                         $scope.frameworks.push(kraken)
                     })
-
+                
+                // Furtive
                 $http.get('/resources/css_github_stars/furtive_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.furtive_stars = res.data.stargazers_count;
@@ -762,7 +797,8 @@
                         }
                         $scope.frameworks.push(furtive)
                     })
-
+                
+                // Tuk Tuk
                 $http.get('/resources/css_github_stars/tuktuk_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
                         $scope.tuktuk_stars = res.data.stargazers_count;
