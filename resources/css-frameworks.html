@@ -275,20 +275,6 @@
                         $scope.frameworks.push(semantic)
                     })
                 
-                // Ionic
-                $http.get('/resources/css_github_stars/ionic_' + year + '-' + month + '-' + day + '.json')
-                    .then(function(res) {
-                        $scope.ionic_stars = res.data.stargazers_count;
-                        $scope.ionic_website = res.data.homepage;
-                        var ionic = {
-                            name: "Ionic",
-                            website: $scope.ionic_website,
-                            stars: $scope.ionic_stars,
-                            description: "Build amazing native and progressive web apps with open web technologies. One app running on everything.",
-                            href_template: "..."
-                        }
-                        $scope.frameworks.push(ionic)
-                    })
                 
                 // Materialize
                 $http.get('/resources/css_github_stars/materialize_' + year + '-' + month + '-' + day + '.json')
