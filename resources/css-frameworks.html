@@ -546,20 +546,6 @@
                         $scope.frameworks.push(ink)
                     })
                 
-                // Alloy UI
-                $http.get('/resources/css_github_stars/alloyui_' + year + '-' + month + '-' + day + '.json')
-                    .then(function(res) {
-                        $scope.alloyui_stars = res.data.stargazers_count;
-                        $scope.alloyui_website = res.data.homepage;
-                        var alloyui = {
-                            name: "Alloy UI",
-                            website: $scope.alloyui_website,
-                            stars: $scope.alloyui_stars,
-                            description: "AlloyUI is a framework built on top of YUI3 (JavaScript) that uses Bootstrap 3 (HTML/CSS) to provide a simple API for building high scalable applications.",
-                            href_template: "..."
-                        }
-                        $scope.frameworks.push(alloyui)
-                    })
                 
                 // Cutestrap
                 $http.get('/resources/css_github_stars/cutestrap_' + year + '-' + month + '-' + day + '.json')
