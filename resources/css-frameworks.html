@@ -73,6 +73,7 @@
 
         fbq('init', '224938111181968');
         fbq('track', "PageView");
+
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -97,6 +98,7 @@
                 }
             })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
         }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
+
     </script>
 </head>
 
@@ -142,7 +144,7 @@
                             <th>Framework</th>
                             <th>Github Stars</th>
                             <th>Description</th>
-                            <th>Live Preview</th>
+                            <th width="12%">Live Demo</th>
                         </tr>
                     </thead>
                     <tbody ng-cloak ng-repeat="framework in frameworks | orderBy: 'stars': true">
@@ -150,7 +152,7 @@
                             <td><a rel=”nofollow” ng-href={{framework.website}} target="_blank">{{framework.name}}</a></td>
                             <td>{{framework.stars}}</td>
                             <td>{{framework.description}}</td>
-                            <td><a ng-href={{framework.href_template}} target="_blank">{{framework.template}}</a></td>
+                            <td width="12%"><a ng-href={{framework.href_template}} target="_blank">{{framework.template}}</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -241,8 +243,8 @@
                 var month = d.getUTCMonth() + 1;
                 var frameworks = [];
                 $scope.frameworks = frameworks;
-                
-                
+
+
                 // Bootstrap
                 $http.get('/resources/css_github_stars/bootstrap_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -253,13 +255,13 @@
                             website: $scope.bootstrap_website,
                             stars: $scope.bootstrap_stars,
                             description: "HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
-                            template: "Blog Template",
-                            href_template: 'https://sitecake.com/demo?template=bootstrapBlog'
+                            template: "Open demo",
+                            href_template: 'https://sitecake.com/demo?template=bootstrap'
                         }
                         $scope.frameworks.push(bootstrap)
                     })
 
-                
+
                 // Semantic
                 $http.get('/resources/css_github_stars/semantic_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -274,8 +276,8 @@
                         }
                         $scope.frameworks.push(semantic)
                     })
-                
-                
+
+
                 // Materialize
                 $http.get('/resources/css_github_stars/materialize_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -290,7 +292,7 @@
                         }
                         $scope.frameworks.push(materialize)
                     })
-                
+
                 // Foundation Zurb
                 $http.get('/resources/css_github_stars/foundationzurb_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -305,7 +307,7 @@
                         }
                         $scope.frameworks.push(foundationzurb)
                     })
-                
+
                 // Bulma
                 $http.get('/resources/css_github_stars/bulma_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -320,7 +322,7 @@
                         }
                         $scope.frameworks.push(bulma)
                     })
-                
+
                 // Pure CSS
                 $http.get('/resources/css_github_stars/purecss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -335,7 +337,7 @@
                         }
                         $scope.frameworks.push(purecss)
                     })
-                
+
                 // Skeleton
                 $http.get('/resources/css_github_stars/skeleton_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -350,7 +352,7 @@
                         }
                         $scope.frameworks.push(skeleton)
                     })
-                
+
                 // Uikit
                 $http.get('/resources/css_github_stars/uikit_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -365,7 +367,7 @@
                         }
                         $scope.frameworks.push(uikit)
                     })
-                
+
                 // Miligram
                 $http.get('/resources/css_github_stars/milligram_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -380,7 +382,7 @@
                         }
                         $scope.frameworks.push(milligram)
                     })
-                
+
                 // Tachyons
                 $http.get('/resources/css_github_stars/tachyons_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -395,7 +397,7 @@
                         }
                         $scope.frameworks.push(tachyons)
                     })
-                
+
                 // Spectre
                 $http.get('/resources/css_github_stars/spectre_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -410,7 +412,7 @@
                         }
                         $scope.frameworks.push(spectre)
                     })
-                
+
                 // Bass CSS
                 $http.get('/resources/css_github_stars/basscss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -425,7 +427,7 @@
                         }
                         $scope.frameworks.push(basscss)
                     })
-                
+
                 // Topcoat
                 $http.get('/resources/css_github_stars/topcoat_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -440,7 +442,7 @@
                         }
                         $scope.frameworks.push(topcoat)
                     })
-                
+
                 // Susy
                 $http.get('/resources/css_github_stars/susy_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -455,7 +457,7 @@
                         }
                         $scope.frameworks.push(susy)
                     })
-                
+
                 // Mui CSS
                 $http.get('/resources/css_github_stars/muicss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -470,7 +472,7 @@
                         }
                         $scope.frameworks.push(muicss)
                     })
-                
+
                 // Picnic
                 $http.get('/resources/css_github_stars/picnic_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -485,7 +487,7 @@
                         }
                         $scope.frameworks.push(picnic)
                     })
-                
+
                 // Mobi CSS
                 $http.get('/resources/css_github_stars/mobicss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -500,7 +502,7 @@
                         }
                         $scope.frameworks.push(mobicss)
                     })
-                
+
                 // Hack
                 $http.get('/resources/css_github_stars/hack_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -515,7 +517,7 @@
                         }
                         $scope.frameworks.push(hack)
                     })
-                
+
                 // Mini CSS
                 $http.get('/resources/css_github_stars/minicss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -530,7 +532,7 @@
                         }
                         $scope.frameworks.push(minicss)
                     })
-                
+
                 // Ink
                 $http.get('/resources/css_github_stars/ink_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -545,8 +547,8 @@
                         }
                         $scope.frameworks.push(ink)
                     })
-                
-                
+
+
                 // Cutestrap
                 $http.get('/resources/css_github_stars/cutestrap_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -561,7 +563,7 @@
                         }
                         $scope.frameworks.push(cutestrap)
                     })
-                
+
                 // Unsemantic
                 $http.get('/resources/css_github_stars/unsemantic_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -590,7 +592,7 @@
                         }
                         $scope.frameworks.push(blaze)
                     })
-                
+
                 // Kube
                 $http.get('/resources/css_github_stars/kube_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -605,7 +607,7 @@
                         }
                         $scope.frameworks.push(kube)
                     })
-                
+
                 // Html KickStart
                 $http.get('/resources/css_github_stars/HTMLKickStart_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -620,7 +622,7 @@
                         }
                         $scope.frameworks.push(HTMLKickStart)
                     })
-                
+
                 // Inuit CSS
                 $http.get('/resources/css_github_stars/inuitcss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -649,7 +651,7 @@
                         }
                         $scope.frameworks.push(mincss)
                     })
-                
+
                 // Tacit
                 $http.get('/resources/css_github_stars/tacit_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -664,7 +666,7 @@
                         }
                         $scope.frameworks.push(tacit)
                     })
-                
+
                 // Concise CSS
                 $http.get('/resources/css_github_stars/concisecss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -679,7 +681,7 @@
                         }
                         $scope.frameworks.push(concisecss)
                     })
-                
+
                 // Awesome CSS
                 $http.get('/resources/css_github_stars/awsmcss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -694,7 +696,7 @@
                         }
                         $scope.frameworks.push(awsmcss)
                     })
-                
+
                 // Furatto
                 $http.get('/resources/css_github_stars/furatto_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -709,7 +711,7 @@
                         }
                         $scope.frameworks.push(furatto)
                     })
-                
+
                 // Cardinal
                 $http.get('/resources/css_github_stars/cardinalcss_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -724,7 +726,7 @@
                         }
                         $scope.frameworks.push(cardinalcss)
                     })
-                
+
                 // Responsive
                 $http.get('/resources/css_github_stars/responsive_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -739,7 +741,7 @@
                         }
                         $scope.frameworks.push(responsive)
                     })
-                
+
                 // Kraken
                 $http.get('/resources/css_github_stars/kraken_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -754,7 +756,7 @@
                         }
                         $scope.frameworks.push(kraken)
                     })
-                
+
                 // Furtive
                 $http.get('/resources/css_github_stars/furtive_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -769,7 +771,7 @@
                         }
                         $scope.frameworks.push(furtive)
                     })
-                
+
                 // Tuk Tuk
                 $http.get('/resources/css_github_stars/tuktuk_' + year + '-' + month + '-' + day + '.json')
                     .then(function(res) {
@@ -788,6 +790,7 @@
             }
             $scope.fetchData();
         })
+
     </script>
 
     <!-- Google Code for Remarketing Tag -->
@@ -797,8 +800,11 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
+
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+
     </script>
     <noscript>
         <div style="display:inline;">
