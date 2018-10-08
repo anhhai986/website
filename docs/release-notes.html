@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="alternate" href="https://sitecake.com/docs/release-notes.html" hreflang="x-default" />
-<link rel="alternate" href="https://sitecake.com/docs/release-notes.html" hreflang="en" />
-<link rel="alternate" href="https://sitecake.com/jp/docs/release-notes.html" hreflang="ja" />
+    <link rel="alternate" href="https://sitecake.com/docs/release-notes.html" hreflang="en" />
+    <link rel="alternate" href="https://sitecake.com/jp/docs/release-notes.html" hreflang="ja" />
     <meta name="keywords" content="Sitecake, release notes" />
     <title>Sitecake Release Notes</title>
     <meta name="description" content="" />
@@ -141,6 +141,27 @@
             </div>
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
+
+
+                    <h2> 2.4.8 Release Notes</h2>
+                    <p class="date">05/21/2018</p>
+
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Sitecake is opened for server side PHP plugins. </li>
+                        <li>Japanese UI language added</li>
+                        <li>Configuration file moved out of the distribution folder. Now it's easy to update version and keep old configuration.</li>
+                        <li>Server requirements check exists as sitecake/&#60;version &#62; /config/requirements.php
+                        </li>
+                    </ul>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Fixed issues with displaying Asian characters and multi byte characters</li>
+                        <li>Two title tags issue fixed.</li>
+                        <li>Paths for uploaded files are fixed from /temp to root folder.</li>
+
+                    </ul>
 
 
                     <h2> 2.4.7 Release Notes</h2>
