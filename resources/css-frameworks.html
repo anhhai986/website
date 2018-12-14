@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSSa -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- Font's -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -23,83 +23,220 @@
     <link rel="stylesheet" href="../css/main.css" type="text/css">
     <!-- filip_table_css-->
     <link rel="stylesheet" href="../css/css-framework-table.css" type="text/css">
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-touch-icon-57x57.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-touch-icon-60x60.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-touch-icon-72x72.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-touch-icon-76x76.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-touch-icon-120x120.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-touch-icon-144x144.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon-152x152.png?v=yy0966qJGm">
-    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon-180x180.png?v=yy0966qJGm">
-    <link rel="icon" type="image/png" href="../img/favicon/favicon-32x32.png?v=yy0966qJGm" sizes="32x32">
-    <link rel="icon" type="image/png" href="../img/favicon/favicon-194x194.png?v=yy0966qJGm" sizes="194x194">
-    <link rel="icon" type="image/png" href="../img/favicon/favicon-96x96.png?v=yy0966qJGm" sizes="96x96">
-    <link rel="icon" type="image/png" href="../img/favicon/android-chrome-192x192.png?v=yy0966qJGm" sizes="192x192">
-    <link rel="icon" type="image/png" href="../img/favicon/favicon-16x16.png?v=yy0966qJGm" sizes="16x16">
-    <link rel="manifest" href="../img/favicon/manifest.json?v=yy0966qJGm">
-    <link rel="shortcut icon" href="../img/favicon/favicon.ico?v=yy0966qJGm">
-    <meta name="msapplication-TileColor" content="#61cae9">
-    <meta name="msapplication-TileImage" content="../img/favicon/mstile-144x144.png?v=yy0966qJGm">
-    <meta name="msapplication-config" content="../img/favicon/browserconfig.xml?v=yy0966qJGm">
-    <meta name="theme-color" content="#61cae9">
 
-
-
-
-    <!-- Facebook Pixel Code -->
+    <!-- Angular.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
     <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window,
-            document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+        var app = angular.module('app', []);
 
-        fbq('init', '224938111181968');
-        fbq('track', "PageView");
 
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=224938111181968&ev=PageView&noscript=1" /></noscript>
-    <!-- End Facebook Pixel Code -->
-    <script type="text/javascript">
-        (function(e, t) {
-            function r(e, t) {
-                e[t] = function() {
-                    e.push([t].concat(Array.prototype.slice.call(arguments, 0)));
-                };
+        app.controller('MainCtrl', function($scope, $http) {
+
+            $scope.fetchData = function(stargazers) {
+
+                var d = new Date()
+                var day = d.getUTCDate()
+                var year = d.getUTCFullYear()
+                var month = d.getUTCMonth() + 1;
+
+
+                $http.get('/resources/css_github_stars/bootstrap_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.bootstrap = res.data.stargazers_count;
+                    })
+
+
+                $http.get('/resources/css_github_stars/semantic_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.semantic = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/ionic_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.ionic = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/materialize_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.materialize = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/foundationzurb_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.foundationzurb = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/bulma_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.bulma = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/purecss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.purecss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/skeleton_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.skeleton = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/uikit_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.uikit = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/milligram_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.milligram = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/tachyons_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.tachyons = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/spectre_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.spectre = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/basscss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.basscss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/topcoat_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.topcoat = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/susy_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.susy = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/muicss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.muicss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/picnic_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.picnic = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/mobicss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.mobicss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/hack_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.hack = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/minicss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.minicss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/ink_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.ink = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/alloyui_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.alloyui = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/cutestrap_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.cutestrap = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/unsemantic_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.unsemantic = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/blaze_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.blaze = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/kube_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.kube = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/HTMLKickStart_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.HTMLKickStart = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/inuitcss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.inuitcss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/mincss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.mincss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/tacit_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.tacit = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/concisecss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.concisecss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/awsmcss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.awsmcss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/furatto_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.furatto = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/cardinalcss_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.cardinalcss = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/responsive_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.responsive = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/kraken_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.kraken = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/furtive_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.furtive = res.data.stargazers_count;
+                    })
+
+                $http.get('/resources/css_github_stars/tuktuk_' + year + '-' + month + '-' + day + '.json')
+                    .then(function(res) {
+                        $scope.tuktuk = res.data.stargazers_count;
+                    })
+
             }
-            var n = "JacoRecorder";
-            (function(e, t, i, s) {
-                if (!i.__VERSION) {
-                    e[n] = i;
-                    var o = ["init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo"];
-                    for (var u = 0; u < o.length; u++) r(i, o[u]);
-                    i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-                    var a = t.createElement("script");
-                    a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-                    var f = t.getElementsByTagName("head")[0];
-                    f.appendChild(a);
-                }
-            })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-        }).call(window, window, document), window.JacoRecorder.push(["init", "de125860-47b2-4e8e-a5b8-4af522df9268", {}]);
-
+            $scope.fetchData();
+        })
     </script>
+
+
 </head>
 
 
@@ -793,7 +930,6 @@
             }
             $scope.fetchData();
         })
-
     </script>
 
     <!-- Google Code for Remarketing Tag -->
@@ -803,7 +939,6 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 
