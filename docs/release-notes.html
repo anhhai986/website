@@ -44,7 +44,6 @@
                 hljs.highlightBlock(block);
             });
         });
-
     </script>
 
 </head>
@@ -88,6 +87,37 @@
             <div class="col-xs-12 col-md-9 col-md-push-3">
                 <div class="sc-content documentation-content">
 
+
+                    <h2> 2.4.10 Release Notes</h2>
+                    <p class="date">12/19/2018</p>
+
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>Publish button is disabled during background save to prevent save errors</li>
+                        <li>Local config.php is packed with release</li>
+                    </ul>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Edit mode rendering bug with head tag comments fixed</li>
+                        <li>Configuration merging bug fixed</li>
+                    </ul>
+
+                    <h2> 2.4.9 Release Notes</h2>
+                    <p class="date">11/01/2018</p>
+
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li>'image.srcset_qualities' config variable added to default configuration. Image quality of Sitecake generated images can be set by the user</li>
+                        <li>Script and css urls without protocol now supported</li>
+                    </ul>
+
+                    <h3>Bug Fixes</h3>
+                    <ul>
+                        <li>Site processing bug with <em>robots</em> and <em>application-name</em> meta tags in header fixed</li>
+                        <li>Draft image path bug of newly uploaded images fixed</li>
+                        <li>Page manager page disappearing bug after duplication to subfolder fixed</li>
+                    </ul>
 
                     <h2> 2.4.8 Release Notes</h2>
                     <p class="date">05/21/2018</p>
@@ -160,7 +190,7 @@
                         <li>Fixed: cache inconsistency for <em>.scpages</em> listed files</li>
                         <li>Fixed: user was not able to navigate website through page links in edit mode</li>
                         <li>Fixed: Sitecake not handling menus in included files listed in <em>
-                            .scpages</em></li>
+                                .scpages</em></li>
                         <li>Fixed: converting urls with query string</li>
                         <li>Fixed: h4 and h6 toolbar buttons are reversed</li>
                         <li>Fixed: menu with zero pages could not be saved</li>
@@ -468,7 +498,6 @@
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 
